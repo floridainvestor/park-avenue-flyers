@@ -13,8 +13,8 @@
       padding: 40px 20px;
     }
     .header {
-      max-width: 780px;
-      margin: 0 auto 40px;
+      max-width: 820px;
+      margin: 0 auto 36px;
       text-align: center;
     }
     .header h1 {
@@ -40,46 +40,87 @@
       border-radius: 3px;
       margin-bottom: 14px;
     }
+    .round-tabs {
+      max-width: 820px;
+      margin: 0 auto 28px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .round-tab {
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      color: #888;
+      background: #fff;
+    }
+    .round-tab.active {
+      background: #e67e22;
+      border-color: #e67e22;
+      color: #fff;
+    }
+    .round-tab:hover:not(.active) {
+      border-color: #888;
+      color: #333;
+    }
     .instructions {
-      max-width: 780px;
-      margin: 0 auto 40px;
+      max-width: 820px;
+      margin: 0 auto 32px;
       background: #fff3cd;
       border-left: 4px solid #f0a500;
-      padding: 16px 20px;
+      padding: 14px 18px;
       border-radius: 4px;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.6;
     }
     .instructions strong { color: #7a4f00; }
+    .section-label {
+      max-width: 820px;
+      margin: 0 auto 16px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #888;
+      display: none;
+    }
+    .section-label.visible { display: block; }
     .grid {
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 18px;
     }
     .card {
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-      padding: 24px 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+      padding: 20px 24px;
       display: flex;
       align-items: flex-start;
-      gap: 22px;
+      gap: 18px;
     }
     .card.winner {
       border: 2px solid #e67e22;
       box-shadow: 0 4px 16px rgba(230,126,34,0.18);
     }
+    .card.v5-new {
+      border-left: 4px solid #2ecc71;
+    }
     .rank-badge {
       flex-shrink: 0;
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 900;
       color: #fff;
     }
@@ -88,76 +129,126 @@
     .rank-3 { background: #555; }
     .rank-4 { background: #888; }
     .rank-5 { background: #aaa; }
+    .rank-new { background: #2ecc71; font-size: 14px; }
     .card-body { flex: 1; }
     .card-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+      gap: 6px;
     }
     .writer-name {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 700;
       color: #1a1a1a;
     }
     .style-tag {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       color: #777;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     .judge-note {
-      font-size: 14px;
+      font-size: 13.5px;
       color: #444;
-      line-height: 1.6;
-      margin-bottom: 14px;
+      line-height: 1.55;
+      margin-bottom: 12px;
       font-style: italic;
       border-left: 3px solid #ddd;
-      padding-left: 12px;
+      padding-left: 10px;
     }
     .judge-note.winner-note { border-color: #e67e22; }
+    .v5-note {
+      font-size: 12px;
+      color: #27ae60;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-style: normal;
+    }
+    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
     .btn {
       display: inline-block;
-      padding: 10px 22px;
+      padding: 8px 18px;
       border-radius: 5px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       text-decoration: none;
       transition: background 0.15s;
     }
-    .btn-orange {
-      background: #e67e22;
-      color: #fff;
-    }
+    .btn-orange { background: #e67e22; color: #fff; }
     .btn-orange:hover { background: #cf6d17; }
-    .btn-dark {
-      background: #2c3e50;
-      color: #fff;
-    }
+    .btn-dark { background: #2c3e50; color: #fff; }
     .btn-dark:hover { background: #1a252f; }
-    .btn-gray {
-      background: #888;
-      color: #fff;
-    }
+    .btn-gray { background: #888; color: #fff; }
     .btn-gray:hover { background: #666; }
+    .btn-green { background: #27ae60; color: #fff; }
+    .btn-green:hover { background: #1e8449; }
+    .btn-outline {
+      background: #fff;
+      color: #888;
+      border: 2px solid #ccc;
+    }
+    .btn-outline:hover { border-color: #888; color: #333; }
     .winner-tag {
       background: #e67e22;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+    }
+    .new-tag {
+      background: #27ae60;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+    }
+    .divider {
+      max-width: 820px;
+      margin: 28px auto 20px;
+      border: none;
+      border-top: 2px dashed #ccc;
+    }
+    .round-header {
+      max-width: 820px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .round-header h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .round-header .round-pill {
+      background: #2c3e50;
       color: #fff;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 3px 9px;
-      border-radius: 3px;
-      margin-left: 10px;
+      padding: 3px 10px;
+      border-radius: 12px;
     }
+    .round-header .round-pill.v5 { background: #27ae60; }
     .footer {
-      max-width: 780px;
-      margin: 40px auto 0;
+      max-width: 820px;
+      margin: 36px auto 0;
       text-align: center;
-      font-size: 13px;
-      color: #888;
+      font-size: 12px;
+      color: #999;
     }
   </style>
 </head>
@@ -165,94 +256,176 @@
 
 <div class="header">
   <div class="badge">Steve Levy — Confidential Review</div>
-  <h1>Park Avenue MHP — Flyer Finals (V4)</h1>
-  <p>Five copywriters. One property. Jay Abraham judged the winner.<br>
-  Review each flyer below and pick the top two to run as ads.</p>
+  <h1>Park Avenue MHP — Flyer Arena</h1>
+  <p>Five copywriters. One property. Jay Abraham judges.<br>
+  Round 4 winner: <strong>Halbert</strong>. Round 5 upgrades every flyer with cross-arena synthesis.</p>
 </div>
 
 <div class="instructions">
-  <strong>How to review:</strong> Click "View Flyer" on any card to open the full-size ad in a new tab. Each flyer is formatted for print (8.5×11) but also readable on screen. After reviewing, let Jerel know your top two picks — those will become the live ad creatives.
+  <strong>How to use this page:</strong> V5 flyers are at the top — each writer has absorbed the best elements from all other writers. V4 originals are below for comparison. Click "View Flyer" to open full-size in a new tab. Let Jerel know your top two picks for ads.
+</div>
+
+<!-- ══════════════════════
+     ROUND 5
+══════════════════════ -->
+<div class="round-header">
+  <div class="round-pill v5">Round 5 — Synthesis</div>
+  <h2>Each writer upgraded with cross-arena learnings</h2>
 </div>
 
 <div class="grid">
 
-  <!-- RANK 1 — HALBERT -->
+  <div class="card v5-new winner">
+    <div class="rank-badge rank-new">V5</div>
+    <div class="card-body">
+      <div class="card-top">
+        <span class="writer-name">Halbert <span class="winner-tag">Round 4 Champion</span></span>
+        <span class="style-tag">Story Letter · Warm &amp; Personal</span>
+      </div>
+      <div class="v5-note">+ Hormozi comparison table as story prop · + Carlton's bank villain in dialogue · + Bencivenga's $1,650–$1,900 Sanford price data · + Makepeace's emotional Month 59 payoff deepened</div>
+      <div class="judge-note winner-note">"The woman cried when she finished the math. Not sad crying. The other kind." — Now the headline. The bank is named through her voice. The table becomes the napkin she scribbled on. Month 59 is a scene, not a stat.</div>
+      <div class="btn-row">
+        <a href="halbert-v5.html" target="_blank" class="btn btn-orange">View V5 →</a>
+        <a href="halbert.html" target="_blank" class="btn btn-outline">V4 (original)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card v5-new">
+    <div class="rank-badge rank-new">V5</div>
+    <div class="card-body">
+      <div class="card-top">
+        <span class="writer-name">Hormozi <span class="new-tag">Upgraded</span></span>
+        <span class="style-tag">Data-Dominant · Math First</span>
+      </div>
+      <div class="v5-note">+ Halbert 3-sentence story hook before the table · + Carlton "Bank Math" rows added to comparison · + Bencivenga cited proof bar (Zillow Q1 2026) · + Makepeace emotional close line</div>
+      <div class="judge-note">"Maria paid $127,400 to landlords over 6 years. That ends today." Then the table with bank math rows. The proof bar with four sourced data points. Closes: "You're not buying a home. You're buying the month your housing payment disappears forever."</div>
+      <div class="btn-row">
+        <a href="hormozi-v5.html" target="_blank" class="btn btn-dark">View V5 →</a>
+        <a href="hormozi.html" target="_blank" class="btn btn-outline">V4 (original)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card v5-new">
+    <div class="rank-badge rank-new">V5</div>
+    <div class="card-body">
+      <div class="card-top">
+        <span class="writer-name">Carlton <span class="new-tag">Upgraded</span></span>
+        <span class="style-tag">Punchy · Bank-as-Villain</span>
+      </div>
+      <div class="v5-note">+ Halbert 3-sentence story opener · + Hormozi "THE MATH DOESN'T LIE" comparison table · + Bencivenga cited Sanford rent data with source · + Makepeace emotional one-liner close</div>
+      <div class="judge-note">"She's got a drawer full of receipts and zero equity. That stops being funny real fast." The table header reads like a verdict. The Bencivenga cite is delivered with attitude. "Month 59 — the last housing check you'll ever write. That's not a metaphor. That's math."</div>
+      <div class="btn-row">
+        <a href="carlton-v5.html" target="_blank" class="btn btn-gray">View V5 →</a>
+        <a href="carlton.html" target="_blank" class="btn btn-outline">V4 (original)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card v5-new">
+    <div class="rank-badge rank-new">V5</div>
+    <div class="card-body">
+      <div class="card-top">
+        <span class="writer-name">Bencivenga <span class="new-tag">Upgraded</span></span>
+        <span class="style-tag">Proof-Dominant · Research-Heavy</span>
+      </div>
+      <div class="v5-note">+ Halbert named character (Rosa M., 63) validates the data · + Carlton bank named as documented barrier · + Hormozi full comparison table with dual citations · + Makepeace measured emotional close</div>
+      <div class="judge-note">"Rosa M., 63, had been paying $1,750 a month for four years. She drove out the next morning and called back that afternoon." The bank section is documented fact, not rhetoric. The table cites Zillow + MHVillage. "Some things resist measurement." Earned emotion, all proof intact.</div>
+      <div class="btn-row">
+        <a href="bencivenga-v5.html" target="_blank" class="btn btn-gray">View V5 →</a>
+        <a href="bencivenga.html" target="_blank" class="btn btn-outline">V4 (original)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card v5-new">
+    <div class="rank-badge rank-new">V5</div>
+    <div class="card-body">
+      <div class="card-top">
+        <span class="writer-name">Makepeace <span class="new-tag">Rebuilt</span></span>
+        <span class="style-tag">Literary · Emotional Journey</span>
+      </div>
+      <div class="v5-note">+ Halbert named character (Elena) as emotional anchor · + Carlton's bank villain through grief not combat · + Hormozi comparison table as "the moment the numbers became real" · + Bencivenga cited Sanford rent stat · Full emotional arc completed: dread → discovery → resolution</div>
+      <div class="judge-note">"The first wanted a credit score she did not have. The second wanted a down payment she could not save. The third did not call back." Then the table. Then Month 59 as a full scene — "The Day Everything Changes." Elena at the kitchen table, no check to write, coffee instead. Makepeace's redemption round.</div>
+      <div class="btn-row">
+        <a href="makepeace-v5.html" target="_blank" class="btn btn-gray">View V5 →</a>
+        <a href="makepeace.html" target="_blank" class="btn btn-outline">V4 (original)</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ══════════════════════
+     ROUND 4 ARCHIVE
+══════════════════════ -->
+<div class="round-header">
+  <div class="round-pill">Round 4 — Jay Abraham Judged</div>
+  <h2>Original rankings for reference</h2>
+</div>
+
+<div class="grid">
+
   <div class="card winner">
     <div class="rank-badge rank-1">1</div>
     <div class="card-body">
       <div class="card-top">
         <span class="writer-name">Halbert <span class="winner-tag">Jay's Pick</span></span>
-        <span class="style-tag">Story Letter · Warm &amp; Personal</span>
+        <span class="style-tag">Story Letter</span>
       </div>
-      <div class="judge-note winner-note">
-        "Halbert's letter achieves the rarest thing in marketing — it makes you feel like you already own the home. The five-year math lands like a gut punch. The mechanism is embedded in story, not a box. The guarantee feels like a conversation, not a contract clause. This is preeminence in print."
-        <br><br>— Jay Abraham
-      </div>
-      <a href="halbert.html" target="_blank" class="btn btn-orange">View Flyer →</a>
+      <div class="judge-note winner-note">"Makes you feel like you already own the home. The five-year math lands like a gut punch. The mechanism is embedded in story. The guarantee feels like a conversation." — Jay Abraham</div>
+      <a href="halbert.html" target="_blank" class="btn btn-orange">View V4 →</a>
     </div>
   </div>
 
-  <!-- RANK 2 — HORMOZI -->
   <div class="card">
     <div class="rank-badge rank-2">2</div>
     <div class="card-body">
       <div class="card-top">
         <span class="writer-name">Hormozi</span>
-        <span class="style-tag">Data-Dominant · Direct Offer</span>
+        <span class="style-tag">Data-Dominant</span>
       </div>
-      <div class="judge-note">
-        "Hormozi brings the math most flyers never show — cost comparisons, equity accumulation, the $1,125 month-59 payoff. Strong risk reversal. Seller motivation gives it humanity. Best at closing buyers who already trust the concept and want proof."
-        <br><br>— Jay Abraham
-      </div>
-      <a href="hormozi.html" target="_blank" class="btn btn-dark">View Flyer →</a>
+      <div class="judge-note">"Strongest math. Best risk reversal. Seller motivation gives it humanity. Best for buyers who already trust the concept." — Jay Abraham</div>
+      <a href="hormozi.html" target="_blank" class="btn btn-dark">View V4 →</a>
     </div>
   </div>
 
-  <!-- RANK 3 — CARLTON -->
   <div class="card">
     <div class="rank-badge rank-3">3</div>
     <div class="card-body">
       <div class="card-top">
         <span class="writer-name">Carlton</span>
-        <span class="style-tag">Punchy · Bank-as-Villain</span>
+        <span class="style-tag">Bank-as-Villain</span>
       </div>
-      <div class="judge-note">
-        "Carlton's bank-as-villain frame is the most preemptive positioning in the group. Strong mechanism box. The guarantee is present. Needs warmer emotional texture before the prospect can fully commit — but for an audience already frustrated with banks and landlords, this lands hard."
-        <br><br>— Jay Abraham
-      </div>
-      <a href="carlton.html" target="_blank" class="btn btn-gray">View Flyer →</a>
+      <div class="judge-note">"Most preemptive positioning. Strong mechanism box. Needs warmer emotional texture before full commitment." — Jay Abraham</div>
+      <a href="carlton.html" target="_blank" class="btn btn-gray">View V4 →</a>
     </div>
   </div>
 
-  <!-- RANK 4 — BENCIVENGA -->
   <div class="card">
     <div class="rank-badge rank-4">4</div>
     <div class="card-body">
       <div class="card-top">
         <span class="writer-name">Bencivenga</span>
-        <span class="style-tag">Proof-Dominant · Research-Heavy</span>
+        <span class="style-tag">Proof-Dominant</span>
       </div>
-      <div class="judge-note">
-        "Bencivenga stacks proof like no other entry. The headline with actual Sanford rental prices is preemptive and specific. The mechanism citation adds legitimacy. Loses ground in emotional resonance — proof without feeling is persuasion without conversion. Best for a highly skeptical, research-oriented buyer."
-        <br><br>— Jay Abraham
-      </div>
-      <a href="bencivenga.html" target="_blank" class="btn btn-gray">View Flyer →</a>
+      <div class="judge-note">"Stacks proof like no other entry. Loses ground in emotional resonance. Best for the highly skeptical buyer." — Jay Abraham</div>
+      <a href="bencivenga.html" target="_blank" class="btn btn-gray">View V4 →</a>
     </div>
   </div>
 
-  <!-- RANK 5 — MAKEPEACE -->
   <div class="card">
     <div class="rank-badge rank-5">5</div>
     <div class="card-body">
       <div class="card-top">
         <span class="writer-name">Makepeace</span>
-        <span class="style-tag">Literary · Emotional Journey</span>
+        <span class="style-tag">Literary · Emotional</span>
       </div>
-      <div class="judge-note">
-        "Makepeace writes beautifully. The emotional arc is real. But the mechanism arrives too late, the dread-to-action pivot is unresolved, and for a buyer who doesn't know what 'owner-financed' means — the literary language creates distance instead of trust. Strong back half; the front needs to earn the read."
-        <br><br>— Jay Abraham
-      </div>
-      <a href="makepeace.html" target="_blank" class="btn btn-gray">View Flyer →</a>
+      <div class="judge-note">"Writes beautifully. The mechanism arrives too late. Literary language creates distance for buyers who don't yet understand owner-financing." — Jay Abraham</div>
+      <a href="makepeace.html" target="_blank" class="btn btn-gray">View V4 →</a>
     </div>
   </div>
 
@@ -260,7 +433,7 @@
 
 <div class="footer">
   Park Avenue Mobile Home Park · Sanford, FL · #1 Rated 2026 (BusinessRate / Google Reviews)<br>
-  Judged by Jay Abraham · Round 4 Finals · Confidential
+  Judged by Jay Abraham · Round 5 Synthesis · Confidential — Steve Levy Review
 </div>
 
 </body>

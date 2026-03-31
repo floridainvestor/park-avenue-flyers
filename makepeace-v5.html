@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Park Avenue MHP — Value Homes | Makepeace Edition V5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    html, body {
+      width: 8.5in;
+      min-height: 11in;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #FAFAF8;
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      color: #1A1A1A;
+      font-size: 10.5pt;
+      line-height: 1.35;
+    }
+
+    /* ─────────────────────────────────────────────
+       HERO BAND — 3-panel photo strip
+    ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 1.30in;
+      display: flex;
+    }
+
+    .hero-panel {
+      flex: 1;
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .hero-panel-left   {
+      background-image: url('photos/hero-left.jpg');
+      background-color: #2C5282;
+    }
+    .hero-panel-center {
+      background-image: url('photos/hero-center.jpg');
+      background-color: #1A3A5C;
+      background-position: center 25%;
+    }
+    .hero-panel-right  {
+      background-image: url('photos/hero-right.jpg');
+      background-color: #3A6491;
+      background-position: center 40%;
+    }
+
+    .hero-panel + .hero-panel {
+      border-left: 2px solid rgba(255,255,255,0.35);
+    }
+
+    .hero-panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 40, 65, 0.38);
+      pointer-events: none;
+    }
+
+    /* Starburst — top-right urgency */
+    .starburst-wrap {
+      position: absolute;
+      top: 8px;
+      right: 0.3in;
+      z-index: 30;
+      width: 84px;
+      height: 84px;
+    }
+
+    .starburst {
+      width: 84px;
+      height: 84px;
+      background: #C0392B;
+      clip-path: polygon(
+        50% 0%,   56% 18%,  73% 4%,   67% 24%,
+        94% 20%,  79% 38%,  100% 50%, 79% 62%,
+        94% 80%,  67% 76%,  73% 96%,  56% 82%,
+        50% 100%, 44% 82%,  27% 96%,  33% 76%,
+        6%  80%,  21% 62%,  0%  50%,  21% 38%,
+        6%  20%,  33% 24%,  27% 4%,   44% 18%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .starburst-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+
+    .starburst-text {
+      color: #FFFFFF;
+      font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 8.5pt;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.2;
+      letter-spacing: 0.3px;
+    }
+
+    .starburst-text .big {
+      font-size: 11pt;
+      display: block;
+    }
+
+    /* Caption at hero bottom-left */
+    .hero-caption {
+      position: absolute;
+      bottom: 7px;
+      left: 0.3in;
+      color: rgba(255,255,255,0.85);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 8pt;
+      letter-spacing: 0.3px;
+      z-index: 10;
+    }
+
+    /* ─────────────────────────────────────────────
+       FIVE YEARS STRIP
+    ───────────────────────────────────────────── */
+    .five-years-strip {
+      background: #1A3A5C;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 0.050in 0.30in;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 11.5pt;
+      line-height: 1.25;
+      letter-spacing: 0.2px;
+    }
+
+    /* ─────────────────────────────────────────────
+       HEADLINE BLOCK
+    ───────────────────────────────────────────── */
+    .headline-block {
+      padding: 0.09in 1.10in 0.02in 0.30in;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 25pt;
+      line-height: 1.07;
+      color: #1A1A1A;
+      margin-bottom: 0.03in;
+      letter-spacing: -0.2px;
+    }
+
+    .subhead {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 10pt;
+      color: #D4601A;
+      letter-spacing: 0.15px;
+      line-height: 1.35;
+    }
+
+    /* ─────────────────────────────────────────────
+       CONTENT WRAPPER
+    ───────────────────────────────────────────── */
+    .content {
+      padding: 0 0.30in;
+    }
+
+    /* ORANGE RULE */
+    .orange-rule {
+      border: none;
+      border-top: 1.5pt solid #D4601A;
+      margin: 0.06in 0;
+    }
+
+    /* ─────────────────────────────────────────────
+       ELENA OPENING — named-character story lead
+    ───────────────────────────────────────────── */
+    .elena-lead {
+      margin-bottom: 0.04in;
+    }
+
+    .elena-lead p {
+      font-size: 11pt;
+      line-height: 1.52;
+      margin-bottom: 0.045in;
+      color: #1A1A1A;
+    }
+
+    .elena-lead p.drop-first::first-letter {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #1A3A5C;
+      float: left;
+      line-height: 0.85;
+      margin-right: 3pt;
+      margin-top: 2pt;
+    }
+
+    .elena-lead p strong {
+      font-weight: 700;
+    }
+
+    .elena-kicker {
+      font-weight: 700;
+      font-size: 11.5pt;
+      color: #1A3A5C;
+      line-height: 1.38;
+      font-style: italic;
+    }
+
+    /* ─────────────────────────────────────────────
+       BANK VILLAIN BLOCK — grief, not combat
+    ───────────────────────────────────────────── */
+    .bank-grief {
+      border-left: 3pt solid #C0392B;
+      padding: 0.055in 0.12in 0.055in 0.14in;
+      margin: 0.04in 0 0.04in;
+      font-style: italic;
+      font-size: 10.5pt;
+      line-height: 1.52;
+      color: #444444;
+      background: #FDF5F4;
+    }
+
+    /* ─────────────────────────────────────────────
+       JOHNSON BOX
+    ───────────────────────────────────────────── */
+    .johnson-box {
+      border: 2pt solid #1A3A5C;
+      background: #EBF2FA;
+      padding: 0.065in 0.13in 0.06in;
+      margin: 0.05in 0 0.04in;
+    }
+
+    .jb-header {
+      font-weight: 700;
+      font-size: 11pt;
+      color: #1A3A5C;
+      margin-bottom: 0;
+      line-height: 1.25;
+    }
+
+    /* ─────────────────────────────────────────────
+       HORMOZI TABLE — "the moment the numbers became real"
+    ───────────────────────────────────────────── */
+    .numbers-intro {
+      font-style: italic;
+      font-size: 10.5pt;
+      color: #555555;
+      margin: 0.04in 0 0.03in;
+      line-height: 1.42;
+    }
+
+    .numbers-intro strong {
+      color: #1A3A5C;
+      font-style: normal;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 0 0.04in;
+      font-size: 9.5pt;
+    }
+
+    .comparison-table thead tr {
+      background: #1A3A5C;
+      color: #FFFFFF;
+    }
+
+    .comparison-table thead th {
+      padding: 4pt 7pt;
+      text-align: left;
+      font-family: 'Oswald', Impact, sans-serif;
+      font-weight: 700;
+      font-size: 9pt;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .comparison-table thead th:first-child {
+      width: 32%;
+    }
+
+    .comparison-table thead th.col-park {
+      background: #27AE60;
+      text-align: center;
+      width: 34%;
+    }
+
+    .comparison-table thead th.col-rent {
+      background: #C0392B;
+      text-align: center;
+      width: 34%;
+    }
+
+    .comparison-table tbody tr {
+      border-bottom: 1pt solid #E0E0E0;
+    }
+
+    .comparison-table tbody tr:nth-child(even) {
+      background: #F3F8FC;
+    }
+
+    .comparison-table tbody td {
+      padding: 3.5pt 7pt;
+      line-height: 1.3;
+      vertical-align: middle;
+    }
+
+    .comparison-table tbody td:first-child {
+      font-weight: 700;
+      color: #1A3A5C;
+      font-size: 9pt;
+    }
+
+    .comparison-table tbody td.park-val {
+      text-align: center;
+      color: #1A5C34;
+      font-weight: 700;
+    }
+
+    .comparison-table tbody td.rent-val {
+      text-align: center;
+      color: #8B1C12;
+    }
+
+    .comparison-table tfoot tr {
+      background: #EBF2FA;
+    }
+
+    .comparison-table tfoot td {
+      padding: 3.5pt 7pt;
+      font-size: 9pt;
+      font-style: italic;
+      color: #1A3A5C;
+      font-weight: 700;
+    }
+
+    .comparison-table tfoot td.park-val {
+      text-align: center;
+      color: #1A5C34;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .comparison-table tfoot td.rent-val {
+      text-align: center;
+      color: #8B1C12;
+      font-style: normal;
+    }
+
+    .bencivenga-stat {
+      font-size: 8.5pt;
+      font-style: italic;
+      color: #666666;
+      margin: 0.01in 0 0.04in;
+      line-height: 1.38;
+    }
+
+    /* ─────────────────────────────────────────────
+       CHECKMARK BULLETS
+    ───────────────────────────────────────────── */
+    .bullets {
+      list-style: none;
+      padding: 0 0 0.02in 0;
+      margin: 0.03in 0;
+    }
+
+    .bullets li {
+      font-size: 10.5pt;
+      line-height: 1.36;
+      margin-bottom: 0.030in;
+      padding-left: 0.22in;
+      position: relative;
+      color: #1A1A1A;
+    }
+
+    .bullets li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #27AE60;
+      font-weight: 700;
+      font-size: 12pt;
+      line-height: 1.1;
+    }
+
+    .bullets li strong {
+      font-weight: 700;
+    }
+
+    /* Risk reversal accent */
+    .bullets li.risk-reversal {
+      border-left: 3pt solid #D4601A;
+      padding-left: 0.18in;
+      margin-left: 0.04in;
+      font-style: italic;
+      color: #444444;
+    }
+
+    .bullets li.risk-reversal::before {
+      display: none;
+    }
+
+    /* Mechanism prose block */
+    .mechanism-prose {
+      border-left: 3pt solid #1A3A5C;
+      padding: 0.06in 0.12in 0.06in 0.14in;
+      margin: 0.04in 0 0.04in;
+      font-style: italic;
+      font-size: 10.5pt;
+      line-height: 1.52;
+      color: #333333;
+    }
+
+    /* ─────────────────────────────────────────────
+       SELLER MOTIVATION BAR
+    ───────────────────────────────────────────── */
+    .welcome-bar {
+      background: #1A3A5C;
+      color: #FFFFFF;
+      padding: 0.045in 0.14in;
+      margin: 0.04in 0;
+      font-size: 10.5pt;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .welcome-bar span {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    /* ─────────────────────────────────────────────
+       TRUST PANEL — 2 cells
+    ───────────────────────────────────────────── */
+    .trust-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.07in;
+      margin: 0.04in 0 0.03in;
+    }
+
+    .trust-cell {
+      background: #F3F3F1;
+      border: 1pt solid #1A3A5C;
+      padding: 0.06in 0.09in;
+    }
+
+    .tc-header {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: #1A3A5C;
+      margin-bottom: 0.025in;
+      line-height: 1.25;
+    }
+
+    .trust-cell p {
+      font-size: 10pt;
+      line-height: 1.35;
+      color: #333333;
+    }
+
+    /* ─────────────────────────────────────────────
+       LOT CARDS — 2-column
+    ───────────────────────────────────────────── */
+    .lot-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.11in;
+      margin: 0.04in 0.38in 0.02in;
+    }
+
+    .lot-card {
+      border: 2pt solid #1A3A5C;
+      background: #FFFFFF;
+      text-align: center;
+      padding: 0 0 0.05in;
+      position: relative;
+    }
+
+    .lot-label {
+      background: #1A3A5C;
+      color: #FFFFFF;
+      font-family: 'Oswald', Impact, sans-serif;
+      font-weight: 700;
+      font-size: 9pt;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 3pt 0;
+      margin-bottom: 0.06in;
+    }
+
+    .card-down-amount {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 26pt;
+      color: #1A3A5C;
+      line-height: 1;
+      margin-bottom: 1pt;
+    }
+
+    .card-down-label {
+      font-family: 'Oswald', Impact, sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #D4601A;
+      margin-bottom: 0.05in;
+    }
+
+    .card-divider {
+      border: none;
+      border-top: 1pt solid #E0E0E0;
+      margin: 0.035in 0.1in;
+    }
+
+    .card-monthly-amount {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 21pt;
+      color: #27AE60;
+      line-height: 1;
+      margin-bottom: 1pt;
+      margin-top: 0.035in;
+    }
+
+    .card-monthly-amount span {
+      font-size: 12pt;
+    }
+
+    .card-monthly-label {
+      font-family: 'Oswald', Impact, sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 0.04in;
+    }
+
+    .card-monthly-note {
+      font-size: 7.5pt;
+      font-style: italic;
+      color: #666666;
+      line-height: 1.3;
+      padding: 0 0.06in;
+      margin-bottom: 0.025in;
+    }
+
+    .card-price {
+      font-size: 7.5pt;
+      color: #777777;
+      margin-top: 0.025in;
+      border-top: 1pt dotted #E0E0E0;
+      padding-top: 0.025in;
+    }
+
+    /* ─────────────────────────────────────────────
+       MONTH 59 CLOSE — the emotional payoff
+    ───────────────────────────────────────────── */
+    .month59-block {
+      background: #EBF2FA;
+      border: 2pt solid #1A3A5C;
+      padding: 0.065in 0.16in 0.065in;
+      margin: 0.04in 0 0.03in;
+      text-align: center;
+    }
+
+    .month59-eyebrow {
+      font-family: 'Oswald', Impact, sans-serif;
+      font-weight: 700;
+      font-size: 8pt;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #D4601A;
+      margin-bottom: 0.025in;
+    }
+
+    .month59-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 14pt;
+      color: #1A3A5C;
+      line-height: 1.2;
+      margin-bottom: 0.025in;
+    }
+
+    .month59-body {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 10pt;
+      color: #333333;
+      line-height: 1.48;
+    }
+
+    /* age note */
+    .age-note {
+      font-size: 8pt;
+      font-style: italic;
+      color: #555555;
+      text-align: center;
+      margin: 0.02in 0 0.02in;
+    }
+
+    /* ─────────────────────────────────────────────
+       URGENCY BAND — full bleed red
+    ───────────────────────────────────────────── */
+    .urgency-band {
+      width: 8.5in;
+      background: #C0392B;
+      color: #FFFFFF;
+      padding: 0.07in 0.35in;
+      margin-top: 0.03in;
+    }
+
+    .ub-line1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 12.5pt;
+      margin-bottom: 0.018in;
+      line-height: 1.2;
+    }
+
+    .ub-line2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 10pt;
+      line-height: 1.3;
+    }
+
+    /* ─────────────────────────────────────────────
+       AWARD STRIP
+    ───────────────────────────────────────────── */
+    .award-strip {
+      background: #1A3A5C;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 0.040in 0.30in;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 8.5pt;
+      letter-spacing: 0.5px;
+      line-height: 1.35;
+    }
+    .award-star { color: #FFD700; font-size: 11pt; }
+    .award-sub  { font-size: 7.5pt; font-weight: 400; font-style: italic; opacity: 0.82; }
+
+    /* ─────────────────────────────────────────────
+       CONTACT BLOCK
+    ───────────────────────────────────────────── */
+    .contact-block {
+      text-align: center;
+      padding: 0.07in 0.35in 0.08in;
+    }
+
+    .phone-row {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 0.16in;
+      margin-bottom: 0.02in;
+    }
+
+    .phone-col {
+      text-align: center;
+    }
+
+    .phone-label {
+      display: block;
+      font-family: 'Oswald', Impact, sans-serif;
+      font-weight: 700;
+      font-size: 8pt;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #D4601A;
+      margin-bottom: 1pt;
+    }
+
+    .phone-number {
+      display: block;
+      font-weight: 700;
+      font-size: 19pt;
+      color: #1A3A5C;
+      line-height: 1.1;
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .phone-name {
+      display: block;
+      font-style: italic;
+      font-size: 9pt;
+      color: #555555;
+      margin-top: 1pt;
+    }
+
+    .phone-pipe {
+      font-size: 24pt;
+      color: #D4601A;
+      font-weight: 300;
+      line-height: 1;
+      align-self: center;
+    }
+
+    .espanol-badge {
+      display: inline-block;
+      background: #1A3A5C;
+      color: #FFFFFF;
+      font-family: 'Oswald', Impact, sans-serif;
+      font-weight: 700;
+      font-size: 9pt;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3pt 10pt;
+      margin-top: 0.03in;
+      margin-bottom: 0.035in;
+    }
+
+    .address-line {
+      font-size: 9.5pt;
+      color: #555555;
+      margin-top: 0.025in;
+    }
+
+    .hours-wrap {
+      display: inline-block;
+      border-top: 1pt solid #D4601A;
+      border-bottom: 1pt solid #D4601A;
+      padding: 2pt 0.14in;
+      margin-top: 0.035in;
+    }
+
+    .hours-line {
+      font-weight: 700;
+      font-style: italic;
+      font-size: 9.5pt;
+      color: #D4601A;
+    }
+
+    /* ─────────────────────────────────────────────
+       PRINT RULES
+    ───────────────────────────────────────────── */
+    @media print {
+      html, body {
+        width: 8.5in;
+        height: 11in;
+        overflow: hidden;
+      }
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .hero              { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .urgency-band      { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .starburst         { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .johnson-box       { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .trust-cell        { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .lot-label         { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .espanol-badge     { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .welcome-bar       { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .award-strip       { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .month59-block     { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .bank-grief        { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .comparison-table thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .five-years-strip  { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { text-decoration: none; color: inherit; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO BAND -->
+  <div class="hero">
+    <div class="hero-panel hero-panel-left"></div>
+    <div class="hero-panel hero-panel-center"></div>
+    <div class="hero-panel hero-panel-right"></div>
+
+    <div class="starburst-wrap">
+      <div class="starburst">
+        <div class="starburst-inner">
+          <span class="starburst-text">
+            <span class="big">ONLY</span>
+            2 HOMES<br>LEFT
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <span class="hero-caption">Park Avenue Mobile Home Park &nbsp;&middot;&nbsp; Sanford, FL &nbsp;&middot;&nbsp; 55-and-Older Community</span>
+  </div>
+
+  <!-- FIVE YEARS STRIP -->
+  <div class="five-years-strip">
+    Five years from now you could be five years older &mdash; with nothing to show for it.
+  </div>
+
+  <!-- HEADLINE BLOCK -->
+  <div class="headline-block">
+    <h1 class="headline">She Had Been Writing the Same Check for Six Years.</h1>
+    <p class="subhead">Her name on the envelope. Someone else&rsquo;s equity inside. This is the story of when that finally changed.</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="content">
+
+    <hr class="orange-rule">
+
+    <!-- ELENA LEAD — Halbert's structure, Makepeace's voice -->
+    <div class="elena-lead">
+      <p class="drop-first">Elena had been writing the same check every month for six years. <strong>$1,750.</strong> To a landlord who would never remember her name. He was not unkind. He was simply somewhere else, depositing what she had earned, while she stayed exactly where she had started.</p>
+      <p>She was 61. The math was not complicated. Six years of checks. Not one dollar of it hers to keep. And the rent, she knew, would not stay the same. It never did.</p>
+      <p class="elena-kicker">She did not need a miracle. She needed one decision to go differently than the last.</p>
+    </div>
+
+    <!-- BANK GRIEF — Carlton through Makepeace's lens -->
+    <div class="bank-grief">
+      She had called three banks. The first wanted a credit score she did not have. The second wanted a down payment she could not save fast enough. The third did not call back. She sat with the phone in her hand for a long moment. Then she put it down.
+    </div>
+
+    <!-- JOHNSON BOX -->
+    <div class="johnson-box">
+      <div class="jb-header">There is a fourth option. Two owner-financed homes available now at Park Avenue in Sanford &mdash; 55-and-older community. No bank. No credit minimum. Your name on the title the day you sign.</div>
+    </div>
+
+    <!-- HORMOZI TABLE — "the moment the numbers became real" -->
+    <p class="numbers-intro">Here is what she found when she finally did the math. <strong>Side by side. Every line.</strong></p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th class="col-park">Park Avenue<br><span style="font-weight:400;font-size:7.5pt;letter-spacing:0;">Owner-Financed</span></th>
+          <th class="col-rent">Continuing<br><span style="font-weight:400;font-size:7.5pt;letter-spacing:0;">to Rent</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monthly cost (all-in)</td>
+          <td class="park-val">$1,125&ndash;$1,175</td>
+          <td class="rent-val">$1,675+ and rising</td>
+        </tr>
+        <tr>
+          <td>What you own</td>
+          <td class="park-val">Equity from day one</td>
+          <td class="rent-val">Nothing. Ever.</td>
+        </tr>
+        <tr>
+          <td>Credit score required</td>
+          <td class="park-val">None</td>
+          <td class="rent-val">740+ preferred</td>
+        </tr>
+        <tr>
+          <td>Down payment</td>
+          <td class="park-val">$2,000&ndash;$2,250</td>
+          <td class="rent-val">First + last + deposit</td>
+        </tr>
+        <tr>
+          <td>Payment in 5 years</td>
+          <td class="park-val">Gone. Permanently.</td>
+          <td class="rent-val">Higher. Still rising.</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>60 months from now</td>
+          <td class="park-val">Home is yours, free &amp; clear</td>
+          <td class="rent-val">Still writing that check</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- BENCIVENGA PROOF STAT -->
+    <p class="bencivenga-stat">The average one-bedroom apartment in Sanford rented for $1,675 a month as of early 2026. She was already paying more. &mdash; <em>Rent estimate, Seminole County market, Q1 2026.</em></p>
+
+    <!-- MAIN CHECKMARK BULLETS -->
+    <ul class="bullets">
+      <li><strong>$2,000 down</strong> gets you into Lot 14 &mdash; all-in monthly cost <strong>$1,125</strong></li>
+      <li><strong>$2,250 down</strong> gets you into Lot 30 &mdash; all-in monthly cost <strong>$1,175</strong></li>
+      <li>Every payment moves you toward owning it outright &mdash; <strong>not your landlord&rsquo;s future. Yours.</strong></li>
+      <li>Your payment is <strong>fixed</strong> &mdash; no surprise increases, no letter in the mail changing everything</li>
+      <li><strong>No bank. No credit score minimum.</strong> We verify income &mdash; pay stub, employer call, or SS award letter</li>
+      <li>Lot rent: <strong>$600/month</strong> &mdash; the lowest for 55-and-older parks in Seminole County</li>
+      <li><strong>ITIN accepted &bull; No SSN required &bull; Passport is all the ID you need</strong></li>
+      <li><strong>Se acepta n&uacute;mero ITIN &bull; No se requiere n&uacute;mero de Seguro Social</strong></li>
+      <li class="risk-reversal">Walk the property. Meet the neighbors. Ask every question you have. If it is not right for you, there is no pressure and no obligation. Walk away. No hard sell. No follow-up guilt.</li>
+    </ul>
+
+    <!-- MECHANISM PROSE -->
+    <div class="mechanism-prose">
+      There is no bank in this transaction. The owner holds the note himself. Your name goes on the title the day you sign &mdash; not when it is paid off, not conditionally, from the very first day. You can pay it off early, any time, without asking permission from anyone. No penalty. No process. And in Month 59, the home is fully and finally yours. No more housing payment. Not reduced. Gone.
+    </div>
+
+    <!-- SELLER MOTIVATION — literary framing -->
+    <div class="welcome-bar">
+      What kind of man finances a home this way? <span>&ldquo;I&rsquo;d rather leave $20,000 on the table than have one bad neighbor.&rdquo;</span> &nbsp; That is not a sales line. It is why the neighbors here have been here for years.
+    </div>
+
+    <!-- TRUST PANEL -->
+    <div class="trust-panel">
+      <div class="trust-cell">
+        <div class="tc-header">On Social Security?</div>
+        <p>Your award letter is your income proof. Nothing else needed. No bank, no loan officer, no waiting.</p>
+      </div>
+      <div class="trust-cell">
+        <div class="tc-header">Got a property to trade?</div>
+        <p>A house, a mobile home, land &mdash; the owner will consider it toward your down payment. Call and ask.</p>
+      </div>
+    </div>
+
+    <!-- LOT CARDS -->
+    <div class="lot-cards">
+
+      <div class="lot-card">
+        <div class="lot-label">Lot 14</div>
+        <div class="card-down-amount">$2,000</div>
+        <div class="card-down-label">Down Payment</div>
+        <hr class="card-divider">
+        <div class="card-monthly-amount">$1,125<span>/mo</span></div>
+        <div class="card-monthly-label">All-In Monthly</div>
+        <div class="card-monthly-note">$375/mo home payment + $600 lot rent</div>
+        <div class="card-price">Purchase price: $24,000 &bull; Owner-financed &bull; Title transfers at signing</div>
+      </div>
+
+      <div class="lot-card">
+        <div class="lot-label">Lot 30</div>
+        <div class="card-down-amount">$2,250</div>
+        <div class="card-down-label">Down Payment</div>
+        <hr class="card-divider">
+        <div class="card-monthly-amount">$1,175<span>/mo</span></div>
+        <div class="card-monthly-label">All-In Monthly</div>
+        <div class="card-monthly-note">$437/mo home payment + $600 lot rent</div>
+        <div class="card-price">Purchase price: $25,000 &bull; Owner-financed &bull; Title transfers at signing</div>
+      </div>
+
+    </div>
+
+    <p class="age-note">Limited non-55+ units available &mdash; no children accepted. Ask about availability.</p>
+
+    <!-- MONTH 59 PAYOFF — Makepeace's strongest close -->
+    <div class="month59-block">
+      <div class="month59-eyebrow">Month 59 &mdash; The Day Everything Changes</div>
+      <div class="month59-headline">No more housing payment. Not reduced. Gone. For the rest of her life.</div>
+      <div class="month59-body">Elena made her last payment on a Tuesday. No ceremony. No phone call. The home had been hers for five years already &mdash; her name on the title since the day she signed. But this Tuesday was different. This Tuesday she sat at her kitchen table and did not write a check. She made coffee instead. She looked out the window at the yard she had planted. And for the first time in twenty years, the roof over her head cost her nothing at all.</div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- URGENCY BAND -->
+  <div class="urgency-band">
+    <div class="ub-line1">Two homes. When they are gone, they are gone. The neighbor who calls tomorrow gets the lot.</div>
+    <div class="ub-line2">A year from now Elena could be twelve payments into owning something. Or she could still be writing that check. The only difference is this call.</div>
+  </div>
+
+  <!-- AWARD STRIP -->
+  <div class="award-strip">
+    <span class="award-star">&#9733;</span>
+    &nbsp;#1 Rated Mobile Home Park in Sanford &mdash; Best of 2026 &nbsp;&middot;&nbsp; Powered by Google Reviews &nbsp;&middot;&nbsp; Ranked #1 Since 2016
+    &nbsp;<span class="award-sub">(BusinessRate.com) &nbsp;&nbsp; &#9733; Parque #1 en Sanford seg&uacute;n Google Reviews &mdash; 2026</span>
+  </div>
+
+  <!-- CONTACT BLOCK -->
+  <div class="contact-block">
+
+    <div class="phone-row">
+      <div class="phone-col">
+        <span class="phone-label">Call (English)</span>
+        <span class="phone-number">904-495-1554</span>
+        <span class="phone-name">Jay</span>
+      </div>
+      <div class="phone-pipe">&middot;</div>
+      <div class="phone-col">
+        <span class="phone-label">Llame (Espa&ntilde;ol)</span>
+        <span class="phone-number">904-335-7767</span>
+        <span class="phone-name">Sandra</span>
+      </div>
+    </div>
+
+    <div>
+      <span class="espanol-badge">Se Habla Espa&ntilde;ol &nbsp;&bull;&nbsp; Sandra: 904-335-7767</span>
+    </div>
+
+    <p class="address-line">Park Avenue Mobile Home Park &nbsp;&middot;&nbsp; 2545 Park Drive, Sanford FL 32771 &nbsp;&middot;&nbsp; 407-322-2861</p>
+
+    <div class="hours-wrap">
+      <span class="hours-line">Weekday showings only &mdash; Monday through Friday</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
