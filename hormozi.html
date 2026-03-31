@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Park Avenue MHP — Group B Hormozi Flyer v2</title>
+  <title>Park Avenue MHP — Group B Hormozi Flyer v5</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
 
@@ -68,7 +68,7 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 1.1in;
+      height: 1.0in;
       display: flex;
     }
 
@@ -145,23 +145,44 @@
     }
 
     /* ─────────────────────────────────────────────
+       HALBERT STORY HOOK — above headline
+    ───────────────────────────────────────────── */
+    .story-hook {
+      background: var(--offwhite);
+      border-left: 5px solid var(--orange);
+      padding: 0.07in 0.35in 0.07in 0.3in;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 9.5pt;
+      color: #2a2a2a;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .story-hook strong {
+      font-weight: 900;
+      font-style: normal;
+      color: var(--black);
+    }
+
+    /* ─────────────────────────────────────────────
        HEADLINE BLOCK
     ───────────────────────────────────────────── */
     .headline-block {
       background: var(--white);
-      padding: 0.1in 1.4in 0.07in 0.35in;
+      padding: 0.08in 1.4in 0.06in 0.35in;
       border-bottom: 3px solid var(--orange);
     }
 
     .headline {
       font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif;
       font-weight: 700;
-      font-size: 30pt;
+      font-size: 29pt;
       line-height: 1.05;
       color: var(--black);
       text-transform: uppercase;
       letter-spacing: -0.5px;
-      margin-bottom: 0.04in;
+      margin-bottom: 0.03in;
     }
 
     .headline span.orange {
@@ -185,10 +206,69 @@
     }
 
     /* ─────────────────────────────────────────────
+       BENCIVENGA PROOF STAT BAR
+    ───────────────────────────────────────────── */
+    .proof-stat-bar {
+      margin: 0.08in 0 0;
+      background: var(--black);
+      padding: 0.055in 0.12in;
+      display: flex;
+      align-items: center;
+      gap: 0.15in;
+      border-left: 5px solid var(--orange);
+    }
+
+    .proof-stat-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 7.5pt;
+      color: #AAAAAA;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      flex-shrink: 0;
+    }
+
+    .proof-stat-numbers {
+      display: flex;
+      gap: 0.25in;
+      flex: 1;
+    }
+
+    .proof-stat-item {
+      text-align: center;
+    }
+
+    .proof-stat-figure {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 15pt;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .proof-stat-desc {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 7pt;
+      color: #AAAAAA;
+      line-height: 1.3;
+      margin-top: 1pt;
+    }
+
+    .proof-stat-source {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 6.5pt;
+      color: #666;
+      font-style: italic;
+      margin-top: 1pt;
+    }
+
+    /* ─────────────────────────────────────────────
        TRUE COMPARISON TABLE — HERO ELEMENT
     ───────────────────────────────────────────── */
     .compare-wrap {
-      margin: 0.1in 0 0.08in;
+      margin: 0.07in 0 0.07in;
       border: 3px solid var(--black);
     }
 
@@ -215,10 +295,10 @@
     .compare-table thead th {
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
-      font-size: 13pt;
+      font-size: 12pt;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      padding: 7pt 0.12in;
+      padding: 6pt 0.1in;
       text-align: center;
     }
 
@@ -226,19 +306,19 @@
       text-align: left;
       font-size: 9pt;
       color: #AAAAAA;
-      width: 28%;
+      width: 24%;
     }
 
     .compare-table thead th.col-park {
       background: #1A7A3E;
       color: var(--white);
-      width: 36%;
+      width: 38%;
     }
 
     .compare-table thead th.col-rent {
       background: #8B1A1A;
       color: var(--white);
-      width: 36%;
+      width: 38%;
     }
 
     .compare-table tbody tr {
@@ -254,7 +334,7 @@
     }
 
     .compare-table tbody td {
-      padding: 7pt 0.12in;
+      padding: 6pt 0.1in;
       font-family: 'Inter', sans-serif;
       font-size: 10pt;
       font-weight: 700;
@@ -263,7 +343,7 @@
     }
 
     .compare-table tbody td:first-child {
-      font-size: 8.5pt;
+      font-size: 8pt;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -275,7 +355,7 @@
       text-align: center;
       color: #1A7A3E;
       font-family: 'Oswald', sans-serif;
-      font-size: 14pt;
+      font-size: 13pt;
       font-weight: 700;
       border-right: 1px solid #CCCCCC;
     }
@@ -284,14 +364,14 @@
       text-align: center;
       color: #C0392B;
       font-family: 'Oswald', sans-serif;
-      font-size: 14pt;
+      font-size: 13pt;
       font-weight: 700;
     }
 
     .compare-table tbody td.park-val .sub-note {
       display: block;
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7pt;
       font-weight: 700;
       color: #1A7A3E;
       line-height: 1.2;
@@ -301,11 +381,33 @@
     .compare-table tbody td.rent-val .sub-note {
       display: block;
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7pt;
       font-weight: 700;
       color: #C0392B;
       line-height: 1.2;
       margin-top: 2pt;
+    }
+
+    /* Carlton "Bank Math" enemy row */
+    .compare-table tbody tr.bank-enemy-row td {
+      background: #FFF3E0;
+      border-top: 2px solid var(--orange);
+      border-bottom: 2px solid var(--orange);
+    }
+
+    .compare-table tbody tr.bank-enemy-row td:first-child {
+      background: #FFF3E0;
+    }
+
+    .bank-enemy-label {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 7pt;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1pt;
     }
 
     .compare-footer {
@@ -348,14 +450,14 @@
     }
 
     .lot-card-body {
-      padding: 0.06in 0.1in;
+      padding: 0.05in 0.1in;
       text-align: center;
     }
 
     .card-down-amount {
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
-      font-size: 30pt;
+      font-size: 28pt;
       color: var(--black);
       line-height: 1;
     }
@@ -367,19 +469,19 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--darkgray);
-      margin-bottom: 0.04in;
+      margin-bottom: 0.035in;
     }
 
     .card-divider {
       border: none;
       border-top: 2px solid var(--orange);
-      margin: 0.04in 0;
+      margin: 0.035in 0;
     }
 
     .card-monthly-amount {
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
-      font-size: 38pt;
+      font-size: 34pt;
       color: var(--orange);
       line-height: 1;
     }
@@ -391,7 +493,7 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--black);
-      margin-bottom: 0.03in;
+      margin-bottom: 0.025in;
     }
 
     .card-monthly-note {
@@ -406,9 +508,9 @@
       font-weight: 600;
       font-size: 8.5pt;
       color: var(--black);
-      margin-top: 0.03in;
+      margin-top: 0.025in;
       border-top: 1px solid var(--gray);
-      padding-top: 0.03in;
+      padding-top: 0.025in;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -422,7 +524,7 @@
       letter-spacing: 1px;
       padding: 3pt 0;
       background: #EDFAF1;
-      margin: 0 -0.1in -0.06in;
+      margin: 0 -0.1in -0.05in;
     }
 
     /* ─────────────────────────────────────────────
@@ -449,9 +551,9 @@
     .bullets li {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 10pt;
+      font-size: 9.5pt;
       line-height: 1.35;
-      margin-bottom: 0.04in;
+      margin-bottom: 0.035in;
       padding-left: 0.25in;
       position: relative;
       color: var(--black);
@@ -464,7 +566,7 @@
       top: 0;
       color: var(--orange);
       font-weight: 900;
-      font-size: 12pt;
+      font-size: 11pt;
       line-height: 1.2;
     }
 
@@ -485,7 +587,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.1in;
-      margin: 0.06in 0 0.04in;
+      margin: 0.05in 0 0.04in;
     }
 
     /* ─────────────────────────────────────────────
@@ -508,7 +610,7 @@
     }
 
     .qualify-box-body {
-      padding: 0.07in 0.1in;
+      padding: 0.06in 0.1in;
     }
 
     .qualify-items {
@@ -521,7 +623,7 @@
       font-weight: 700;
       font-size: 9.5pt;
       line-height: 1.4;
-      margin-bottom: 0.035in;
+      margin-bottom: 0.03in;
       padding-left: 0.2in;
       position: relative;
       color: var(--black);
@@ -540,7 +642,7 @@
 
     /* Welcome note */
     .welcome-note {
-      margin-top: 0.05in;
+      margin-top: 0.04in;
       background: #FFF8ED;
       border: 2px solid var(--orange);
       padding: 5pt 0.1in;
@@ -573,8 +675,8 @@
       width: 8.5in;
       background: var(--black);
       color: var(--white);
-      padding: 0.08in 0.35in;
-      margin-top: 0.06in;
+      padding: 0.07in 0.35in;
+      margin-top: 0.05in;
       display: flex;
       align-items: center;
       gap: 0.15in;
@@ -583,7 +685,7 @@
     }
 
     .urgency-icon {
-      font-size: 24pt;
+      font-size: 22pt;
       line-height: 1;
       flex-shrink: 0;
     }
@@ -593,7 +695,7 @@
     .ub-line1 {
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
-      font-size: 16pt;
+      font-size: 15pt;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--orange);
@@ -604,9 +706,25 @@
     .ub-line2 {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 10pt;
+      font-size: 9.5pt;
       color: var(--white);
       line-height: 1.3;
+    }
+
+    /* ─────────────────────────────────────────────
+       MAKEPEACE EMOTIONAL CLOSE LINE
+    ───────────────────────────────────────────── */
+    .emotional-close {
+      background: var(--orange);
+      color: var(--black);
+      text-align: center;
+      padding: 0.05in 0.35in;
+      font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      line-height: 1.25;
     }
 
     /* ─────────────────────────────────────────────
@@ -614,7 +732,7 @@
     ───────────────────────────────────────────── */
     .contact-block {
       background: var(--white);
-      padding: 0.08in 0.35in 0.08in;
+      padding: 0.07in 0.35in 0.07in;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.1in;
@@ -623,7 +741,7 @@
 
     .contact-phones { text-align: left; }
 
-    .phone-entry { margin-bottom: 0.03in; }
+    .phone-entry { margin-bottom: 0.025in; }
 
     .phone-who {
       font-family: 'Inter', sans-serif;
@@ -639,7 +757,7 @@
     .phone-number {
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
-      font-size: 24pt;
+      font-size: 22pt;
       color: var(--black);
       line-height: 1;
       display: block;
@@ -657,7 +775,7 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       padding: 4pt 0.12in;
-      margin-bottom: 0.05in;
+      margin-bottom: 0.04in;
     }
 
     .address-line {
@@ -708,7 +826,7 @@
       letter-spacing: 0.8px;
       padding: 3pt 8pt;
       line-height: 1.4;
-      margin-top: 0.04in;
+      margin-top: 0.03in;
     }
     .award-badge-sub {
       display: block;
@@ -726,7 +844,7 @@
        PRINT RULES
     ───────────────────────────────────────────── */
     @media print {
-      html, body { overflow: hidden; }
+      html, body { height: 11in; overflow: hidden; }
       body {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -747,6 +865,10 @@
       .card-own-line    { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .welcome-note     { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .fifty-five-note  { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .story-hook       { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .proof-stat-bar   { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .emotional-close  { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .compare-table tbody tr.bank-enemy-row td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
 
   </style>
@@ -779,9 +901,16 @@
   </div>
 
   <!-- ═══════════════════════════════════════
+       HALBERT STORY HOOK
+  ═══════════════════════════════════════ -->
+  <div class="story-hook">
+    Maria paid <strong>$127,400 to landlords</strong> over 6 years. She has a folder of receipts. <strong>Not one dollar bought her equity.</strong> That ends today.
+  </div>
+
+  <!-- ═══════════════════════════════════════
        FIVE YEARS URGENCY STRIP
   ═══════════════════════════════════════ -->
-  <div style="background:#FF6B00; color:#0A0A0A; text-align:center; padding:0.055in 0.35in; font-family:'Oswald',Impact,'Arial Narrow',sans-serif; font-weight:700; font-size:11pt; text-transform:uppercase; letter-spacing:1px; line-height:1.2;">
+  <div style="background:#FF6B00; color:#0A0A0A; text-align:center; padding:0.045in 0.35in; font-family:'Oswald',Impact,'Arial Narrow',sans-serif; font-weight:700; font-size:10.5pt; text-transform:uppercase; letter-spacing:1px; line-height:1.2;">
     Five years from now you could be five years older &mdash; with nothing to show for it.
   </div>
 
@@ -799,16 +928,45 @@
   <div class="content">
 
     <!-- ══════════════════════════════════════
+         BENCIVENGA PROOF STAT BAR
+    ═══════════════════════════════════════ -->
+    <div class="proof-stat-bar">
+      <div class="proof-stat-label">Market<br>Data</div>
+      <div class="proof-stat-numbers">
+        <div class="proof-stat-item">
+          <div class="proof-stat-figure">$1,675/mo</div>
+          <div class="proof-stat-desc">Sanford 1BR median rent</div>
+          <div class="proof-stat-source">Zillow, Q1 2026</div>
+        </div>
+        <div class="proof-stat-item" style="border-left:1px solid #444; padding-left:0.2in;">
+          <div class="proof-stat-figure">$1,125/mo</div>
+          <div class="proof-stat-desc">Park Avenue all-in</div>
+          <div class="proof-stat-source">home + lot rent</div>
+        </div>
+        <div class="proof-stat-item" style="border-left:1px solid #444; padding-left:0.2in;">
+          <div class="proof-stat-figure">$550/mo</div>
+          <div class="proof-stat-desc">you keep vs. renting</div>
+          <div class="proof-stat-source">every single month</div>
+        </div>
+        <div class="proof-stat-item" style="border-left:1px solid #444; padding-left:0.2in;">
+          <div class="proof-stat-figure" style="color:#1DB954;">$33,000</div>
+          <div class="proof-stat-desc">savings over 5 years</div>
+          <div class="proof-stat-source">vs. median Sanford rent</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
          TRUE SIDE-BY-SIDE COMPARISON TABLE
     ═══════════════════════════════════════ -->
     <div class="compare-wrap">
-      <div class="compare-header">Park Avenue vs. Renting — Run the Numbers Yourself</div>
+      <div class="compare-header">Park Avenue vs. Your Other Options &mdash; Run the Numbers Yourself</div>
       <table class="compare-table">
         <thead>
           <tr>
             <th></th>
             <th class="col-park">&#x2713;&nbsp; PARK AVENUE</th>
-            <th class="col-rent">&#x2717;&nbsp; RENTING</th>
+            <th class="col-rent">&#x2717;&nbsp; RENTING IN SANFORD</th>
           </tr>
         </thead>
         <tbody>
@@ -819,8 +977,8 @@
           </tr>
           <tr>
             <td>What You Own</td>
-            <td class="park-val" style="color:#1A7A3E; font-size:13pt;">YOUR HOME</td>
-            <td class="rent-val" style="color:#C0392B; font-size:13pt;">NOTHING</td>
+            <td class="park-val" style="color:#1A7A3E; font-size:12pt;">YOUR HOME</td>
+            <td class="rent-val" style="color:#C0392B; font-size:12pt;">NOTHING</td>
           </tr>
           <tr>
             <td>After 5 Years</td>
@@ -832,28 +990,39 @@
             <td class="park-val">$2,000<span class="sub-note">that's all — no closing costs</span></td>
             <td class="rent-val">$0 DOWN<span class="sub-note">but nothing to show for it either</span></td>
           </tr>
+          <!-- CARLTON "THE BANK MATH" ENEMY ROWS -->
+          <tr class="bank-enemy-row">
+            <td><span class="bank-enemy-label">&#x26A0; The Bank Math</span>Credit Needed</td>
+            <td class="park-val" style="font-size:12pt; color:#1A7A3E;">NONE<span class="sub-note">income check only — no credit score</span></td>
+            <td class="rent-val" style="font-size:12pt; color:#C0392B;">680+<span class="sub-note">bank mortgage minimum — most fixed-income buyers denied</span></td>
+          </tr>
+          <tr class="bank-enemy-row">
+            <td><span class="bank-enemy-label">&#x26A0; The Bank Math</span>Required Down</td>
+            <td class="park-val" style="font-size:12pt; color:#1A7A3E;">$2,000<span class="sub-note">that's the whole number</span></td>
+            <td class="rent-val" style="font-size:12pt; color:#C0392B;">$50,000+<span class="sub-note">20% on $250K home — money most people don't have</span></td>
+          </tr>
+          <tr class="bank-enemy-row">
+            <td><span class="bank-enemy-label">&#x26A0; The Bank Math</span>Approval Odds</td>
+            <td class="park-val" style="font-size:11pt; color:#1A7A3E;">INCOME CHECK<span class="sub-note">SS award letter or employer call — that's it</span></td>
+            <td class="rent-val" style="font-size:11pt; color:#C0392B;">LIKELY DENIED<span class="sub-note">for most fixed-income and retirement-age buyers</span></td>
+          </tr>
           <tr>
             <td>Lot Rent</td>
             <td class="park-val">$600/mo<span class="sub-note">lowest in Seminole County</span></td>
-            <td class="rent-val">N/A<span class="sub-note">included in your rent — landlord keeps it</span></td>
-          </tr>
-          <tr>
-            <td>Bank Required</td>
-            <td class="park-val" style="font-size:13pt; color:#1A7A3E;">NONE</td>
-            <td class="rent-val" style="font-size:11pt; color:#555;">Usually required for lease</td>
+            <td class="rent-val">N/A<span class="sub-note">included in rent — landlord keeps every dollar</span></td>
           </tr>
         </tbody>
       </table>
-      <div class="compare-footer">5-Year Renter Cost: Up to $114,000 Gone &nbsp;·&nbsp; Your Total at Park Avenue: ~$69,500 &mdash; and you OWN the home</div>
+      <div class="compare-footer">The bank already said no to most buyers here. The owner said yes. &nbsp;·&nbsp; 5-Year Renter Cost: Up to $114,000 gone &nbsp;·&nbsp; Park Avenue total: ~$69,500 — and you OWN it</div>
     </div>
 
     <!-- ══════════════════════════════════════
          SELLER MOTIVATION QUOTE
     ═══════════════════════════════════════ -->
-    <div style="margin: 0.08in 0 0.08in; background: var(--offwhite); border: 3px solid var(--black); border-left: 6px solid var(--orange); padding: 0.07in 0.15in 0.07in 0.18in; display: flex; align-items: center; gap: 0.12in;">
-      <div style="font-family: 'Oswald', Impact, sans-serif; font-size: 42pt; color: var(--orange); line-height: 1; flex-shrink: 0; margin-top: -6pt;">&ldquo;</div>
+    <div style="margin: 0.06in 0 0.06in; background: var(--offwhite); border: 3px solid var(--black); border-left: 6px solid var(--orange); padding: 0.06in 0.15in 0.06in 0.18in; display: flex; align-items: center; gap: 0.12in;">
+      <div style="font-family: 'Oswald', Impact, sans-serif; font-size: 38pt; color: var(--orange); line-height: 1; flex-shrink: 0; margin-top: -5pt;">&ldquo;</div>
       <div>
-        <div style="font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif; font-weight: 700; font-size: 12pt; color: var(--black); line-height: 1.2; text-transform: uppercase; letter-spacing: 0.3px;">I&rsquo;d rather leave $20,000 on the table than have one bad neighbor.</div>
+        <div style="font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif; font-weight: 700; font-size: 11.5pt; color: var(--black); line-height: 1.2; text-transform: uppercase; letter-spacing: 0.3px;">I&rsquo;d rather leave $20,000 on the table than have one bad neighbor.</div>
         <div style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 8pt; color: var(--darkgray); margin-top: 3pt; letter-spacing: 0.3px;">&mdash; The Owner &nbsp;&middot;&nbsp; His personal standard for who lives in this community</div>
       </div>
     </div>
@@ -869,7 +1038,7 @@
           <div class="card-down-amount">$2,000</div>
           <div class="card-down-label">Down Payment</div>
           <hr class="card-divider">
-          <div class="card-monthly-amount">$1,125<span style="font-size:18pt;">/mo</span></div>
+          <div class="card-monthly-amount">$1,125<span style="font-size:16pt;">/mo</span></div>
           <div class="card-monthly-label">All-In Monthly Cost</div>
           <div class="card-monthly-note">$375 home payment + $600 lot rent<br>No hidden fees. No surprises.</div>
           <div class="card-price">Purchase Price: $24,000 &nbsp;·&nbsp; 59 months to own</div>
@@ -883,7 +1052,7 @@
           <div class="card-down-amount">$2,250</div>
           <div class="card-down-label">Down Payment</div>
           <hr class="card-divider">
-          <div class="card-monthly-amount">$1,175<span style="font-size:18pt;">/mo</span></div>
+          <div class="card-monthly-amount">$1,175<span style="font-size:16pt;">/mo</span></div>
           <div class="card-monthly-label">All-In Monthly Cost</div>
           <div class="card-monthly-note">$437 home payment + $600 lot rent<br>No hidden fees. No surprises.</div>
           <div class="card-price">Purchase Price: $25,000 &nbsp;·&nbsp; 59 months to own</div>
@@ -911,14 +1080,14 @@
 
         <div class="welcome-note">
           <ul class="bullets" style="margin: 0; padding-left: 0.22in;">
-            <li>✓ ITIN numbers accepted</li>
-            <li>✓ No Social Security number required</li>
-            <li>✓ Passport is all the ID you need</li>
+            <li>&#x2713; ITIN numbers accepted</li>
+            <li>&#x2713; No Social Security number required</li>
+            <li>&#x2713; Passport is all the ID you need</li>
           </ul>
-          <ul class="bullets" style="margin: 0.06in 0 0 0; padding-left: 0.22in;">
-            <li>✓ Se acepta número ITIN</li>
-            <li>✓ No se requiere número de Seguro Social</li>
-            <li>✓ Tu pasaporte es toda la identificación que necesitas</li>
+          <ul class="bullets" style="margin: 0.05in 0 0 0; padding-left: 0.22in;">
+            <li>&#x2713; Se acepta n&uacute;mero ITIN</li>
+            <li>&#x2713; No se requiere n&uacute;mero de Seguro Social</li>
+            <li>&#x2713; Tu pasaporte es toda la identificaci&oacute;n que necesitas</li>
           </ul>
         </div>
 
@@ -942,14 +1111,14 @@
           </div>
         </div>
 
-        <div style="margin-top: 0.08in; border: 3px solid var(--orange); background: var(--white);">
+        <div style="margin-top: 0.07in; border: 3px solid var(--orange); background: var(--white);">
           <div style="background: var(--orange); color: var(--black); font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 10pt; text-transform: uppercase; letter-spacing: 2px; padding: 3pt 0.1in;">No Bank Required — Here's How It Works</div>
-          <div style="padding: 0.07in 0.1in;">
+          <div style="padding: 0.06in 0.1in;">
             <ul class="qualify-items" style="list-style:none; padding:0;">
-              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.035in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Owner holds the note</strong> — no third-party lender</li>
-              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.035in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Your name on the title</strong> at signing</li>
-              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.035in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Pay off early</strong> anytime — no penalty</li>
-              <li style="padding-left: 0.22in; position:relative;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Month 59</strong> — the home is fully yours</li>
+              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.03in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Owner holds the note</strong> — no third-party lender</li>
+              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.03in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Your name on the title</strong> at signing</li>
+              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.03in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Pay off early</strong> anytime — no penalty</li>
+              <li style="padding-left: 0.22in; position:relative;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Month 59</strong> — no more housing payment. Not reduced. Gone.</li>
             </ul>
           </div>
         </div>
@@ -971,6 +1140,13 @@
   </div>
 
   <!-- ═══════════════════════════════════════
+       MAKEPEACE EMOTIONAL CLOSE LINE
+  ═══════════════════════════════════════ -->
+  <div class="emotional-close">
+    You&rsquo;re not buying a home. You&rsquo;re buying the month your housing payment disappears forever.
+  </div>
+
+  <!-- ═══════════════════════════════════════
        CONTACT BLOCK
   ═══════════════════════════════════════ -->
   <div class="contact-block">
@@ -980,11 +1156,11 @@
         <span class="phone-who">Jay (English)</span>
         <span class="phone-number">904-495-1554</span>
       </div>
-      <div class="phone-entry" style="margin-top:0.05in;">
+      <div class="phone-entry" style="margin-top:0.04in;">
         <span class="phone-who">Sandra (Espa&ntilde;ol)</span>
         <span class="phone-number">904-335-7767</span>
       </div>
-      <div style="margin-top:0.05in;">
+      <div style="margin-top:0.04in;">
         <div class="hours-badge">
           <span class="hours-line">Weekday Showings Only &mdash; Mon&ndash;Fri</span>
         </div>
@@ -993,7 +1169,7 @@
 
     <div class="contact-right">
       <div class="espanol-badge">&#x2605;&nbsp; SE HABLA ESPA&Ntilde;OL &nbsp;&#x2605;</div>
-      <div style="margin-bottom:0.04in;"></div>
+      <div style="margin-bottom:0.03in;"></div>
       <div class="address-line">
         Park Avenue Mobile Home Park<br>
         2545 Park Drive, Sanford FL 32771<br>
@@ -1001,8 +1177,8 @@
       </div>
       <div class="community-line" style="margin-top:0.04in;">55-and-older community</div>
       <div class="award-badge">
-        &#9733; #1 Rated &mdash; Sanford, FL &mdash; Best of 2026
-        <span class="award-badge-sub">Powered by Google Reviews &nbsp;&middot;&nbsp; BusinessRate.com &nbsp;&middot;&nbsp; Ranked #1 since 2016</span>
+        &#9733; #1 Rated Mobile Home Park in Sanford &mdash; Best of 2026
+        <span class="award-badge-sub">Powered by Google Reviews &nbsp;&middot;&nbsp; BusinessRate.com &nbsp;&middot;&nbsp; Since 2016</span>
         <span class="award-badge-sub" style="margin-top:0;">&#9733; Parque #1 en Sanford &mdash; Google Reviews 2026</span>
       </div>
     </div>
