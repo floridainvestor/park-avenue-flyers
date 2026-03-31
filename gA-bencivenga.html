@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group A — Premium Homes | Park Avenue MHP</title>
+<style>
+  /* ===== RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ===== PAGE DIMENSIONS — 8.5×11 PRINT ===== */
+  html, body {
+    width: 8.5in;
+    height: 11in;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 9.5pt;
+    color: #1a1a1a;
+    background: #fff;
+  }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    padding: 0.32in 0.40in 0.28in 0.40in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ===== MASTHEAD ===== */
+  .masthead {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.08in;
+    border-bottom: 2.5pt solid #2c5f2e;
+    padding-bottom: 0.06in;
+  }
+
+  .masthead-left { flex: 1; }
+
+  .park-name {
+    font-family: 'Georgia', serif;
+    font-size: 7.5pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2c5f2e;
+    font-weight: bold;
+    margin-bottom: 2pt;
+  }
+
+  .headline {
+    font-family: Georgia, serif;
+    font-size: 14.5pt;
+    font-weight: bold;
+    color: #1a1a1a;
+    line-height: 1.2;
+    max-width: 5.8in;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #2c5f2e;
+  }
+
+  .badge-block {
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 0.12in;
+  }
+
+  .badge {
+    display: inline-block;
+    border: 2pt solid #2c5f2e;
+    border-radius: 4pt;
+    padding: 5pt 7pt;
+    text-align: center;
+    background: #f4f9f4;
+  }
+
+  .badge-star { font-size: 12pt; line-height: 1; color: #2c5f2e; }
+  .badge-line1 { font-size: 6pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #2c5f2e; display: block; margin-top: 1pt; }
+  .badge-line2 { font-size: 7pt; font-weight: bold; color: #1a1a1a; display: block; }
+  .badge-line3 { font-size: 5.5pt; color: #555; display: block; }
+
+  /* ===== SUBHEADLINE ===== */
+  .subheadline {
+    font-size: 8.5pt;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 0.08in;
+    line-height: 1.4;
+  }
+
+  .subheadline strong { color: #1a1a1a; font-style: normal; }
+
+  /* ===== PHOTO ROW ===== */
+  .photo-row {
+    display: flex;
+    gap: 0.07in;
+    margin-bottom: 0.07in;
+    flex-shrink: 0;
+  }
+
+  .photo-row img {
+    width: calc(33.33% - 0.05in);
+    height: 1.4in;
+    object-fit: cover;
+    border-radius: 2pt;
+    display: block;
+    border: 0.5pt solid #ccc;
+  }
+
+  .photo-caption {
+    text-align: center;
+    font-size: 6.5pt;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.07in;
+    margin-top: 2pt;
+  }
+
+  /* ===== TWO-COLUMN BODY ===== */
+  .body-columns {
+    display: flex;
+    gap: 0.18in;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .col-left { flex: 1.1; display: flex; flex-direction: column; gap: 0.06in; }
+  .col-right { flex: 0.9; display: flex; flex-direction: column; gap: 0.06in; }
+
+  /* ===== SECTION BLOCKS ===== */
+  .section-label {
+    font-size: 6pt;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2c5f2e;
+    border-bottom: 0.5pt solid #2c5f2e;
+    padding-bottom: 1.5pt;
+    margin-bottom: 3pt;
+  }
+
+  p {
+    font-size: 8pt;
+    line-height: 1.42;
+    color: #1a1a1a;
+    margin-bottom: 3pt;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* ===== HOMES TABLE ===== */
+  .homes-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.5pt;
+    margin-top: 2pt;
+  }
+
+  .homes-table th {
+    background: #2c5f2e;
+    color: #fff;
+    padding: 3pt 5pt;
+    text-align: left;
+    font-size: 7pt;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+  }
+
+  .homes-table td {
+    padding: 2.5pt 5pt;
+    border-bottom: 0.5pt solid #ddd;
+    font-size: 7.5pt;
+    vertical-align: top;
+  }
+
+  .homes-table tr:nth-child(even) td { background: #f9fdf9; }
+  .homes-table tr:last-child td { border-bottom: none; }
+  .homes-table .feature-label { font-size: 7pt; color: #555; font-style: italic; }
+
+  /* ===== MATH BOX ===== */
+  .math-box {
+    border: 1pt solid #2c5f2e;
+    border-radius: 2pt;
+    padding: 5pt 7pt;
+    background: #fff;
+  }
+
+  .math-box .math-headline {
+    font-size: 7.5pt;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 3pt;
+  }
+
+  .math-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7pt;
+    padding: 1.5pt 0;
+    border-bottom: 0.5pt solid #eee;
+    line-height: 1.32;
+  }
+
+  .math-row:last-of-type { border-bottom: none; }
+  .math-row .label { color: #444; flex: 1; }
+  .math-row .value { font-weight: bold; text-align: right; flex-shrink: 0; margin-left: 6pt; }
+  .math-row.winner .value { color: #2c5f2e; }
+  .math-row.loser .value { color: #8b0000; }
+
+  .math-delta {
+    margin-top: 3pt;
+    font-size: 7.5pt;
+    font-weight: bold;
+    color: #2c5f2e;
+    text-align: center;
+    background: #f4f9f4;
+    border-radius: 2pt;
+    padding: 2.5pt 5pt;
+  }
+
+  /* ===== 10-YEAR TABLE ===== */
+  .decade-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7pt;
+    margin-top: 3pt;
+  }
+
+  .decade-table th {
+    background: #1a3a1c;
+    color: #a8d5aa;
+    padding: 3pt 4pt;
+    text-align: left;
+    font-size: 6.5pt;
+    letter-spacing: 0.04em;
+  }
+
+  .decade-table td {
+    padding: 2.5pt 4pt;
+    border-bottom: 0.5pt solid #ddd;
+    font-size: 7pt;
+    vertical-align: middle;
+  }
+
+  .decade-table tr:nth-child(even) td { background: #f9fdf9; }
+  .decade-table tr:last-child td { border-bottom: none; font-weight: bold; }
+  .decade-table .own-col { color: #2c5f2e; font-weight: bold; }
+  .decade-table .rent-col { color: #8b0000; }
+  .decade-table .delta-col { font-weight: bold; color: #1a1a1a; }
+
+  .decade-summary {
+    background: #1a3a1c;
+    color: #a8d5aa;
+    border-radius: 2pt;
+    padding: 4pt 7pt;
+    font-size: 7.5pt;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3pt;
+    line-height: 1.4;
+  }
+
+  /* ===== PUNCHLINE ===== */
+  .punchline {
+    font-size: 8pt;
+    font-style: italic;
+    color: #1a3a1c;
+    text-align: center;
+    padding: 4pt 6pt;
+    border-top: 0.5pt solid #2c5f2e;
+    border-bottom: 0.5pt solid #2c5f2e;
+    background: #f4f9f4;
+    line-height: 1.42;
+    margin-top: 2pt;
+  }
+
+  /* ===== PROOF BOX ===== */
+  .proof-box {
+    background: #f4f9f4;
+    border-left: 2.5pt solid #2c5f2e;
+    padding: 5pt 7pt;
+    border-radius: 0 2pt 2pt 0;
+  }
+
+  .proof-box .proof-headline {
+    font-size: 7.5pt;
+    font-weight: bold;
+    color: #2c5f2e;
+    margin-bottom: 3pt;
+  }
+
+  .proof-box p { font-size: 7.5pt; line-height: 1.40; }
+
+  /* ===== BANK REJECTION NARRATIVE ===== */
+  .bank-rejection {
+    background: #fff;
+    border-left: 2pt solid #c8a84b;
+    padding: 5pt 8pt;
+    border-radius: 0 2pt 2pt 0;
+    background: #fffef8;
+  }
+
+  .bank-rejection .br-label {
+    font-size: 6pt;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8b6914;
+    margin-bottom: 3pt;
+  }
+
+  .bank-rejection p {
+    font-size: 7.5pt;
+    line-height: 1.42;
+    font-style: italic;
+    color: #333;
+  }
+
+  .bank-rejection p strong {
+    font-style: normal;
+    color: #1a1a1a;
+  }
+
+  /* ===== MECHANISM BOX ===== */
+  .mechanism-box {
+    background: #fffef8;
+    border: 1pt solid #c8a84b;
+    border-radius: 2pt;
+    padding: 5pt 7pt;
+  }
+
+  .mechanism-box .mech-headline {
+    font-size: 7.5pt;
+    font-weight: bold;
+    color: #8b6914;
+    margin-bottom: 3pt;
+  }
+
+  .mech-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 5pt;
+    margin-bottom: 2.5pt;
+    font-size: 7.5pt;
+    line-height: 1.36;
+  }
+
+  .mech-item:last-child { margin-bottom: 0; }
+  .mech-dot { color: #2c5f2e; font-weight: bold; flex-shrink: 0; }
+
+  /* ===== WHO QUALIFIES ===== */
+  .qual-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .qual-list li {
+    font-size: 7.5pt;
+    line-height: 1.36;
+    padding: 2pt 0;
+    border-bottom: 0.5pt solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 5pt;
+  }
+
+  .qual-list li:last-child { border-bottom: none; }
+  .qual-check { color: #2c5f2e; font-weight: bold; flex-shrink: 0; }
+
+  /* ===== SELLER VOICE ===== */
+  .seller-voice {
+    font-size: 7.5pt;
+    font-style: italic;
+    color: #333;
+    border-left: 2pt solid #c8a84b;
+    padding: 4pt 7pt;
+    line-height: 1.40;
+    background: #fffef8;
+  }
+
+  .seller-voice strong { font-style: normal; color: #1a1a1a; }
+
+  /* ===== GUARANTEE ===== */
+  .guarantee-box {
+    border: 1pt solid #1a1a1a;
+    border-radius: 2pt;
+    padding: 5pt 7pt;
+    background: #fff;
+    display: flex;
+    align-items: flex-start;
+    gap: 6pt;
+  }
+
+  .guarantee-icon {
+    font-size: 14pt;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 1pt;
+  }
+
+  .guarantee-body { flex: 1; }
+  .guarantee-body .g-headline { font-size: 7.5pt; font-weight: bold; color: #1a1a1a; margin-bottom: 2pt; }
+  .guarantee-body p { font-size: 7.5pt; line-height: 1.38; }
+
+  /* ===== REFERRAL ===== */
+  .referral-bar {
+    background: #f4f9f4;
+    border: 0.5pt solid #2c5f2e;
+    border-radius: 2pt;
+    padding: 3.5pt 8pt;
+    font-size: 7.5pt;
+    color: #2c5f2e;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* ===== FOOTER / CTA ===== */
+  .footer {
+    margin-top: 0.07in;
+    border-top: 1.5pt solid #2c5f2e;
+    padding-top: 0.05in;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-left { flex: 1; }
+
+  .cta-main {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #1a1a1a;
+    line-height: 1.2;
+  }
+
+  .cta-phone {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #2c5f2e;
+    letter-spacing: 0.03em;
+    display: block;
+    margin-top: 1pt;
+  }
+
+  .cta-sub {
+    font-size: 7pt;
+    color: #555;
+    margin-top: 2pt;
+  }
+
+  .footer-right {
+    text-align: right;
+    font-size: 7pt;
+    color: #666;
+    line-height: 1.45;
+  }
+
+  .footer-right .disclaimer-source {
+    font-size: 5.5pt;
+    color: #888;
+    max-width: 2.5in;
+    line-height: 1.38;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    html, body {
+      width: 8.5in;
+      height: 11in;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      page-break-after: avoid;
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== MASTHEAD ===== -->
+  <div class="masthead">
+    <div class="masthead-left">
+      <div class="park-name">Park Avenue MHP &nbsp;&#183;&nbsp; Sanford, FL &nbsp;&#183;&nbsp; Group A — Premium Homes</div>
+      <div class="headline">Why Would a Seller Accept Less Than Market Price?<br>
+        <em>The Answer — and the Verified Math Behind It — Are Below.</em>
+      </div>
+    </div>
+    <div class="badge-block">
+      <div class="badge">
+        <div class="badge-star">&#9733;&#9733;&#9733;</div>
+        <span class="badge-line1">BusinessRate</span>
+        <span class="badge-line2">#1 in Sanford</span>
+        <span class="badge-line3">2026 &nbsp;|&nbsp; Residential Value</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SUBHEADLINE ===== -->
+  <div class="subheadline">
+    Two fully renovated homes. No bank. No credit score. <strong>Title transfers at signing.</strong>
+    According to <strong>Zillow (Q1 2026)</strong> and the Seminole County Property Appraiser, comparable 1-bedroom units in Sanford rent for <strong>$1,650–$1,900/month</strong> — and you own nothing when you leave. These homes come in at $1,325–$1,350 all-in. At month 59, your payment stops permanently.
+  </div>
+
+  <!-- ===== PHOTO ROW ===== -->
+  <div class="photo-row">
+    <img src="photos/gA-left.jpg" alt="Lot 16 — New LVP floors, white shaker kitchen, stainless appliances">
+    <img src="photos/gA-center.jpg" alt="Lot 31 — White cabinets, new appliances, dark LVP">
+    <img src="photos/gA-right.jpg" alt="Renovated bathroom — fully updated">
+  </div>
+  <div class="photo-caption">Left: Lot 16 interior &nbsp;&#124;&nbsp; Center: Lot 31 kitchen &nbsp;&#124;&nbsp; Right: Renovated bath (Lot 103 shown)</div>
+
+  <!-- ===== TWO-COLUMN BODY ===== -->
+  <div class="body-columns">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-left">
+
+      <!-- HOMES TABLE -->
+      <div>
+        <div class="section-label">The Two Homes Available Now</div>
+        <table class="homes-table">
+          <thead>
+            <tr>
+              <th style="width:30%">Detail</th>
+              <th style="width:35%">Lot 16 — Premium</th>
+              <th style="width:35%">Lot 31 — Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-label">Down Payment</td>
+              <td><strong>$3,500</strong></td>
+              <td><strong>$3,000</strong></td>
+            </tr>
+            <tr>
+              <td class="feature-label">Monthly Payment</td>
+              <td><strong>$600/mo</strong></td>
+              <td><strong>$575/mo</strong></td>
+            </tr>
+            <tr>
+              <td class="feature-label">All-In (incl. lot rent)</td>
+              <td><strong>$1,350/mo</strong></td>
+              <td><strong>$1,325/mo</strong></td>
+            </tr>
+            <tr>
+              <td class="feature-label">Purchase Price</td>
+              <td>~$39,000</td>
+              <td>~$36,000</td>
+            </tr>
+            <tr>
+              <td class="feature-label">Term</td>
+              <td colspan="2" style="text-align:center">59 months — then payment stops permanently</td>
+            </tr>
+            <tr>
+              <td class="feature-label">Floors / Kitchen</td>
+              <td>New LVP, white shaker cabinets, stainless</td>
+              <td>Dark LVP, white cabinets, new appliances</td>
+            </tr>
+            <tr>
+              <td class="feature-label">Cooling / Extras</td>
+              <td>Mini-split AC, screened porch</td>
+              <td>Mini-split AC, textured ceilings</td>
+            </tr>
+            <tr>
+              <td class="feature-label">Electric (separate)</td>
+              <td colspan="2" style="text-align:center; color:#555">~$150/mo — not included in above</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 59-MONTH MATH BOX -->
+      <div class="math-box">
+        <div class="math-headline">The Math That Changes Everything — Months 1 Through 59</div>
+        <div class="math-row winner">
+          <span class="label">59 payments × $1,325/mo (Lot 31 all-in)</span>
+          <span class="value">$78,175</span>
+        </div>
+        <div class="math-row loser">
+          <span class="label">Comparable Sanford rental × 59 months @ $1,750/mo</span>
+          <span class="value">$103,250</span>
+        </div>
+        <div class="math-row loser">
+          <span class="label">After 59 months of renting — equity built</span>
+          <span class="value">$0</span>
+        </div>
+        <div class="math-row winner">
+          <span class="label">After 59 months of owning — payment going forward</span>
+          <span class="value">$0/mo</span>
+        </div>
+        <div class="math-delta">You save $25,075 versus renting — and the payment stops. Permanently.</div>
+      </div>
+
+      <!-- MAKEPEACE PUNCHLINE -->
+      <div class="punchline">
+        That morning is what $3,000 down buys. Not square footage. Not appliances. <em>The morning.</em>
+      </div>
+
+      <!-- 10-YEAR COMPARISON TABLE -->
+      <div>
+        <div class="section-label">10-Year Comparison — What Your Housing Costs, Start to Finish</div>
+        <table class="decade-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th class="own-col">This Deal</th>
+              <th class="rent-col">Renting</th>
+              <th class="delta-col">You Keep</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Years 1–5 (mos. 1–59)<br><span style="font-size:6pt; color:#555">$1,325/mo own vs. $1,750/mo rent</span></td>
+              <td class="own-col">$78,175</td>
+              <td class="rent-col">$103,250</td>
+              <td class="delta-col">$25,075</td>
+            </tr>
+            <tr>
+              <td>Years 6–10 (mos. 60–120)<br><span style="font-size:6pt; color:#555">Lot + electric only vs. $1,750/mo rent</span></td>
+              <td class="own-col">$46,175<br><span style="font-size:6pt; color:#555">($753/mo × 60 mos.)</span></td>
+              <td class="rent-col">$105,000<br><span style="font-size:6pt; color:#555">($1,750/mo × 60 mos.)</span></td>
+              <td class="delta-col">$58,825</td>
+            </tr>
+            <tr>
+              <td><strong>10-Year Total</strong></td>
+              <td class="own-col"><strong>$124,350</strong><br><span style="font-size:6.5pt; color:#2c5f2e">+ you own the home</span></td>
+              <td class="rent-col"><strong>$208,250</strong><br><span style="font-size:6.5pt; color:#8b0000">+ you own nothing</span></td>
+              <td class="delta-col"><strong>$83,900</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="decade-summary">
+          10-year delta: $83,900 — plus full title to a renovated home, paid free and clear.<br>
+          <span style="font-size:6.5pt; font-weight:normal; color:#c8e6c9;">Rental figure: Zillow Q1 2026 + Seminole County PAO comparable rentals. Both sources confirmed independently.</span>
+        </div>
+      </div>
+
+    </div>
+    <!-- end left col -->
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <!-- HALBERT: BANK REJECTION NARRATIVE -->
+      <div class="bank-rejection">
+        <div class="br-label">What Brought Her Here</div>
+        <p>She called three banks. Each one had a formula — score, down payment, income type. <strong>"Not a pension letter — we need documented W-2 income."</strong> The first bank was polite. The second asked her to come back with a co-signer. The third did not call back. What she found instead — this flyer — is what you are reading right now.</p>
+      </div>
+
+      <!-- PROOF BOX -->
+      <div class="proof-box">
+        <div class="proof-headline">Two Independent Sources Confirm the Value</div>
+        <p>According to <strong>Zillow (Q1 2026)</strong> and the <strong>Seminole County Property Appraiser's comparable rentals database</strong>, 1-bedroom units in Sanford currently rent for $1,650–$1,900 per month. These homes — fully renovated, owner-financed — come in at $1,325–$1,350 all-in including lot rent. That is a verified savings of $300–$575 per month versus renting a comparable space. With nothing to show for it at the end.</p>
+      </div>
+
+      <!-- MECHANISM — HOW IT WORKS -->
+      <div class="mechanism-box">
+        <div class="mech-headline">How the Financing Works — Plain English</div>
+        <div class="mech-item">
+          <span class="mech-dot">&#9679;</span>
+          <span><strong>No bank involved.</strong> The seller holds the note directly. Your payment goes to him — not a mortgage servicer.</span>
+        </div>
+        <div class="mech-item">
+          <span class="mech-dot">&#9679;</span>
+          <span><strong>Title at signing.</strong> Mobile homes convey by certificate of title — not a deed. You receive the title the day you sign and put your down payment down. It is yours from day one.</span>
+        </div>
+        <div class="mech-item">
+          <span class="mech-dot">&#9679;</span>
+          <span><strong>Pay off early any time.</strong> No prepayment penalty. Pay it off in 36 months if you choose — that is your right.</span>
+        </div>
+        <div class="mech-item">
+          <span class="mech-dot">&#9679;</span>
+          <span><strong>Month 59 — done.</strong> After 59 payments the balance reaches zero. No balloon. No refinance. The payment stops permanently.</span>
+        </div>
+      </div>
+
+      <!-- WHO QUALIFIES -->
+      <div>
+        <div class="section-label">Who Qualifies</div>
+        <ul class="qual-list">
+          <li><span class="qual-check">&#10003;</span><span>Social Security award letter accepted as income proof — no W-2 required</span></li>
+          <li><span class="qual-check">&#10003;</span><span>Pension or fixed income documentation accepted</span></li>
+          <li><span class="qual-check">&#10003;</span><span>No credit score checked — not a factor</span></li>
+          <li><span class="qual-check">&#10003;</span><span>ITIN accepted — no SSN required</span></li>
+          <li><span class="qual-check">&#10003;</span><span>Passport accepted as photo ID</span></li>
+          <li><span class="qual-check">&#10003;</span><span>Park age requirement: 55+ community</span></li>
+        </ul>
+      </div>
+
+      <!-- SELLER VOICE -->
+      <div class="seller-voice">
+        <strong>On why the price is what it is:</strong> "I'd rather leave $20,000 on the table than have one bad neighbor." The seller — 30+ years in Seminole County real estate — sets his price based on one rule: fit over profit.
+      </div>
+
+      <!-- GUARANTEE -->
+      <div class="guarantee-box">
+        <div class="guarantee-icon">&#9675;</div>
+        <div class="guarantee-body">
+          <div class="g-headline">No-Obligation Guarantee</div>
+          <p>Look at the home. Ask every question you have. Walk away — no pressure, no follow-up call, no hard close. If it is not right for you, we shake hands and part as friends. This is a neighbor search, not a sales pitch.</p>
+        </div>
+      </div>
+
+      <!-- REFERRAL -->
+      <div class="referral-bar">
+        Know someone who might be right for this? Have them call Jay.
+      </div>
+
+    </div>
+    <!-- end right col -->
+  </div>
+  <!-- end body columns -->
+
+  <!-- ===== FOOTER / CTA ===== -->
+  <div class="footer">
+    <div class="footer-left">
+      <div class="cta-main">Call or Text Jay to Schedule a Walk-Through</div>
+      <span class="cta-phone">(407) 000-0000</span>
+      <div class="cta-sub">Two homes available. One call reserves your showing. No commitment required.</div>
+    </div>
+    <div class="footer-right">
+      <div style="font-size:7pt; font-weight:bold; color:#1a1a1a; margin-bottom:3pt;">Park Avenue MHP &nbsp;&#124;&nbsp; Sanford, FL &nbsp;&#124;&nbsp; 55+ Community</div>
+      <div class="disclaimer-source">
+        Rent comparables sourced from Zillow Q1 2026 and Seminole County Property Appraiser comparable rentals database — both sources verified independently. Purchase math based on stated terms; actual totals may vary by lot. Years 6–10 own-cost based on lot rent + electric ($753/mo) after note payoff at month 59. All financing subject to park approval and seller underwriting. Certificate of title conveyance per Florida Statute Ch. 319. BusinessRate #1 Sanford 2026 award based on community ratings and value index.
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .page -->
+</body>
+</html>

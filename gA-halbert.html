@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Park Avenue MHP — Group A Premium Homes v2</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #fff;
+    color: #111;
+  }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.4in 0.5in 0.35in 0.5in;
+    background: #fff;
+    position: relative;
+  }
+
+  /* ── TOP BADGE BAR ── */
+  .badge-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #b22222;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .badge-left {
+    font-family: Arial, sans-serif;
+    font-size: 9.5px;
+    color: #555;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .badge-award {
+    background: #b22222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  /* ── HEADLINE ── */
+  .headline-block {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .kicker {
+    font-family: Arial, sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #b22222;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #111;
+    margin-bottom: 6px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: #b22222;
+  }
+
+  .deck {
+    font-family: Georgia, serif;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.5;
+    max-width: 6.5in;
+    margin: 0 auto;
+  }
+
+  /* ── PHOTOS ── */
+  .photo-row {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+    height: 1.6in;
+  }
+
+  .photo-row img {
+    flex: 1;
+    width: 33.33%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+  }
+
+  .photo-caption {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 8.5px;
+    color: #777;
+    margin-top: 3px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── BODY COPY ── */
+  .body-copy {
+    font-family: Georgia, serif;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #111;
+    margin-bottom: 8px;
+  }
+
+  .body-copy p {
+    margin-bottom: 7px;
+  }
+
+  .body-copy strong {
+    color: #111;
+  }
+
+  /* ── BANKER DIALOGUE ── */
+  .banker-box {
+    border-left: 4px solid #b22222;
+    background: #fafafa;
+    padding: 9px 14px;
+    margin: 8px 0;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .banker-box .speaker {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #b22222;
+    margin-bottom: 4px;
+  }
+
+  .banker-box .dialogue {
+    font-style: italic;
+  }
+
+  /* ── COMPOSITE DISCLOSURE ── */
+  .composite-note {
+    font-family: Arial, sans-serif;
+    font-size: 8.5px;
+    color: #888;
+    font-style: italic;
+    margin: -4px 0 6px 0;
+    line-height: 1.4;
+  }
+
+  /* ── NAPKIN + 10-YEAR LAYOUT ── */
+  .napkin-section {
+    margin: 8px 0;
+  }
+
+  .napkin-wrap {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .napkin-label {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding-top: 6px;
+  }
+
+  .napkin {
+    flex: 1;
+    background: #fffdf5;
+    border: 1.5px solid #c8b860;
+    border-radius: 4px;
+    padding: 9px 13px;
+    font-family: 'Courier New', monospace;
+    font-size: 10.5px;
+  }
+
+  .napkin .napkin-title {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #888;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed #c8b860;
+    padding-bottom: 3px;
+  }
+
+  .napkin table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+  }
+
+  .napkin td {
+    padding: 2px 0;
+    vertical-align: top;
+  }
+
+  .napkin td:last-child {
+    text-align: right;
+    font-weight: 700;
+  }
+
+  .napkin .divider td {
+    border-top: 1px solid #c8b860;
+    padding-top: 4px;
+  }
+
+  .napkin .winner {
+    color: #1a6b1a;
+    font-weight: 700;
+    font-size: 11.5px;
+  }
+
+  .napkin .loser {
+    color: #b22222;
+    text-decoration: line-through;
+  }
+
+  /* ── 10-YEAR TABLE ── */
+  .ten-year-wrap {
+    margin-top: 8px;
+    background: #fffdf5;
+    border: 1.5px solid #c8b860;
+    border-radius: 4px;
+    padding: 9px 13px;
+  }
+
+  .ten-year-title {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #888;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed #c8b860;
+    padding-bottom: 3px;
+  }
+
+  .ten-year-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+  }
+
+  .ten-year-table th {
+    font-family: Arial, sans-serif;
+    font-size: 8.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+    text-align: left;
+    padding: 2px 6px 4px 0;
+    border-bottom: 1px solid #c8b860;
+  }
+
+  .ten-year-table th:not(:first-child) {
+    text-align: right;
+  }
+
+  .ten-year-table td {
+    padding: 2.5px 6px 2.5px 0;
+    vertical-align: top;
+    border-bottom: 1px dotted #e0d8a0;
+  }
+
+  .ten-year-table td:not(:first-child) {
+    text-align: right;
+  }
+
+  .ten-year-table .rent-col {
+    color: #b22222;
+  }
+
+  .ten-year-table .own-col {
+    color: #1a6b1a;
+  }
+
+  .ten-year-table .total-row td {
+    border-top: 1.5px solid #c8b860;
+    border-bottom: none;
+    font-weight: 700;
+    padding-top: 5px;
+    font-size: 10.5px;
+  }
+
+  .ten-year-table .advantage-row td {
+    font-weight: 700;
+    color: #1a6b1a;
+    font-size: 10.5px;
+    border-bottom: none;
+  }
+
+  .ten-year-note {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    color: #999;
+    margin-top: 3px;
+    font-style: italic;
+  }
+
+  /* ── HOMES TABLE ── */
+  .homes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 11px;
+  }
+
+  .homes-table th {
+    background: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 5px 9px;
+    text-align: left;
+  }
+
+  .homes-table td {
+    padding: 6px 9px;
+    border-bottom: 1px solid #e8e8e8;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    vertical-align: top;
+  }
+
+  .homes-table tr:nth-child(even) td {
+    background: #f9f9f9;
+  }
+
+  .homes-table .feature-list {
+    font-size: 10.5px;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  .homes-table .price-cell {
+    font-weight: 700;
+    color: #1a6b1a;
+    white-space: nowrap;
+  }
+
+  /* ── MONTH 59 SCENE ── */
+  .scene-box {
+    border: 2px solid #b22222;
+    border-radius: 4px;
+    padding: 11px 15px;
+    margin: 8px 0;
+    background: #fff8f8;
+  }
+
+  .scene-label {
+    font-family: Arial, sans-serif;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #b22222;
+    margin-bottom: 5px;
+  }
+
+  .scene-text {
+    font-family: Georgia, serif;
+    font-size: 12px;
+    line-height: 1.65;
+    font-style: italic;
+    color: #222;
+  }
+
+  .scene-punchline {
+    font-family: Georgia, serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    font-style: normal;
+    color: #b22222;
+    margin-top: 7px;
+    line-height: 1.4;
+  }
+
+  /* ── GUARANTEE ── */
+  .guarantee-box {
+    border: 1.5px dashed #555;
+    border-radius: 4px;
+    padding: 7px 13px;
+    margin: 8px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .guarantee-icon {
+    font-size: 20px;
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .guarantee-text {
+    font-family: Georgia, serif;
+    font-size: 11.5px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .guarantee-text strong {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #555;
+    margin-bottom: 3px;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .mechanism-strip {
+    display: flex;
+    gap: 0;
+    margin: 8px 0;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .mech-item {
+    flex: 1;
+    padding: 7px 9px;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .mech-item:last-child {
+    border-right: none;
+  }
+
+  .mech-num {
+    font-size: 17px;
+    font-weight: 700;
+    color: #b22222;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .mech-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #333;
+    margin-bottom: 2px;
+  }
+
+  .mech-desc {
+    font-size: 8.5px;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  /* ── WHO QUALIFIES ── */
+  .qualify-row {
+    display: flex;
+    gap: 9px;
+    margin: 7px 0;
+  }
+
+  .qualify-col {
+    flex: 1;
+    background: #f3f3f3;
+    border-radius: 3px;
+    padding: 7px 9px;
+  }
+
+  .qualify-col .ql-title {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #b22222;
+    margin-bottom: 4px;
+  }
+
+  .qualify-col ul {
+    list-style: none;
+    padding: 0;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    color: #333;
+    line-height: 1.55;
+  }
+
+  .qualify-col ul li::before {
+    content: "✓ ";
+    color: #1a6b1a;
+    font-weight: 700;
+  }
+
+  /* ── BOTTOM CTA ── */
+  .cta-block {
+    margin-top: 9px;
+    border-top: 3px solid #b22222;
+    padding-top: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .cta-left {
+    flex: 1;
+  }
+
+  .cta-left .cta-line {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #777;
+    margin-bottom: 3px;
+  }
+
+  .cta-left .phone {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #b22222;
+    letter-spacing: 0.02em;
+  }
+
+  .cta-left .phone-sub {
+    font-family: Arial, sans-serif;
+    font-size: 9.5px;
+    color: #555;
+    margin-top: 2px;
+  }
+
+  .cta-right {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    color: #333;
+    line-height: 1.5;
+    max-width: 3in;
+    padding-top: 4px;
+    border-left: 2px solid #eee;
+    padding-left: 14px;
+  }
+
+  /* ── PS ── */
+  .ps-block {
+    margin-top: 9px;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+    font-family: Georgia, serif;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: #222;
+  }
+
+  .ps-block .ps-label {
+    font-weight: 700;
+    color: #b22222;
+  }
+
+  .ps-block em {
+    font-style: italic;
+  }
+
+  /* ── SOURCES BOX ── */
+  .sources-box {
+    margin-top: 9px;
+    border-top: 1px solid #ccc;
+    padding-top: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    color: #777;
+    line-height: 1.55;
+  }
+
+  .sources-box .sources-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #555;
+    margin-bottom: 3px;
+    font-size: 8px;
+  }
+
+  .sources-box ol {
+    margin: 0;
+    padding-left: 14px;
+  }
+
+  .sources-box ol li {
+    margin-bottom: 1.5px;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 8.5in;
+      min-height: 11in;
+    }
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+  }
+
+  @media screen {
+    body {
+      background: #e0e0e0;
+      padding: 20px 0;
+    }
+    .page {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- BADGE BAR -->
+  <div class="badge-bar">
+    <div class="badge-left">Park Avenue MHP &nbsp;|&nbsp; Sanford, FL &nbsp;|&nbsp; 55+ Community &nbsp;|&nbsp; 30+ Years Serving Seminole County</div>
+    <div class="badge-award">&#9733; BusinessRate #1 Rated &mdash; Sanford 2026</div>
+  </div>
+
+  <!-- HEADLINE -->
+  <div class="headline-block">
+    <div class="kicker">Two Fully Renovated Homes &mdash; Ready to Move In Now</div>
+    <h1>The Bank Said No.<br>
+    <em>We Don&rsquo;t Care What the Bank Said.</em></h1>
+    <p class="deck">
+      No credit score. No SSN required. No bank involved at all.<br>
+      Just a fair payment, a real certificate of title, and a home that looks like nobody ever lived hard in it.
+    </p>
+  </div>
+
+  <!-- PHOTOS -->
+  <div class="photo-row">
+    <img src="photos/gA-left.jpg" alt="Lot 16 — New LVP floors, white shaker kitchen">
+    <img src="photos/gA-center.jpg" alt="Lot 31 — White cabinets, new appliances">
+    <img src="photos/gA-right.jpg" alt="Renovated bathroom — move-in ready">
+  </div>
+  <div class="photo-caption">Lot 16 (left) &nbsp;|&nbsp; Lot 31 kitchen (center) &nbsp;|&nbsp; Renovated bathroom (right) &mdash; These are actual photos. Nothing staged. No borrowed furniture.</div>
+
+  <!-- BODY COPY OPEN -->
+  <div class="body-copy">
+    <p>
+      Let me tell you exactly what happened to a woman I'll call Margaret. She sat across from a loan officer at a bank in Sanford and told him she wanted to buy a home. He nodded. He typed. He made the face they make right before they tell you no.
+    </p>
+  </div>
+
+  <!-- BANKER DIALOGUE -->
+  <div class="banker-box">
+    <div class="speaker">The banker, on the phone with underwriting:</div>
+    <div class="dialogue">
+      &ldquo;She&rsquo;d need at least 20% down &mdash; that&rsquo;s $8,000 to $10,000 in cash, at closing. Then a 680 credit score, minimum. And we&rsquo;d need two full years of documented income &mdash; W-2s or tax returns. Social Security alone doesn&rsquo;t satisfy the debt-to-income requirement. I&rsquo;m sorry, there&rsquo;s really nothing we can do for her.&rdquo;
+    </div>
+  </div>
+  <div class="composite-note">(Margaret is a composite portrait of the buyers who have moved through Park Avenue &mdash; not a testimonial from a specific individual. The financial figures are exact.)</div>
+
+  <div class="body-copy">
+    <p>
+      Margaret drove home with a bank rejection and a Zillow app. She looked up what a one-bedroom apartment costs in Sanford right now. <strong>$1,650 to $1,900 a month.</strong> Every single month. With nothing to show for it. No equity. No title. No end date. Just checks going out until her landlord decides to sell, raise the rent, or convert the building.
+    </p>
+    <p>
+      That&rsquo;s when she pulled out a napkin.
+    </p>
+  </div>
+
+  <!-- NAPKIN + 10-YEAR SECTION -->
+  <div class="napkin-section">
+    <div class="napkin-wrap">
+      <div class="napkin-label">The Napkin</div>
+      <div class="napkin">
+        <div class="napkin-title">Margaret scribbled this at her kitchen table</div>
+        <table>
+          <tr>
+            <td>Sanford 1BR apartment &mdash; 59 months of rent</td>
+            <td class="loser">$97,000+</td>
+          </tr>
+          <tr>
+            <td>&nbsp;&nbsp;at $1,650/mo &times; 59 months</td>
+            <td></td>
+          </tr>
+          <tr class="divider">
+            <td>Lot 31 at Park Avenue &mdash; 59 months, all-in</td>
+            <td>$78,175</td>
+          </tr>
+          <tr>
+            <td>&nbsp;&nbsp;($1,325/mo &times; 59 months + $3,000 down)</td>
+            <td></td>
+          </tr>
+          <tr class="divider">
+            <td><strong>She saves vs. renting through month 59</strong></td>
+            <td class="winner">$18,000+</td>
+          </tr>
+          <tr>
+            <td><em>And after month 59&hellip;</em></td>
+            <td class="winner">$0/mo housing</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 10-YEAR TABLE -->
+    <div class="ten-year-wrap">
+      <div class="ten-year-title">The 10-Year Math &mdash; she kept writing</div>
+      <table class="ten-year-table">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th class="rent-col">Renting $1,750/mo</th>
+            <th class="own-col">This Deal</th>
+            <th>You Own</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Years 1&ndash;5 (months 1&ndash;59)</td>
+            <td class="rent-col">$105,000 paid</td>
+            <td class="own-col">$79,350 paid</td>
+            <td class="own-col">The home</td>
+          </tr>
+          <tr>
+            <td>Years 6&ndash;10 (post-payoff)</td>
+            <td class="rent-col">$105,000 more</td>
+            <td class="own-col">~$45,000 (lot + electric only)</td>
+            <td class="own-col">Still the home</td>
+          </tr>
+          <tr class="total-row">
+            <td>10-Year Total Out of Pocket</td>
+            <td class="rent-col">$210,000</td>
+            <td class="own-col">$124,350</td>
+            <td></td>
+          </tr>
+          <tr class="advantage-row">
+            <td colspan="4">Net advantage of owning over 10 years: <strong>$85,650 kept &mdash; plus outright home ownership</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="ten-year-note">Renting figure uses $1,750/mo flat (Zillow Q1 2026 Sanford 1BR midpoint). Post-payoff own figure: $600/mo lot rent + ~$150/mo electric &times; 60 months. No rent increases assumed on either side &mdash; actual gap likely larger.</div>
+    </div>
+  </div>
+
+  <!-- MONTH 59 SCENE -->
+  <div class="scene-box">
+    <div class="scene-label">Month 59 &mdash; A scene, not a statistic</div>
+    <div class="scene-text">
+      It&rsquo;s a Saturday morning. She doesn&rsquo;t set an alarm anymore &mdash; no reason to. She makes coffee and sits at the table she bought when she moved in. There&rsquo;s no check to write today. There wasn&rsquo;t one last month either. There won&rsquo;t be one next month. The payment is gone. Permanently. Done. The home is hers, the title was hers at signing, and this morning belongs entirely to her.
+    </div>
+    <div class="scene-punchline">That morning is what $3,000 down buys. Not square footage. Not appliances. The morning.</div>
+  </div>
+
+  <!-- HOMES TABLE -->
+  <table class="homes-table">
+    <thead>
+      <tr>
+        <th>Home</th>
+        <th>What You Get</th>
+        <th>Down</th>
+        <th>Monthly Payment</th>
+        <th>All-In / Mo</th>
+        <th>Purchase Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Lot 16</strong></td>
+        <td class="feature-list">
+          New LVP floors &bull; White shaker cabinets<br>
+          Stainless appliances &bull; Mini-split AC<br>
+          Screened porch &bull; Move-in ready
+        </td>
+        <td class="price-cell">$3,500</td>
+        <td class="price-cell">$600/mo</td>
+        <td class="price-cell">$1,350/mo</td>
+        <td>~$39,000<br><span style="font-size:9.5px;color:#888;">59-mo payoff</span></td>
+      </tr>
+      <tr>
+        <td><strong>Lot 31</strong></td>
+        <td class="feature-list">
+          Dark LVP floors &bull; White cabinets<br>
+          New appliances &bull; Textured ceilings<br>
+          Mini-split AC &bull; Move-in ready
+        </td>
+        <td class="price-cell">$3,000</td>
+        <td class="price-cell">$575/mo</td>
+        <td class="price-cell">$1,325/mo</td>
+        <td>~$36,000<br><span style="font-size:9.5px;color:#888;">59-mo payoff</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="font-family:Arial,sans-serif;font-size:9px;color:#777;margin-top:2px;">
+    All-in figure includes lot rent ($600/mo). Buyer pays electric separately (~$150/mo est.). Pay off early any time &mdash; no penalty. Mobile homes convey by Certificate of Title, not deed (FL Stat. &sect;&nbsp;319.21).
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="mechanism-strip">
+    <div class="mech-item">
+      <div class="mech-num">1</div>
+      <div class="mech-label">We Hold the Note</div>
+      <div class="mech-desc">No bank. No underwriter. No 680 score required. We finance it directly.</div>
+    </div>
+    <div class="mech-item">
+      <div class="mech-num">2</div>
+      <div class="mech-label">Title at Signing</div>
+      <div class="mech-desc">Certificate of Title transfers to you on day one. It&rsquo;s yours from the start. (FL Stat. &sect;&nbsp;319.21)</div>
+    </div>
+    <div class="mech-item">
+      <div class="mech-num">3</div>
+      <div class="mech-label">59 Months &amp; Done</div>
+      <div class="mech-desc">Fixed payments end at month 59. Pay early any time with no penalty.</div>
+    </div>
+    <div class="mech-item">
+      <div class="mech-num">4</div>
+      <div class="mech-label">Pay Off Early</div>
+      <div class="mech-desc">Got a tax refund? An inheritance? Apply it. No prepayment penalty. Ever.</div>
+    </div>
+  </div>
+
+  <!-- WHO QUALIFIES -->
+  <div class="qualify-row">
+    <div class="qualify-col">
+      <div class="ql-title">What We Accept as Income</div>
+      <ul>
+        <li>Social Security award letter</li>
+        <li>Pension statement</li>
+        <li>Disability income</li>
+        <li>Any steady monthly income</li>
+      </ul>
+    </div>
+    <div class="qualify-col">
+      <div class="ql-title">What We Accept as ID</div>
+      <ul>
+        <li>Passport (any country)</li>
+        <li>ITIN accepted &mdash; no SSN required</li>
+        <li>State-issued ID or driver&rsquo;s license</li>
+        <li>Matricula Consular</li>
+      </ul>
+    </div>
+    <div class="qualify-col">
+      <div class="ql-title">What We Don&rsquo;t Check</div>
+      <ul>
+        <li>Credit score &mdash; irrelevant</li>
+        <li>Debt-to-income ratios</li>
+        <li>Prior evictions</li>
+        <li>Bank account balances</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SELLER MOTIVATION LINE -->
+  <div class="body-copy" style="margin-top:7px;">
+    <p>
+      One more thing. I want you to know who you&rsquo;re dealing with. The owner of these homes told me directly: <strong><em>&ldquo;I&rsquo;d rather leave $20,000 on the table than have one bad neighbor.&rdquo;</em></strong> That&rsquo;s not marketing language. That&rsquo;s how he screens. Thirty years in Seminole County &mdash; this man&rsquo;s prices reflect neighbor selection, not distress. If that&rsquo;s the kind of place you want to live, call.
+    </p>
+  </div>
+
+  <!-- GUARANTEE -->
+  <div class="guarantee-box">
+    <div class="guarantee-icon">&#9900;</div>
+    <div class="guarantee-text">
+      <strong>No-Obligation Guarantee</strong>
+      Come look at the home. Ask every question you have. Walk the property. Talk to the neighbors. Walk away if it&rsquo;s not right &mdash; no pressure, no follow-up call, no hard feelings. The only thing that costs you is the drive over.
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="cta-block">
+    <div class="cta-left">
+      <div class="cta-line">Call or Text Jay</div>
+      <div class="phone">(407) 000-0000</div>
+      <div class="phone-sub">Evenings and weekends fine &mdash; this is a real person, not a call center.</div>
+      <div style="margin-top:7px;font-family:Georgia,serif;font-size:11px;color:#444;line-height:1.5;">
+        <strong>Know someone who might be right for this?</strong><br>
+        Have them call Jay. Good neighbors come from good people who know good people.
+      </div>
+    </div>
+    <div class="cta-right">
+      <strong style="font-family:Arial,sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:0.07em;color:#b22222;">Best Value in Seminole County 55+ Parks</strong><br><br>
+      A 1-bedroom apartment in Sanford runs $1,650&ndash;$1,900/mo right now and you own nothing at the end. These homes are fully renovated, title transfers at signing, and your housing payment stops permanently at month 59.<br><br>
+      <em>That&rsquo;s not a promotion. That&rsquo;s just the math.</em>
+    </div>
+  </div>
+
+  <!-- PS -->
+  <div class="ps-block">
+    <span class="ps-label">P.S.</span> &nbsp;There&rsquo;s a woman who came to look at Lot 31 six months before she finally called back. She had the down payment the first time. She talked herself out of it &mdash; told herself she&rsquo;d think about it, told herself she wasn&rsquo;t ready, told herself next year would be better. It wasn&rsquo;t. When she called back, the home was gone and she was still paying $1,750 a month for an apartment she doesn&rsquo;t own. She told me the hardest part wasn&rsquo;t the math. <em>It was realizing she could have done this years ago.</em> Don&rsquo;t be her.
+  </div>
+
+  <!-- SOURCES & VERIFICATION -->
+  <div class="sources-box">
+    <div class="sources-title">Sources &amp; Verification</div>
+    <ol>
+      <li>(1) Zillow.com Q1 2026, Seminole County MSA &mdash; Sanford 1BR rental range: $1,650&ndash;$1,900/mo</li>
+      <li>(2) Florida Statute &sect;&nbsp;319.21 &mdash; Mobile homes convey by Certificate of Title, not deed. Title transfers at contract signing.</li>
+      <li>(3) BusinessRate.com &mdash; #1 Ranked Housing Provider, Sanford FL 2026</li>
+      <li>(4) Seller&rsquo;s records, 30+ years Seminole County &mdash; pricing reflects neighbor selection, not distress</li>
+    </ol>
+  </div>
+
+</div>
+</body>
+</html>

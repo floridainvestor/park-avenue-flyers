@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Park Avenue MHP — Group A Premium Homes</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    background: #fff;
+    color: #1a1a1a;
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+  }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    padding: 0;
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== PHOTO STRIP ===== */
+  .photo-strip {
+    display: flex;
+    width: 100%;
+    height: 2.0in;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .photo-strip img {
+    width: 33.333%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ===== HEADER BAND ===== */
+  .header-band {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 0.14in 0.32in 0.12in;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .header-left .park-name {
+    font-size: 8.5pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 2px;
+  }
+
+  .header-left .group-label {
+    font-size: 18pt;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+
+  .header-left .group-sub {
+    font-size: 8.5pt;
+    color: #ccc;
+    margin-top: 2px;
+  }
+
+  .badge {
+    background: #c8a84b;
+    color: #fff;
+    font-size: 7pt;
+    font-weight: 800;
+    text-align: center;
+    padding: 5px 9px;
+    border-radius: 4px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .badge .badge-star {
+    font-size: 12pt;
+    display: block;
+    line-height: 1;
+  }
+
+  /* ===== ENTRY STORY ===== */
+  .entry-story {
+    background: #f2f2f2;
+    border-left: 5px solid #888;
+    padding: 0.11in 0.32in;
+    flex-shrink: 0;
+  }
+
+  .entry-story p {
+    font-size: 8.5pt;
+    color: #444;
+    line-height: 1.55;
+    font-style: italic;
+  }
+
+  .entry-story p em.quote {
+    font-style: normal;
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+
+  /* ===== OUTCOME HOOK ===== */
+  .outcome-hook {
+    background: #1a1a1a;
+    border-left: 5px solid #c8a84b;
+    padding: 0.13in 0.32in;
+    flex-shrink: 0;
+  }
+
+  .outcome-hook .hook-line {
+    font-size: 14.5pt;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .outcome-hook .hook-line span.accent {
+    color: #c8a84b;
+  }
+
+  .outcome-hook .hook-sub {
+    font-size: 8.5pt;
+    color: #bbb;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ===== NO-OBLIGATION (HIGH POSITION) ===== */
+  .no-oblig-top {
+    background: #fff8e6;
+    border-top: 2.5px solid #c8a84b;
+    border-bottom: 2.5px solid #c8a84b;
+    padding: 0.07in 0.32in;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .no-oblig-top .oblig-icon {
+    font-size: 13pt;
+    flex-shrink: 0;
+    color: #c8a84b;
+  }
+
+  .no-oblig-top .oblig-text {
+    font-size: 8pt;
+    color: #5a4200;
+    line-height: 1.4;
+  }
+
+  .no-oblig-top .oblig-text strong {
+    color: #1a1a1a;
+    font-weight: 900;
+    font-size: 8.5pt;
+  }
+
+  /* ===== MAIN BODY ===== */
+  .body-wrap {
+    display: flex;
+    gap: 0;
+    padding: 0.12in 0.32in 0.1in;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .col-left {
+    flex: 1.08;
+    padding-right: 0.16in;
+    border-right: 1.5px solid #e0e0e0;
+  }
+
+  .col-right {
+    flex: 0.92;
+    padding-left: 0.16in;
+  }
+
+  /* ===== SECTION HEADERS ===== */
+  .section-head {
+    font-size: 6.5pt;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+    border-bottom: 1.5px solid #e0e0e0;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+    margin-top: 9px;
+  }
+
+  .section-head:first-child {
+    margin-top: 0;
+  }
+
+  /* ===== PROOF BAR ===== */
+  .proof-bar {
+    background: #fff8e6;
+    border: 1.5px solid #c8a84b;
+    border-radius: 4px;
+    padding: 6px 9px;
+    margin-bottom: 8px;
+  }
+
+  .proof-bar .proof-label {
+    font-size: 6pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c8a84b;
+    margin-bottom: 2px;
+  }
+
+  .proof-bar .proof-text {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+  }
+
+  .proof-bar .proof-source {
+    font-size: 6.5pt;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  /* ===== MATH TABLE ===== */
+  .math-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.8pt;
+    margin-bottom: 7px;
+  }
+
+  .math-table thead tr th {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 7pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 5px 6px;
+    text-align: left;
+    border: none;
+  }
+
+  .math-table thead tr th.col-b {
+    background: #c8a84b;
+    color: #fff;
+  }
+
+  .math-table tbody tr td {
+    padding: 4px 6px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    line-height: 1.3;
+    color: #333;
+  }
+
+  .math-table tbody tr:nth-child(even) td {
+    background: #fafafa;
+  }
+
+  .math-table tbody tr td.label-col {
+    font-weight: 700;
+    color: #555;
+    font-size: 7.2pt;
+  }
+
+  .math-table tbody tr td.col-a-val {
+    color: #c0392b;
+    font-weight: 600;
+  }
+
+  .math-table tbody tr td.col-b-val {
+    color: #1a6b2a;
+    font-weight: 700;
+  }
+
+  .math-table tfoot tr td {
+    padding: 5px 6px;
+    font-weight: 900;
+    font-size: 8.5pt;
+    border-top: 2px solid #1a1a1a;
+  }
+
+  .math-table tfoot tr td.total-a {
+    background: #fdf0ef;
+    color: #c0392b;
+  }
+
+  .math-table tfoot tr td.total-b {
+    background: #edfaef;
+    color: #1a6b2a;
+  }
+
+  .math-table tfoot tr td.total-label {
+    background: #f5f5f5;
+    color: #555;
+    font-size: 7.5pt;
+  }
+
+  .savings-callout {
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 4px;
+    padding: 6px 9px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .savings-callout .save-num {
+    font-size: 16pt;
+    font-weight: 900;
+    color: #c8a84b;
+    line-height: 1;
+  }
+
+  .savings-callout .save-label {
+    font-size: 7pt;
+    color: #ccc;
+    margin-top: 2px;
+  }
+
+  /* ===== SCENE BLOCK ===== */
+  .scene-block {
+    background: #f0f7f0;
+    border-left: 4px solid #2e7d32;
+    border-radius: 0 4px 4px 0;
+    padding: 7px 9px;
+    margin-bottom: 7px;
+  }
+
+  .scene-block .scene-head {
+    font-size: 6.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #2e7d32;
+    margin-bottom: 3px;
+  }
+
+  .scene-block .scene-text {
+    font-size: 8pt;
+    color: #1a1a1a;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .scene-block .scene-punchline {
+    font-size: 8.5pt;
+    font-weight: 900;
+    color: #1a6b2a;
+    margin-top: 5px;
+    font-style: normal;
+    line-height: 1.3;
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .mechanism-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 7px 0;
+  }
+
+  .mechanism-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 7.8pt;
+    color: #333;
+    line-height: 1.4;
+    padding: 3.5px 0;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  .mechanism-list li:last-child {
+    border-bottom: none;
+  }
+
+  .mechanism-list li .mech-icon {
+    font-size: 8.5pt;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: #c8a84b;
+    font-weight: 900;
+  }
+
+  .mechanism-list li .mech-text strong {
+    color: #1a1a1a;
+    font-weight: 800;
+  }
+
+  /* ===== LOT CARDS ===== */
+  .lot-card {
+    border: 1.5px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 8px 9px;
+    margin-bottom: 7px;
+    background: #fff;
+  }
+
+  .lot-card .lot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .lot-card .lot-num {
+    font-size: 7.5pt;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+  }
+
+  .lot-card .lot-price {
+    font-size: 10.5pt;
+    font-weight: 900;
+    color: #1a1a1a;
+  }
+
+  .lot-card .lot-tag {
+    background: #c8a84b;
+    color: #fff;
+    font-size: 5.5pt;
+    font-weight: 800;
+    padding: 2px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .lot-card .lot-features {
+    font-size: 7.5pt;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  .lot-card .lot-numbers {
+    display: flex;
+    gap: 5px;
+  }
+
+  .lot-num-box {
+    flex: 1;
+    background: #f5f5f5;
+    border-radius: 3px;
+    padding: 4px 5px;
+    text-align: center;
+  }
+
+  .lot-num-box .lnb-val {
+    font-size: 9.5pt;
+    font-weight: 900;
+    color: #1a1a1a;
+    line-height: 1;
+  }
+
+  .lot-num-box .lnb-label {
+    font-size: 5.5pt;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 2px;
+  }
+
+  /* ===== QUALIFY BOX ===== */
+  .qualify-box {
+    background: #fff;
+    border: 1.5px solid #1a1a1a;
+    border-radius: 5px;
+    padding: 7px 9px;
+    margin-bottom: 7px;
+  }
+
+  .qualify-box .q-head {
+    font-size: 7.5pt;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .qualify-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .qualify-box ul li {
+    font-size: 7.5pt;
+    color: #333;
+    line-height: 1.45;
+    padding: 2px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .qualify-box ul li::before {
+    content: "✓";
+    color: #2e7d32;
+    font-weight: 900;
+    font-size: 8.5pt;
+    flex-shrink: 0;
+  }
+
+  /* ===== SELLER QUOTE ===== */
+  .seller-quote {
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-bottom: 7px;
+    font-size: 8pt;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .seller-quote .q-attr {
+    font-size: 6.5pt;
+    color: #aaa;
+    margin-top: 3px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ===== SOURCES BLOCK ===== */
+  .sources-block {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 6px 9px;
+    margin-bottom: 7px;
+  }
+
+  .sources-block .sources-head {
+    font-size: 6pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #888;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 2px;
+  }
+
+  .sources-block ol {
+    padding-left: 14px;
+    margin: 0;
+  }
+
+  .sources-block ol li {
+    font-size: 6.5pt;
+    color: #555;
+    line-height: 1.45;
+    padding: 1.5px 0;
+  }
+
+  .sources-block ol li strong {
+    color: #333;
+    font-weight: 700;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 0.1in 0.32in;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.2in;
+    flex-shrink: 0;
+  }
+
+  .footer-left {
+    flex: 1;
+  }
+
+  .footer-left .cta-line {
+    font-size: 8pt;
+    color: #ccc;
+    margin-bottom: 3px;
+  }
+
+  .footer-left .cta-number {
+    font-size: 17pt;
+    font-weight: 900;
+    color: #c8a84b;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+
+  .footer-left .cta-name {
+    font-size: 8pt;
+    color: #ccc;
+    margin-top: 2px;
+  }
+
+  .footer-center {
+    text-align: center;
+    flex: 0.85;
+  }
+
+  .footer-center .referral-text {
+    font-size: 7.5pt;
+    color: #bbb;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .footer-right {
+    text-align: right;
+    flex: 0.7;
+  }
+
+  .footer-right .park-info {
+    font-size: 7pt;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  .footer-right .park-name-footer {
+    font-size: 8.5pt;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  @media print {
+    body {
+      margin: 0;
+      padding: 0;
+      width: 8.5in;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      page-break-after: always;
+    }
+
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip">
+    <img src="photos/gA-left.jpg" alt="Park Avenue MHP — Renovated Interior">
+    <img src="photos/gA-center.jpg" alt="Park Avenue MHP — White Kitchen">
+    <img src="photos/gA-right.jpg" alt="Park Avenue MHP — Renovated Bath">
+  </div>
+
+  <!-- HEADER BAND -->
+  <div class="header-band">
+    <div class="header-left">
+      <div class="park-name">Park Avenue MHP &mdash; Sanford, FL &mdash; 55+ Community</div>
+      <div class="group-label">GROUP A &mdash; PREMIUM</div>
+      <div class="group-sub">Fully Renovated &bull; Best Value in Seminole County 55+ Parks</div>
+    </div>
+    <div class="badge">
+      <span class="badge-star">&#9733;</span>
+      BusinessRate<br>#1 Sanford<br>2026
+    </div>
+  </div>
+
+  <!-- ENTRY STORY (WEAPON 1 — HALBERT) -->
+  <div class="entry-story">
+    <p>She called three banks. The first said she needed $8,000&ndash;$10,000 cash at closing, a 680 score, and two years of documented income. <em class="quote">&ldquo;The kind of income they document with W-2s. You know the kind.&rdquo;</em> The second said the same thing, different logo. The third did not call back.</p>
+  </div>
+
+  <!-- OUTCOME HOOK -->
+  <div class="outcome-hook">
+    <div class="hook-line">In 59 months, your housing payment <span class="accent">disappears.</span> Not temporarily. <span class="accent">Permanently.</span></div>
+    <div class="hook-sub">Here&rsquo;s what the math shows &mdash; no pitch, no pressure. Just numbers. No bank required.</div>
+  </div>
+
+  <!-- NO-OBLIGATION GUARANTEE — MOVED HIGH (WEAPON 2 position) -->
+  <div class="no-oblig-top">
+    <div class="oblig-icon">&#9679;</div>
+    <div class="oblig-text"><strong>No-Obligation Guarantee:</strong> Come see it. Ask every question. Walk away if it&rsquo;s not right. No pressure. No follow-up call. We want the right fit &mdash; same as you do.</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-wrap">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-left">
+
+      <!-- PROOF BAR -->
+      <div class="proof-bar">
+        <div class="proof-label">Market Proof &mdash; Zillow Q1 2026</div>
+        <div class="proof-text">Sanford 1-bedroom apartments average <strong>$1,650&ndash;$1,900/month</strong> &mdash; and you own nothing at the end.</div>
+        <div class="proof-source">Source: Zillow.com, Sanford FL market trends, Q1 2026 &bull; Seminole County MSA</div>
+      </div>
+
+      <!-- MATH TABLE -->
+      <div class="section-head">10-Year Cost Comparison &mdash; Renting vs. This Deal</div>
+      <table class="math-table">
+        <thead>
+          <tr>
+            <th class="label-col" style="width:36%;">Item</th>
+            <th style="background:#c0392b; color:#fff; width:32%;">Renting 1BR Sanford</th>
+            <th class="col-b" style="width:32%;">This Deal (Lot 31)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label-col">Monthly payment (yrs 1&ndash;5)</td>
+            <td class="col-a-val">$1,750/mo</td>
+            <td class="col-b-val">$1,325/mo</td>
+          </tr>
+          <tr>
+            <td class="label-col">Monthly payment (yrs 6&ndash;10)</td>
+            <td class="col-a-val">~$1,850/mo <em style="font-size:6pt;">(rent increases)</em></td>
+            <td class="col-b-val">$750/mo <em style="font-size:6pt;">(lot + electric only)</em></td>
+          </tr>
+          <tr>
+            <td class="label-col">Total paid, yrs 1&ndash;5 (60 mo)</td>
+            <td class="col-a-val">$105,000</td>
+            <td class="col-b-val">$79,500</td>
+          </tr>
+          <tr>
+            <td class="label-col">Total paid, yrs 6&ndash;10 (60 mo)</td>
+            <td class="col-a-val">$111,000</td>
+            <td class="col-b-val">$45,000</td>
+          </tr>
+          <tr>
+            <td class="label-col">Own anything at end?</td>
+            <td class="col-a-val">No</td>
+            <td class="col-b-val" style="font-weight:900; color:#1a6b2a;">Yes &mdash; free &amp; clear</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td class="total-label">10-Year Total Cost</td>
+            <td class="total-a">$216,000</td>
+            <td class="total-b">$124,500</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="savings-callout">
+        <div class="save-num">$91,500</div>
+        <div class="save-label">Total 10-year savings vs. renting &mdash; plus you own the home free and clear</div>
+      </div>
+
+      <!-- SCENE BLOCK — MONTH 59 WITH MAKEPEACE PUNCHLINE (WEAPON 3) -->
+      <div class="scene-block">
+        <div class="scene-head">Month 59 &mdash; What That Morning Looks Like</div>
+        <div class="scene-text">&ldquo;You make your last payment on a Tuesday. On Wednesday morning, your housing cost is $750 a month &mdash; lot rent and electricity. That&rsquo;s it. No mortgage. No landlord. No lease renewal. The home is yours, paid in full.&rdquo;</div>
+        <div class="scene-punchline">That morning is what $3,000 down buys. Not square footage. Not appliances. The morning.</div>
+      </div>
+
+      <!-- HOW IT WORKS — WITH BENCIVENGA TITLE LINE (WEAPON 4) -->
+      <div class="section-head">How This Works (Plain English)</div>
+      <ul class="mechanism-list">
+        <li>
+          <span class="mech-icon">&bull;</span>
+          <span class="mech-text"><strong>No bank involved.</strong> The owner holds the note. You pay us directly &mdash; same as rent, but every payment builds toward ownership. You can pay off early anytime with no penalty.</span>
+        </li>
+        <li>
+          <span class="mech-icon">&bull;</span>
+          <span class="mech-text"><strong>Mobile homes convey by Certificate of Title &mdash; not a deed.</strong> Your name on the title, day one. It is yours from the moment you sign.</span>
+        </li>
+        <li>
+          <span class="mech-icon">&bull;</span>
+          <span class="mech-text"><strong>59-month payoff.</strong> Make your payments and the note is done in 59 months. Housing solved &mdash; permanently.</span>
+        </li>
+        <li>
+          <span class="mech-icon">&bull;</span>
+          <span class="mech-text"><strong>Payment stops at month 59.</strong> After that, your only monthly cost is lot rent ($600/mo) + electric (~$150/mo). That is it.</span>
+        </li>
+      </ul>
+
+    </div><!-- /col-left -->
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <!-- LOT 31 -->
+      <div class="section-head">Available Now &mdash; Lot 31</div>
+      <div class="lot-card">
+        <div class="lot-header">
+          <div>
+            <div class="lot-num">Lot 31</div>
+            <div class="lot-price">$36,000 Purchase Price</div>
+          </div>
+          <div class="lot-tag">Premium</div>
+        </div>
+        <div class="lot-features">
+          Dark LVP floors &bull; White shaker cabinets &bull; New appliances &bull; Textured ceilings &bull; Mini-split AC/heat &bull; Renovated bath
+        </div>
+        <div class="lot-numbers">
+          <div class="lot-num-box">
+            <div class="lnb-val" style="color:#c8a84b;">$3,000</div>
+            <div class="lnb-label">Down</div>
+          </div>
+          <div class="lot-num-box">
+            <div class="lnb-val">$575</div>
+            <div class="lnb-label">Note/mo</div>
+          </div>
+          <div class="lot-num-box">
+            <div class="lnb-val" style="font-size:8.5pt;">$1,325</div>
+            <div class="lnb-label">All-In/mo</div>
+          </div>
+          <div class="lot-num-box">
+            <div class="lnb-val">59</div>
+            <div class="lnb-label">Mo. Payoff</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOT 103 -->
+      <div class="section-head">Available Now &mdash; Lot 103</div>
+      <div class="lot-card">
+        <div class="lot-header">
+          <div>
+            <div class="lot-num">Lot 103</div>
+            <div class="lot-price">$40,000 Purchase Price</div>
+          </div>
+          <div class="lot-tag">Premium</div>
+        </div>
+        <div class="lot-features">
+          New LVP hardwood-look floors &bull; White shaker kitchen &bull; Stainless appliances &bull; Mini-split AC/heat &bull; Screened porch &bull; Renovated bath
+        </div>
+        <div class="lot-numbers">
+          <div class="lot-num-box">
+            <div class="lnb-val" style="color:#c8a84b;">$3,500</div>
+            <div class="lnb-label">Down</div>
+          </div>
+          <div class="lot-num-box">
+            <div class="lnb-val">$600</div>
+            <div class="lnb-label">Note/mo</div>
+          </div>
+          <div class="lot-num-box">
+            <div class="lnb-val" style="font-size:8.5pt;">$1,350</div>
+            <div class="lnb-label">All-In/mo</div>
+          </div>
+          <div class="lot-num-box">
+            <div class="lnb-val">59</div>
+            <div class="lnb-label">Mo. Payoff</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUALIFY -->
+      <div class="section-head">Who Qualifies</div>
+      <div class="qualify-box">
+        <div class="q-head">No Bank. No Credit Score Required.</div>
+        <ul>
+          <li>Social Security award letter accepted as income proof</li>
+          <li>Pension, annuity, or fixed income statement accepted</li>
+          <li>ITIN accepted &mdash; SSN not required</li>
+          <li>Passport accepted as photo ID</li>
+          <li>55+ community &mdash; at least one resident must be 55+</li>
+          <li>Move in now &mdash; homes are fully renovated, nothing to fix</li>
+        </ul>
+      </div>
+
+      <!-- SELLER QUOTE -->
+      <div class="seller-quote">
+        &ldquo;I&rsquo;d rather leave $20,000 on the table than have one bad neighbor.&rdquo;
+        <div class="q-attr">&mdash; The Seller &mdash; Park Avenue MHP</div>
+      </div>
+
+      <!-- SOURCES & VERIFICATION (WEAPON 2 — CARLTON) -->
+      <div class="sources-block">
+        <div class="sources-head">Sources &amp; Verification</div>
+        <ol>
+          <li><strong>(1) Zillow.com Q1 2026</strong> &mdash; Sanford, FL 1BR market rent: $1,650&ndash;$1,900/mo</li>
+          <li><strong>(2) FL Statute &sect; 319.21</strong> &mdash; Certificate of Title, mobile home conveyance</li>
+          <li><strong>(3) BusinessRate.com</strong> &mdash; #1 Ranked Sanford MHP, 2026</li>
+          <li><strong>(4) Seller records</strong> &mdash; lot pricing, payment terms, income on file</li>
+        </ol>
+      </div>
+
+      <!-- REFERRAL IN-COLUMN -->
+      <div style="font-size: 7.5pt; color: #555; text-align: center; line-height: 1.5; padding: 4px 0; border-top: 1px solid #e0e0e0; margin-top: 2px;">
+        <em>Know someone who might be right for this?<br>Have them call Jay.</em>
+      </div>
+
+    </div><!-- /col-right -->
+
+  </div><!-- /body-wrap -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <div class="cta-line">Call or Text Jay &mdash; Questions Welcome</div>
+      <div class="cta-number">(407) 000-0000</div>
+      <div class="cta-name">Jay &mdash; Park Avenue MHP</div>
+    </div>
+    <div class="footer-center">
+      <div class="referral-text">&ldquo;Know someone who might be<br>right for this? Have them call Jay.&rdquo;</div>
+    </div>
+    <div class="footer-right">
+      <div class="park-name-footer">Park Avenue MHP</div>
+      <div class="park-info">
+        Sanford, Seminole County, FL<br>
+        Active 55+ Community<br>
+        <span style="color:#c8a84b; font-weight:800;">&#9733; BusinessRate #1 Sanford 2026</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
