@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Park Avenue MHP — Group 2: Clean Out &amp; Move In (Halbert v1)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <style>
+
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 8.5in;
+      min-height: 11in;
+    }
+
+    body {
+      background: #FDFAF4;
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      color: #1A1A1A;
+      font-size: 11pt;
+      line-height: 1.45;
+    }
+
+    /* ─────────────────────────────────────────────
+       HERO BAND — 3-panel photo strip
+    ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 1.35in;
+      display: flex;
+    }
+
+    .hero-panel {
+      flex: 1;
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      position: relative;
+      background-color: #4a3a2a;
+    }
+
+    .hero-panel + .hero-panel {
+      border-left: 2px solid rgba(255,255,255,0.35);
+    }
+
+    .hero-panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(40, 30, 15, 0.30);
+      pointer-events: none;
+    }
+
+    .hero-panel-left   { background-image: url('photos/g2-left.jpg'); }
+    .hero-panel-center { background-image: url('photos/g2-center.jpg'); background-position: center 25%; }
+    .hero-panel-right  { background-image: url('photos/g2-right.jpg'); background-position: center 40%; }
+
+    /* Warm gold top accent strip */
+    .gold-top-strip {
+      width: 100%;
+      height: 6px;
+      background: #C8902A;
+    }
+
+    /* ── Starburst — gold, top-right ── */
+    .starburst-wrap {
+      position: absolute;
+      bottom: -42px;
+      right: 0.32in;
+      z-index: 30;
+      width: 90px;
+      height: 90px;
+    }
+
+    .starburst {
+      width: 90px;
+      height: 90px;
+      background: #C8902A;
+      clip-path: polygon(
+        50% 0%,   56% 20%,  73% 5%,   67% 26%,
+        93% 22%,  78% 40%,  100% 50%, 78% 60%,
+        93% 78%,  67% 74%,  73% 95%,  56% 80%,
+        50% 100%, 44% 80%,  27% 95%,  33% 74%,
+        7%  78%,  22% 60%,  0%  50%,  22% 40%,
+        7%  22%,  33% 26%,  27% 5%,   44% 20%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .starburst-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .starburst-text {
+      color: white;
+      font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 8.5pt;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.15;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-caption {
+      position: absolute;
+      bottom: 8px;
+      left: 0.32in;
+      color: rgba(255,255,255,0.78);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 8pt;
+      letter-spacing: 0.3px;
+      z-index: 10;
+    }
+
+    /* ─────────────────────────────────────────────
+       HEADLINE BLOCK
+    ───────────────────────────────────────────── */
+    .headline-block {
+      padding: 0.13in 1.3in 0.04in 0.38in;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      font-size: 25pt;
+      line-height: 1.1;
+      color: #1A1A1A;
+      margin-bottom: 0.05in;
+      letter-spacing: -0.2px;
+    }
+
+    .subhead {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 11pt;
+      color: #C8902A;
+      letter-spacing: 0.2px;
+      margin-bottom: 0;
+    }
+
+    /* ─────────────────────────────────────────────
+       CONTENT WRAPPER
+    ───────────────────────────────────────────── */
+    .content {
+      padding: 0 0.38in;
+    }
+
+    /* ── Warm rule ── */
+    .gold-rule {
+      border: none;
+      border-top: 1.5pt solid #C8902A;
+      margin: 0.08in 0;
+    }
+
+    /* ─────────────────────────────────────────────
+       BODY COPY — letter-style
+    ───────────────────────────────────────────── */
+    .body-copy p {
+      font-size: 11.5pt;
+      line-height: 1.52;
+      margin-bottom: 0.065in;
+      color: #1A1A1A;
+    }
+
+    .body-copy p.em-line {
+      font-weight: 700;
+      font-size: 12pt;
+      color: #1A1A1A;
+    }
+
+    /* ─────────────────────────────────────────────
+       JOHNSON BOX — gold border, warm feel
+    ───────────────────────────────────────────── */
+    .johnson-box {
+      border: 2pt solid #C8902A;
+      padding: 0.1in 0.18in;
+      margin: 0.08in 0;
+      background: #FFFDF7;
+    }
+
+    .jb-header {
+      font-family: 'Oswald', Impact, sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #1A3A5C;
+      margin-bottom: 0.06in;
+    }
+
+    .jb-check-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .jb-check-list li {
+      font-size: 10.5pt;
+      line-height: 1.42;
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 0.035in;
+    }
+
+    .jb-check-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #C8902A;
+      font-weight: 700;
+    }
+
+    .jb-check-list li.note-55 {
+      font-style: italic;
+      font-size: 9.5pt;
+      color: #555;
+    }
+
+    /* Condition disclosure box */
+    .condition-box {
+      border-left: 3pt solid #B8860B;
+      background: #FFF8E8;
+      padding: 0.09in 0.15in;
+      margin: 0.07in 0;
+    }
+
+    .condition-box-header {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #7A5800;
+      margin-bottom: 0.04in;
+    }
+
+    .condition-box p {
+      font-size: 10pt;
+      line-height: 1.45;
+      color: #4A3A00;
+      margin-bottom: 0.03in;
+    }
+
+    /* ─────────────────────────────────────────────
+       NAPKIN TABLE
+    ───────────────────────────────────────────── */
+    .napkin-wrap {
+      margin: 0.08in 0;
+    }
+
+    .napkin-intro {
+      font-style: italic;
+      font-size: 10pt;
+      color: #555;
+      margin-bottom: 0.04in;
+      text-align: center;
+    }
+
+    .napkin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10pt;
+    }
+
+    .napkin-table thead th {
+      background: #1A3A5C;
+      color: white;
+      padding: 4px 8px;
+      text-align: center;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .napkin-table thead th:first-child {
+      text-align: left;
+      background: #2a2a2a;
+    }
+
+    .napkin-table tbody td {
+      padding: 4px 8px;
+      border-bottom: 1pt solid #DDD8C8;
+    }
+
+    .napkin-table tbody tr:nth-child(even) td {
+      background: #F7F4EC;
+    }
+
+    .col-park { }
+    .col-park-val {
+      text-align: center;
+      font-weight: 700;
+      color: #1A3A5C;
+    }
+    .col-rent-val {
+      text-align: center;
+      color: #8B0000;
+    }
+
+    .napkin-table tfoot td {
+      padding: 5px 8px;
+      font-weight: 700;
+      font-size: 10pt;
+    }
+
+    .col-park-foot {
+      text-align: center;
+      background: #E8F0E8;
+      color: #1A5C1A;
+    }
+
+    .col-rent-foot {
+      text-align: center;
+      background: #F0E8E8;
+      color: #8B0000;
+    }
+
+    /* ─────────────────────────────────────────────
+       LOT CARDS
+    ───────────────────────────────────────────── */
+    .lot-cards {
+      display: flex;
+      gap: 0.18in;
+      margin: 0.1in 0 0.06in;
+    }
+
+    .lot-card {
+      flex: 1;
+      border: 2pt solid #C8902A;
+      padding: 0.1in 0.12in;
+      text-align: center;
+      background: white;
+    }
+
+    .lot-label {
+      font-family: 'Oswald', Impact, sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1A3A5C;
+      margin-bottom: 0.04in;
+    }
+
+    .lot-condition-tag {
+      font-size: 8pt;
+      font-style: italic;
+      color: #8B6800;
+      background: #FFF3CC;
+      border: 1pt solid #D4A017;
+      padding: 2px 6px;
+      display: inline-block;
+      margin-bottom: 0.04in;
+    }
+
+    .card-down-amount {
+      font-family: 'Oswald', Impact, sans-serif;
+      font-size: 28pt;
+      font-weight: 700;
+      color: #1A3A5C;
+      line-height: 1;
+    }
+
+    .card-down-label {
+      font-size: 8.5pt;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.04in;
+    }
+
+    .card-divider {
+      border: none;
+      border-top: 1pt solid #DDD8C8;
+      margin: 0.05in 0;
+    }
+
+    .card-monthly-amount {
+      font-family: 'Oswald', Impact, sans-serif;
+      font-size: 22pt;
+      font-weight: 700;
+      color: #C8902A;
+      line-height: 1;
+    }
+
+    .card-monthly-label {
+      font-size: 8.5pt;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-monthly-note {
+      font-size: 8pt;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .card-price {
+      font-size: 8.5pt;
+      color: #555;
+      margin-top: 0.03in;
+      font-style: italic;
+    }
+
+    /* ─────────────────────────────────────────────
+       TRUST FULL-WIDTH BAR
+    ───────────────────────────────────────────── */
+    .trust-bar {
+      background: #1A3A5C;
+      color: white;
+      padding: 0.08in 0.15in;
+      margin: 0.07in 0 0.05in;
+      font-size: 10pt;
+      line-height: 1.4;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER / CONTACT
+    ───────────────────────────────────────────── */
+    .footer-contact {
+      background: #1A3A5C;
+      color: white;
+      text-align: center;
+      padding: 0.09in 0.38in;
+    }
+
+    .footer-contact .call-line {
+      font-family: 'Oswald', Impact, sans-serif;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    .footer-contact .footer-sub {
+      font-size: 9pt;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.03in;
+    }
+
+    .footer-contact .award-line {
+      font-size: 8.5pt;
+      color: #C8902A;
+      margin-top: 0.02in;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─────────────────────────────────────────────
+       PS BLOCK
+    ───────────────────────────────────────────── */
+    .ps-block {
+      padding: 0.06in 0.38in 0.08in;
+      font-size: 10pt;
+      font-style: italic;
+      color: #333;
+      line-height: 1.45;
+    }
+
+    /* Print safety */
+    @media print {
+      html, body { overflow: hidden; min-height: auto; }
+      .hero, .footer-contact { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- GOLD TOP STRIP -->
+  <div class="gold-top-strip"></div>
+
+  <!-- ═══════════════════════════════════════
+       HERO BAND
+  ═══════════════════════════════════════ -->
+  <div class="hero">
+    <div class="hero-panel hero-panel-left"></div>
+    <div class="hero-panel hero-panel-center"></div>
+    <div class="hero-panel hero-panel-right"></div>
+    <div class="starburst-wrap">
+      <div class="starburst">
+        <div class="starburst-inner">
+          <span class="starburst-text">FROM<br>$750<br>DOWN</span>
+        </div>
+      </div>
+    </div>
+    <span class="hero-caption">Park Avenue Mobile Home Park &mdash; 2545 Park Drive, Sanford FL 32771</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FIVE YEARS URGENCY STRIP
+  ═══════════════════════════════════════ -->
+  <div style="background:#C8902A; color:#FFFFFF; text-align:center; padding:0.055in 0.38in; font-family:'Playfair Display',Georgia,serif; font-weight:700; font-style:italic; font-size:11.5pt; line-height:1.25; letter-spacing:0.2px;">
+    Five years from now you could be five years older &mdash; with nothing to show for it.
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HEADLINE
+  ═══════════════════════════════════════ -->
+  <div class="headline-block">
+    <h1 class="headline">She Was Done Waiting for Perfect.<br>She Just Needed In.</h1>
+    <p class="subhead">Clean out &amp; move in &nbsp;&middot;&nbsp; From $750 down &nbsp;&middot;&nbsp; 55-and-older community &nbsp;&middot;&nbsp; Owner-financed, no bank</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       BODY COPY
+  ═══════════════════════════════════════ -->
+  <div class="content">
+
+    <div class="body-copy">
+      <p>She&rsquo;s been renting the same apartment in Sanford for four years. <strong>$1,750 a month.</strong> The landlord repainted the cabinets once. That&rsquo;s been the highlight.</p>
+
+      <p>She looked at the renovated homes. Beautiful. $3,000–$3,500 down. Not quite there yet. Then she heard about two others in the same park. Not perfect. The prior occupants left things behind. One needs a door hung. One needs a cleanout.</p>
+
+      <p>She&rsquo;d done harder things with less. And the price reflected exactly what they were.</p>
+
+      <p>She drove over. Walked through. Ran the numbers on her phone standing in the kitchen.</p>
+
+      <p class="em-line">The math worked. Even with some elbow grease factored in.</p>
+    </div>
+
+    <!-- NAPKIN TABLE -->
+    <div class="napkin-wrap">
+      <div class="napkin-intro">Here&rsquo;s what she found. I haven&rsquo;t changed a single number.</div>
+      <table class="napkin-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="col-park">Park Avenue<br><span style="font-size:8pt; font-weight:400; letter-spacing:0; text-transform:none; font-family:'Playfair Display',Georgia,serif; font-style:italic;">Owner-Financed</span></th>
+            <th>Renting<br><span style="font-size:8pt; font-weight:400; letter-spacing:0; text-transform:none; font-family:'Playfair Display',Georgia,serif; font-style:italic;">Sanford Area</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly cost (all-in)</td>
+            <td class="col-park-val">$1,075</td>
+            <td class="col-rent-val">$1,650&ndash;$1,900</td>
+          </tr>
+          <tr>
+            <td>What you own at the end</td>
+            <td class="col-park-val">Your home. Free &amp; clear.</td>
+            <td class="col-rent-val">Nothing.</td>
+          </tr>
+          <tr>
+            <td>Credit score required</td>
+            <td class="col-park-val">None</td>
+            <td class="col-rent-val">Usually 620+</td>
+          </tr>
+          <tr>
+            <td>Down payment needed</td>
+            <td class="col-park-val">$750</td>
+            <td class="col-rent-val">First + last + deposit</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>After 59 months&hellip;</td>
+            <td class="col-park-foot">Housing payment: $0</td>
+            <td class="col-rent-foot">Still paying. Forever.</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <hr class="gold-rule">
+
+    <!-- CONDITION DISCLOSURE — honesty is the hook -->
+    <div class="condition-box">
+      <div class="condition-box-header">Honest About What These Are</div>
+      <p>These homes are livable, structurally sound, and priced for what they are today — not what they&rsquo;ll be once you&rsquo;re settled. They need cleanout. One needs a door hung. They do not need permits, contractors, or a construction budget. They need a weekend and someone who doesn&rsquo;t need everything handed to them.</p>
+      <p>That&rsquo;s why the price is lower. That&rsquo;s exactly why you can afford it.</p>
+    </div>
+
+    <!-- JOHNSON BOX -->
+    <div class="johnson-box">
+      <div class="jb-header">Here is what he&rsquo;s offering right now at Park Avenue:</div>
+      <ul class="jb-check-list">
+        <li><strong>No bank. No credit score minimum.</strong> He holds the note himself.</li>
+        <li><strong>Income check only</strong> &mdash; job, Social Security, pension, any steady source covers 2.5x your monthly payment.</li>
+        <li><strong>SS award letter is fine</strong> &mdash; that alone qualifies as income proof.</li>
+        <li><strong>Basic background check:</strong> no violent crimes ever, no evictions in the last 7 years. That&rsquo;s all.</li>
+        <li>ITIN numbers accepted &nbsp;&middot;&nbsp; No Social Security number required &nbsp;&middot;&nbsp; Passport is all the ID you need</li>
+        <li class="note-55">55-and-older community. Limited non-55+ units available &mdash; no children accepted. Ask about availability.</li>
+      </ul>
+    </div>
+
+    <!-- LOT CARDS -->
+    <div class="lot-cards">
+
+      <div class="lot-card">
+        <div class="lot-label">Lot 30</div>
+        <div class="lot-condition-tag">Cleanout + door needed</div>
+        <div class="card-down-amount">$2,000</div>
+        <div class="card-down-label">Down Payment</div>
+        <hr class="card-divider">
+        <div class="card-monthly-amount">$1,175<span style="font-size:12pt;">/mo</span></div>
+        <div class="card-monthly-label">All-In Monthly</div>
+        <div class="card-monthly-note">$425 home payment + $600 lot rent</div>
+        <div class="card-price">Purchase price: $25,000</div>
+      </div>
+
+      <div class="lot-card">
+        <div class="lot-label">Lot 55</div>
+        <div class="lot-condition-tag">Cleanout only</div>
+        <div class="card-down-amount">$750</div>
+        <div class="card-down-label">Down Payment</div>
+        <hr class="card-divider">
+        <div class="card-monthly-amount">$1,075<span style="font-size:12pt;">/mo</span></div>
+        <div class="card-monthly-label">All-In Monthly</div>
+        <div class="card-monthly-note">$325 home payment + $600 lot rent</div>
+        <div class="card-price">Purchase price: $20,000</div>
+      </div>
+
+    </div>
+
+    <!-- SELLER MOTIVATION -->
+    <div style="border-left: 3pt solid #C8902A; padding: 0.07in 0.12in; margin: 0.07in 0; font-size: 10.5pt; font-style: italic; color: #333;">
+      What kind of man finances a home this way? <strong>&ldquo;I&rsquo;d rather leave $20,000 on the table than have one bad neighbor.&rdquo;</strong> That&rsquo;s why he&rsquo;s pricing these at what they are today &mdash; not inflating for the work you&rsquo;ll put in.
+    </div>
+
+    <!-- MONTH 59 CLOSE -->
+    <div class="body-copy" style="margin-top: 0.07in;">
+      <p>Month 59. You wake up and that $325 stays in your account. The month after. And every month after that. You didn&rsquo;t need perfect. You needed in. And now you&rsquo;re out.</p>
+    </div>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      No Pressure. No Obligation. Walk the property. Meet the neighbors. Ask everything. Walk away &mdash; no hard sell, no follow-up guilt.
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- ═══════════════════════════════════════
+       FOOTER / CONTACT
+  ═══════════════════════════════════════ -->
+  <div class="footer-contact">
+    <div class="call-line">Call or Text Jay &nbsp;&bull;&nbsp; (407) 000-0000</div>
+    <div class="footer-sub">Park Avenue Mobile Home Park &nbsp;&middot;&nbsp; 2545 Park Drive, Sanford FL 32771 &nbsp;&middot;&nbsp; 55-and-Older Community</div>
+    <div class="award-line">&#9733; BusinessRate #1 Sanford 2026 &nbsp;&middot;&nbsp; Lot rent $600/mo &mdash; lowest in Seminole County 55+ parks</div>
+  </div>
+
+  <!-- PS -->
+  <div class="ps-block">
+    <strong>P.S.</strong> &mdash; She told me the hardest part wasn&rsquo;t the cleanup. It was realizing she could have done this years ago. The price was always this low. She just hadn&rsquo;t seen it yet. <em>Don&rsquo;t be her.</em>
+  </div>
+
+</body>
+</html>
