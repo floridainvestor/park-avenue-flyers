@@ -3,472 +3,444 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Park Avenue MHP — Flyer Review for Steve Levy</title>
+  <title>Park Avenue MHP — Flyer Arena</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
-      padding: 40px 20px;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0f0f0f;
+      color: #e8e8e8;
+      min-height: 100vh;
     }
-    .header {
-      max-width: 820px;
-      margin: 0 auto 36px;
-      text-align: center;
-    }
-    .header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-    }
-    .header p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.5;
-    }
-    .badge {
-      display: inline-block;
-      background: #0a3d62;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 3px;
-      margin-bottom: 14px;
-    }
-    .instructions {
-      max-width: 820px;
-      margin: 0 auto 32px;
-      background: #fff3cd;
-      border-left: 4px solid #f0a500;
-      padding: 14px 18px;
-      border-radius: 4px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .instructions strong { color: #7a4f00; }
-    .group-header {
-      max-width: 820px;
-      margin: 0 auto 16px;
-      padding: 12px 18px;
-      border-radius: 6px;
+
+    /* ── Top bar ── */
+    .topbar {
+      background: #6B1A1A;
+      padding: 10px 24px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
-    .group-header.g1 { background: #1a3a5c; }
-    .group-header.g2 { background: #5c3a1a; }
-    .group-header h2 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
-    }
-    .group-header .group-meta {
-      font-size: 12px;
-      color: rgba(255,255,255,0.72);
-      margin-top: 2px;
-    }
-    .group-pill {
-      flex-shrink: 0;
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #fff;
-      white-space: nowrap;
-    }
-    .g1 .group-pill { background: #c8902a; }
-    .g2 .group-pill { background: #9a5e1a; }
-    .grid {
-      max-width: 820px;
-      margin: 0 auto 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-      padding: 18px 22px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .card.winner { border: 2px solid #e67e22; box-shadow: 0 4px 16px rgba(230,126,34,0.18); }
-    .card.g2-card { border-left: 4px solid #9a5e1a; }
-    .rank-badge {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 900;
-      color: #fff;
-    }
-    .rank-1 { background: #e67e22; }
-    .rank-2 { background: #2c3e50; }
-    .rank-3 { background: #555; }
-    .rank-4 { background: #888; }
-    .rank-5 { background: #aaa; }
-    .rank-g2 { background: #9a5e1a; font-size: 13px; letter-spacing: 0; }
-    .card-body { flex: 1; }
-    .card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 5px;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .writer-name {
-      font-size: 19px;
-      font-weight: 700;
-      color: #1a1a1a;
-    }
-    .style-tag {
-      font-size: 11px;
-      font-weight: 600;
-      color: #777;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .judge-note {
-      font-size: 13.5px;
-      color: #444;
-      line-height: 1.55;
-      margin-bottom: 12px;
-      font-style: italic;
-      border-left: 3px solid #ddd;
-      padding-left: 10px;
-    }
-    .judge-note.winner-note { border-color: #e67e22; }
-    .score-line {
-      font-size: 12px;
-      font-weight: 700;
-      color: #888;
-      margin-bottom: 10px;
-    }
-    .score-line strong { color: #e67e22; }
-    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
-    .btn {
-      display: inline-block;
-      padding: 8px 18px;
-      border-radius: 5px;
+    .topbar-logo {
       font-size: 13px;
       font-weight: 700;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
-    .btn-orange { background: #e67e22; color: #fff; }
-    .btn-orange:hover { background: #cf6d17; }
-    .btn-brown { background: #9a5e1a; color: #fff; }
-    .btn-brown:hover { background: #7a4a12; }
-    .btn-dark { background: #2c3e50; color: #fff; }
-    .btn-outline { background: #fff; color: #888; border: 2px solid #ccc; }
-    .btn-outline:hover { border-color: #888; color: #333; }
-    .winner-tag {
-      background: #e67e22;
       color: #fff;
-      font-size: 10px;
-      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .topbar-sep { color: rgba(255,255,255,0.3); }
+    .topbar-sub { font-size: 12px; color: rgba(255,255,255,0.65); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 52px 24px 40px;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero h1 span { color: #C8902A; }
+    .hero p {
+      font-size: 16px;
+      color: #aaa;
+      max-width: 560px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .hero-stat {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 14px 24px;
+      text-align: center;
+    }
+    .hero-stat .num {
+      font-size: 22px;
+      font-weight: 800;
+      color: #C8902A;
+    }
+    .hero-stat .lbl {
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin-left: 8px;
+      color: #888;
+      margin-top: 2px;
     }
-    .new-tag {
-      background: #27ae60;
-      color: #fff;
-      font-size: 10px;
+
+    /* ── Group section ── */
+    .group-section {
+      max-width: 1100px;
+      margin: 0 auto 64px;
+      padding: 0 24px;
+    }
+
+    .group-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #222;
+    }
+    .group-badge {
+      font-size: 11px;
       font-weight: 700;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin-left: 8px;
+      padding: 5px 12px;
+      border-radius: 4px;
     }
-    .lots-tag {
-      display: inline-block;
+    .badge-a { background: #C8902A; color: #000; }
+    .badge-b { background: #2D6A4F; color: #fff; }
+    .badge-c { background: #1A3A5C; color: #fff; }
+
+    .group-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .group-subtitle {
+      font-size: 13px;
+      color: #777;
+      margin-top: 3px;
+    }
+    .group-winner-tag {
+      margin-left: auto;
       font-size: 11px;
       font-weight: 600;
-      background: #f0f4f8;
-      border: 1px solid #ccd;
-      color: #445;
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin-bottom: 8px;
+      color: #C8902A;
+      border: 1px solid #C8902A;
+      border-radius: 4px;
+      padding: 4px 10px;
+      white-space: nowrap;
     }
-    .footer {
-      max-width: 820px;
-      margin: 36px auto 0;
+
+    /* ── Flyer grid ── */
+    .flyer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .flyer-card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+    .flyer-card:hover {
+      transform: translateY(-3px);
+      border-color: #C8902A;
+      box-shadow: 0 8px 28px rgba(200,144,42,0.15);
+    }
+    .flyer-card.winner {
+      border-color: #C8902A;
+      box-shadow: 0 0 0 1px #C8902A;
+    }
+
+    .flyer-preview {
+      width: 100%;
+      aspect-ratio: 8.5 / 11;
+      overflow: hidden;
+      position: relative;
+      background: #111;
+    }
+    .flyer-preview iframe {
+      width: 850px;
+      height: 1100px;
+      border: none;
+      transform-origin: top left;
+      pointer-events: none;
+    }
+
+    .flyer-meta {
+      padding: 12px 14px;
+      border-top: 1px solid #222;
+    }
+    .flyer-writer {
+      font-size: 13px;
+      font-weight: 700;
+      color: #e8e8e8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .crown { font-size: 12px; }
+    .flyer-score {
+      font-size: 11px;
+      color: #888;
+      margin-top: 3px;
+    }
+    .score-gold { color: #C8902A; font-weight: 600; }
+
+    /* ── Divider ── */
+    .section-divider {
+      max-width: 1100px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+    }
+    .section-divider hr { border: none; border-top: 1px solid #1e1e1e; }
+
+    /* ── Footer ── */
+    footer {
       text-align: center;
+      padding: 32px 24px;
       font-size: 12px;
-      color: #999;
+      color: #555;
+      border-top: 1px solid #1a1a1a;
+    }
+    footer a { color: #C8902A; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .flyer-grid { grid-template-columns: repeat(2, 1fr); }
+      .group-winner-tag { display: none; }
     }
   </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="badge">Steve Levy — Confidential Review</div>
-  <h1>Park Avenue MHP — Flyer Review</h1>
-  <p>Four ad groups. Five writers per group. Jay Abraham judges every round.<br>
-  Group A control: <strong>Makepeace (83/96)</strong> &nbsp;·&nbsp; Group B legacy control: <strong>Halbert (91/100)</strong></p>
+<div class="topbar">
+  <span class="topbar-logo">Park Avenue MHP</span>
+  <span class="topbar-sep">|</span>
+  <span class="topbar-sub">2545 Park Drive, Sanford FL 32771 &nbsp;·&nbsp; 407-322-2861</span>
 </div>
 
-<div class="instructions">
-  <strong>How to use this page:</strong> Group A = Premium (Lots 16, 31, 103 — fully renovated). Group B = Entry Ready (Lots 9, 14). Group C = Clean Out (Lots 30, 55). Each group has 5 writers competing — Jay Abraham judges. Click any flyer to open full-size. Let Jay know your feedback.
+<div class="hero">
+  <h1>Copywriting Arena<br><span>All Groups — All Writers</span></h1>
+  <p>5 writers. 3 groups. Each one tried to get a tired 65-year-old to pick up the phone. See who came closest.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">15</div><div class="lbl">Flyers</div></div>
+    <div class="hero-stat"><div class="num">5</div><div class="lbl">Writers</div></div>
+    <div class="hero-stat"><div class="num">3</div><div class="lbl">Groups</div></div>
+    <div class="hero-stat"><div class="num">$600<span style="font-size:14px">/mo</span></div><div class="lbl">Lowest in Seminole Co.</div></div>
+  </div>
 </div>
 
-<!-- ══════════════════════
-     GROUP A — Premium
-══════════════════════ -->
-<div class="group-header" style="background:#0a3d62; color:#fff;">
-  <div>
-    <h2 style="color:#fff;">Group A — Premium</h2>
-    <div class="group-meta" style="color:#b8cfe0;">Lots 16, 31, 103 &nbsp;·&nbsp; Fully renovated &nbsp;·&nbsp; From $3,000 down &nbsp;·&nbsp; $1,325–$1,350/mo all-in &nbsp;·&nbsp; Move in this week</div>
+<!-- ════════════════════════════════════════
+     GROUP A — PREMIER
+═════════════════════════════════════════ -->
+<div class="group-section">
+  <div class="group-header">
+    <span class="group-badge badge-a">Group A</span>
+    <div>
+      <div class="group-title">Premier</div>
+      <div class="group-subtitle">3 units &nbsp;·&nbsp; $36K–$46K &nbsp;·&nbsp; $1,325–$1,450/mo all-in</div>
+    </div>
+    <span class="group-winner-tag">🏆 Halbert wins</span>
   </div>
-  <div class="group-pill" style="background:rgba(255,255,255,0.15); color:#fff;">Synthesis Round — 5 Writers</div>
+
+  <div class="flyer-grid">
+    <a class="flyer-card winner" href="gA-halbert.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gA-halbert.html" scrolling="no" title="Halbert — Group A"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer"><span class="crown">👑</span> Halbert</div>
+        <div class="flyer-score"><span class="score-gold">Winner</span></div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gA-carlton.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gA-carlton.html" scrolling="no" title="Carlton — Group A"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Carlton</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gA-makepeace.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gA-makepeace.html" scrolling="no" title="Makepeace — Group A"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Makepeace</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gA-bencivenga.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gA-bencivenga.html" scrolling="no" title="Bencivenga — Group A"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Bencivenga</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gA-hormozi.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gA-hormozi.html" scrolling="no" title="Hormozi — Group A"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Hormozi</div>
+      </div>
+    </a>
+  </div>
 </div>
 
-<div class="grid">
+<div class="section-divider"><hr></div>
 
-  <!-- MAKEPEACE — GROUP A CONTROL -->
-  <div class="card winner">
-    <div class="rank-badge rank-1">1</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Makepeace <span class="winner-tag">Group A Control</span></span>
-        <span class="style-tag">Emotional Arc · Johnson Box Reveal</span>
-      </div>
-      <div class="lots-tag">Lot 16 ($3,500 down) + Lot 31 ($3,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>83/96</strong> (synthesis round)</div>
-      <div class="judge-note winner-note">"She was not reckless. She was not irresponsible." — Deepest preeminence in the arena. Bank grief arc + Johnson Box reveal + Month 59 punchline: "That morning is what $3,000 down buys. Not square footage. Not appliances. The morning." Only entry with two distinct referral personas: peer referral + adult-child angle.</div>
-      <div class="btn-row">
-        <a href="gA-makepeace.html" target="_blank" class="btn btn-orange">View Control Flyer →</a>
-      </div>
+<!-- ════════════════════════════════════════
+     GROUP B — VALUE
+═════════════════════════════════════════ -->
+<div class="group-section">
+  <div class="group-header">
+    <span class="group-badge badge-b">Group B</span>
+    <div>
+      <div class="group-title">Value</div>
+      <div class="group-subtitle">2 units &nbsp;·&nbsp; $24K–$25K &nbsp;·&nbsp; $1,125–$1,175/mo all-in</div>
     </div>
+    <span class="group-winner-tag">🏆 Halbert 53/60</span>
   </div>
 
-  <!-- HALBERT — GROUP A #2 -->
-  <div class="card">
-    <div class="rank-badge rank-2">2</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Halbert</span>
-        <span class="style-tag">Story Letter · "Don't Be Her" P.S.</span>
+  <div class="flyer-grid">
+    <a class="flyer-card winner" href="gB-halbert.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gB-halbert.html" scrolling="no" title="Halbert — Group B"></iframe>
       </div>
-      <div class="lots-tag">Lot 16 ($3,500 down) + Lot 31 ($3,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>80/96</strong></div>
-      <div class="judge-note">Strongest narrative trust arc + best barrier-removal grid (names what is NOT checked). Margaret-banker dialogue is the emotional engine. 10-year napkin math in courier style. "Don't be her" P.S. closes with regret, not scarcity.</div>
-      <div class="btn-row">
-        <a href="gA-halbert.html" target="_blank" class="btn btn-dark">View Flyer →</a>
+      <div class="flyer-meta">
+        <div class="flyer-writer"><span class="crown">👑</span> Halbert</div>
+        <div class="flyer-score"><span class="score-gold">53/60</span></div>
       </div>
-    </div>
+    </a>
+    <a class="flyer-card" href="gB-makepeace.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gB-makepeace.html" scrolling="no" title="Makepeace — Group B"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Makepeace</div>
+        <div class="flyer-score">51/60</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gB-carlton.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gB-carlton.html" scrolling="no" title="Carlton — Group B"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Carlton</div>
+        <div class="flyer-score">48/60</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gB-bencivenga.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gB-bencivenga.html" scrolling="no" title="Bencivenga — Group B"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Bencivenga</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gB-hormozi.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gB-hormozi.html" scrolling="no" title="Hormozi — Group B"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Hormozi</div>
+      </div>
+    </a>
   </div>
-
-  <!-- CARLTON — GROUP A #3 -->
-  <div class="card">
-    <div class="rank-badge rank-3">3</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Carlton</span>
-        <span class="style-tag">Skeptic Disarm · 4-Source Proof</span>
-      </div>
-      <div class="lots-tag">Lot 16 ($3,500 down) + Lot 31 ($3,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>75/96</strong></div>
-      <div class="judge-note">"Yes, I Know This Sounds Like Every Other 'No-Credit-Needed' Ad." Best skepticism-first headline. Most rigorous citation block — 4 numbered sources including FL Statute §319.21. "Math Doesn't Lie — 10 Years Out" table extended past month 59.</div>
-      <div class="btn-row">
-        <a href="gA-carlton.html" target="_blank" class="btn btn-dark">View Flyer →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HORMOZI — GROUP A #4 -->
-  <div class="card">
-    <div class="rank-badge rank-4">4</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Hormozi</span>
-        <span class="style-tag">Outcome First · Math Dominant</span>
-      </div>
-      <div class="lots-tag">Lot 16 ($3,500 down) + Lot 31 ($3,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>72/96</strong></div>
-      <div class="judge-note">Best guarantee placement — above the body copy, gold-bordered, first thing the reader sees. $90K+ savings callout. Double referral placement. "In 59 months, your housing payment disappears. Not temporarily. Permanently."</div>
-      <div class="btn-row">
-        <a href="gA-hormozi.html" target="_blank" class="btn btn-dark">View Flyer →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- BENCIVENGA — GROUP A #5 -->
-  <div class="card">
-    <div class="rank-badge rank-5">5</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Bencivenga</span>
-        <span class="style-tag">Credentialed · Dual-Sourced</span>
-      </div>
-      <div class="lots-tag">Lot 16 ($3,500 down) + Lot 31 ($3,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>72/96</strong></div>
-      <div class="judge-note">Most analytically rigorous proof architecture — every claim dual-sourced (Zillow + Seminole County PAO). "Why Would a Seller Accept Less Than Market Price?" curiosity headline. Best certificate-of-title mechanism explanation. Ideal leave-behind for warmed prospects.</div>
-      <div class="btn-row">
-        <a href="gA-bencivenga.html" target="_blank" class="btn btn-dark">View Flyer →</a>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /group A grid -->
-
-
-<!-- ══════════════════════
-     GROUP 1 — Ready to Go
-══════════════════════ -->
-<div class="group-header g1">
-  <div>
-    <h2>Group 1 — Ready to Go</h2>
-    <div class="group-meta">Lots 9, 14, 16, 31, 103 &nbsp;·&nbsp; Move-in ready or near-ready &nbsp;·&nbsp; From $1,000 down &nbsp;·&nbsp; $1,100–$1,350/mo all-in</div>
-  </div>
-  <div class="group-pill">5-Writer Arena</div>
 </div>
 
-<div class="grid">
+<div class="section-divider"><hr></div>
 
-  <!-- HALBERT — Winner -->
-  <div class="card winner">
-    <div class="rank-badge rank-1">1</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Halbert <span class="winner-tag">Round 5 Champion</span></span>
-        <span class="style-tag">Story Letter · Warm &amp; Personal</span>
-      </div>
-      <div class="lots-tag">Lot 14 ($2,000 down) + Lot 9 ($1,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>91/100</strong></div>
-      <div class="judge-note winner-note">"Don't be her." P.S. (urgency through regret, not scarcity) + bank rejection woven into character dialogue. "She thanked him and drove home. Twice." — the bank as villain without calling it a villain. Month 59 as a scene, not a stat.</div>
-      <div class="btn-row">
-        <a href="halbert.html" target="_blank" class="btn btn-orange">View Flyer →</a>
-      </div>
+<!-- ════════════════════════════════════════
+     GROUP C — STARTER (billboard reset)
+═════════════════════════════════════════ -->
+<div class="group-section">
+  <div class="group-header">
+    <span class="group-badge badge-c">Group C</span>
+    <div>
+      <div class="group-title">Starter</div>
+      <div class="group-subtitle">4 units &nbsp;·&nbsp; $875 down &nbsp;·&nbsp; $1,075–$1,150/mo all-in &nbsp;·&nbsp; Billboard format</div>
     </div>
+    <span class="group-winner-tag">🏆 Carlton 51/60</span>
   </div>
 
-  <!-- MAKEPEACE -->
-  <div class="card">
-    <div class="rank-badge rank-2">2</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Makepeace</span>
-        <span class="style-tag">Emotional Narrative · Character Arc</span>
+  <div class="flyer-grid">
+    <a class="flyer-card winner" href="gC-carlton.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gC-carlton.html" scrolling="no" title="Carlton — Group C"></iframe>
       </div>
-      <div class="lots-tag">Lot 14 ($2,000 down) + Lot 9 ($1,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>84/100</strong></div>
-      <div class="judge-note">"The third did not call back. She sat with the phone in her hand for a long moment. Then she put it down." Best 3 sentences in 5 rounds. Full emotional arc — grief to resolution.</div>
-      <div class="btn-row">
-        <a href="makepeace.html" target="_blank" class="btn btn-dark">View Flyer →</a>
+      <div class="flyer-meta">
+        <div class="flyer-writer"><span class="crown">👑</span> Carlton</div>
+        <div class="flyer-score"><span class="score-gold">51/60</span></div>
       </div>
-    </div>
+    </a>
+    <a class="flyer-card" href="gC-halbert.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gC-halbert.html" scrolling="no" title="Halbert — Group C"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Halbert</div>
+        <div class="flyer-score">50/60</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gC-hormozi.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gC-hormozi.html" scrolling="no" title="Hormozi — Group C"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Hormozi</div>
+        <div class="flyer-score">50/60</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gC-makepeace.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gC-makepeace.html" scrolling="no" title="Makepeace — Group C"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Makepeace</div>
+        <div class="flyer-score">48/60</div>
+      </div>
+    </a>
+    <a class="flyer-card" href="gC-bencivenga.html" target="_blank">
+      <div class="flyer-preview">
+        <iframe src="gC-bencivenga.html" scrolling="no" title="Bencivenga — Group C"></iframe>
+      </div>
+      <div class="flyer-meta">
+        <div class="flyer-writer">Bencivenga</div>
+        <div class="flyer-score">46/60</div>
+      </div>
+    </a>
   </div>
-
-  <!-- HORMOZI -->
-  <div class="card">
-    <div class="rank-badge rank-3">3</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Hormozi</span>
-        <span class="style-tag">Data-Dominant · Math First</span>
-      </div>
-      <div class="lots-tag">Lot 14 ($2,000 down) + Lot 9 ($1,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>80/100</strong></div>
-      <div class="judge-note">Best proof bar — Zillow Q1 2026 cited. Strongest bank math comparison. "Maria paid $127,400 to landlords over 6 years. Not one dollar bought her equity. That ends today." Strongest credibility package in the arena.</div>
-      <div class="btn-row">
-        <a href="hormozi.html" target="_blank" class="btn btn-dark">View Flyer →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARLTON -->
-  <div class="card">
-    <div class="rank-badge rank-4">4</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Carlton</span>
-        <span class="style-tag">Skeptic Disarm · Proof-First</span>
-      </div>
-      <div class="lots-tag">Lot 14 ($2,000 down) + Lot 9 ($1,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>78/100</strong></div>
-      <div class="judge-note">Best headline for cold skeptical prospect. "The Gap Between 'I Can't Afford to Own' and 'I Own My Home' Is $2,000." Proof cite block with orange border. Math table labeled "THE MATH DOESN'T LIE."</div>
-      <div class="btn-row">
-        <a href="carlton.html" target="_blank" class="btn btn-dark">View Flyer →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- BENCIVENGA -->
-  <div class="card">
-    <div class="rank-badge rank-5">5</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Bencivenga</span>
-        <span class="style-tag">Credentialed · Proof-Dense</span>
-      </div>
-      <div class="lots-tag">Lot 14 ($2,000 down) + Lot 9 ($1,000 down)</div>
-      <div class="score-line">Jay Abraham score: <strong>75/100</strong></div>
-      <div class="judge-note">Most credentialed. Dual-sourced citations (Zillow + MHVillage). Rosa M., 63 as testimonial proxy. Best leave-behind for warmed prospects. Density risk for cold distribution.</div>
-      <div class="btn-row">
-        <a href="bencivenga.html" target="_blank" class="btn btn-dark">View Flyer →</a>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /group 1 grid -->
-
-
-<!-- ══════════════════════
-     GROUP 2 — Clean Out & Move In
-══════════════════════ -->
-<div class="group-header g2">
-  <div>
-    <h2>Group 2 — Clean Out &amp; Move In</h2>
-    <div class="group-meta">Lots 30, 55, 80, 7, 94, 90 &nbsp;·&nbsp; Livable, needs work &nbsp;·&nbsp; From $750 down &nbsp;·&nbsp; $1,075–$1,200/mo all-in</div>
-  </div>
-  <div class="group-pill">Halbert V1</div>
 </div>
 
-<div class="grid">
+<footer>
+  Park Avenue Mobile Home Park &nbsp;·&nbsp; 2545 Park Drive, Sanford FL 32771<br>
+  <a href="tel:4073222861">407-322-2861</a> (English) &nbsp;·&nbsp; <a href="tel:9043357767">904-335-7767</a> Sandra (Español)<br><br>
+  <span style="color:#444">Weekday showings Mon–Fri &nbsp;·&nbsp; 55+ community &nbsp;·&nbsp; No bank required</span>
+</footer>
 
-  <div class="card g2-card">
-    <div class="rank-badge rank-g2">G2</div>
-    <div class="card-body">
-      <div class="card-top">
-        <span class="writer-name">Halbert — Group 2 Adaptation <span class="new-tag">NEW</span></span>
-        <span class="style-tag">Honest Framing · Low Barrier</span>
-      </div>
-      <div class="lots-tag">Lot 30 ($2,000 down) + Lot 55 ($750 down)</div>
-      <div class="judge-note" style="border-color:#9a5e1a;">"She Was Done Waiting for Perfect. She Just Needed In." Honest condition disclosure built into the copy as the reason the price works. Lowest barrier in the portfolio — $750 down. Month 59 close adapted for the handy buyer.</div>
-      <div class="btn-row">
-        <a href="group2-halbert.html" target="_blank" class="btn btn-brown">View Flyer →</a>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /group 2 grid -->
-
-
-<div class="footer">
-  <p>Park Avenue Mobile Home Park &nbsp;·&nbsp; 2545 Park Drive, Sanford FL 32771 &nbsp;·&nbsp; 55-and-Older Community</p>
-  <p style="margin-top:6px;">Prepared by Jay &nbsp;·&nbsp; floridainvestor.github.io/park-avenue-flyers</p>
-</div>
+<script>
+  // Scale iframes to fit preview containers
+  document.querySelectorAll('.flyer-preview').forEach(function(preview) {
+    var iframe = preview.querySelector('iframe');
+    if (!iframe) return;
+    function scale() {
+      var w = preview.clientWidth;
+      var s = w / 850;
+      iframe.style.transform = 'scale(' + s + ')';
+      preview.style.height = (1100 * s) + 'px';
+    }
+    scale();
+    window.addEventListener('resize', scale);
+  });
+</script>
 
 </body>
 </html>

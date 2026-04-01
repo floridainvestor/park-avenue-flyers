@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Park Avenue MHP — Group C Flyer (Carlton v3)</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 8.5in 11in;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 8.5in;
+    height: 11in;
+    background: #FFFFFF;
+    color: #111111;
+    font-family: 'Roboto', Arial, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 1. HERO PHOTO */
+  .hero-photo {
+    width: 100%;
+    height: 3.8in;
+    overflow: hidden;
+    background: #222;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 2. HEADLINE */
+  .headline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 52pt;
+    line-height: 1.0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #111111;
+    padding: 0.12in 0.3in 0;
+    letter-spacing: -1px;
+  }
+
+  /* 3. THREE HERO NUMBERS */
+  .hero-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4in;
+    padding: 0.08in 0.3in 0.06in;
+  }
+
+  .hero-number {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 36pt;
+    text-align: center;
+    color: #C41230;
+    line-height: 1.1;
+  }
+
+  .hero-number .label {
+    font-size: 13pt;
+    color: #111111;
+    display: block;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* 4. STORY PARAGRAPH */
+  .story {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.45;
+    text-align: center;
+    padding: 0.04in 0.5in 0.06in;
+    color: #111111;
+  }
+
+  /* 5. COMPARISON STRIP */
+  .comparison {
+    display: flex;
+    margin: 0 0.3in;
+    border-top: 3px solid #111111;
+    border-bottom: 3px solid #111111;
+  }
+
+  .comparison .col {
+    flex: 1;
+    padding: 0.08in 0.15in;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .comparison .col:first-child {
+    border-right: 2px solid #111111;
+  }
+
+  .comparison .col strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13pt;
+    display: block;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+
+  .comparison .col .red {
+    color: #C41230;
+    font-weight: 700;
+  }
+
+  /* 6. LOT CARDS */
+  .lot-cards {
+    display: flex;
+    gap: 0.1in;
+    padding: 0.08in 0.3in 0.06in;
+    justify-content: center;
+  }
+
+  .lot-card {
+    flex: 1;
+    border: 2px solid #111111;
+    padding: 0.06in 0.08in;
+    text-align: center;
+    max-width: 1.8in;
+  }
+
+  .lot-card .lot-num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 16pt;
+    background: #111111;
+    color: #FFFFFF;
+    padding: 2px 0;
+    margin: 0 -0.08in;
+    margin-top: -0.06in;
+  }
+
+  .lot-card .down {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 18pt;
+    color: #C41230;
+    margin-top: 0.04in;
+    line-height: 1.1;
+  }
+
+  .lot-card .monthly {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 11pt;
+    margin-top: 1px;
+  }
+
+  .lot-card .fixup {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8.5pt;
+    color: #555;
+    margin-top: 3px;
+    line-height: 1.2;
+  }
+
+  /* 7. PHONE NUMBER */
+  .phone-block {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.05in 0;
+  }
+
+  .phone-main {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 56pt;
+    color: #C41230;
+    letter-spacing: 2px;
+    line-height: 1.0;
+  }
+
+  .phone-cta {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 18pt;
+    text-transform: uppercase;
+    color: #111111;
+    letter-spacing: 3px;
+  }
+
+  /* 8. SPANISH LINE */
+  .spanish {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11pt;
+    text-align: center;
+    padding: 0 0 0.04in;
+    color: #111111;
+  }
+
+  /* 9. FOOTER */
+  .footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 7.5pt;
+    text-align: center;
+    color: #888;
+    padding: 0 0.3in 0.12in;
+    line-height: 1.3;
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. HERO PHOTO -->
+<div class="hero-photo">
+  <img src="photos/gC-left.jpg" alt="Park Avenue Mobile Home Park — shaded lot under massive live oak">
+</div>
+
+<!-- 2. HEADLINE -->
+<div class="headline">Looks Like '74. Priced Like It.</div>
+
+<!-- 3. THREE HERO NUMBERS -->
+<div class="hero-numbers">
+  <div class="hero-number">$875<span class="label">Down</span></div>
+  <div class="hero-number">$1,075<span class="label">/Month All-In</span></div>
+  <div class="hero-number">No Bank<span class="label">No Credit Check</span></div>
+</div>
+
+<!-- 4. STORY PARAGRAPH -->
+<div class="story">
+  These homes sat empty. The yards grew over. The price dropped to match. You bring a weekend, a few hundred bucks in paint, and your Social Security letter &mdash; and you move in with no bank, no credit check, and the lowest lot rent in Seminole County.
+</div>
+
+<!-- 5. COMPARISON STRIP -->
+<div class="comparison">
+  <div class="col">
+    <strong>Renting Now?</strong>
+    You pay ~$1,000/mo.<br>At the end, you own <span class="red">nothing</span>.
+  </div>
+  <div class="col">
+    <strong>Here?</strong>
+    You pay $1,075/mo.<br>In under 5 years, <span class="red">it's yours</span>.
+  </div>
+</div>
+
+<!-- 6. LOT CARDS -->
+<div class="lot-cards">
+  <div class="lot-card">
+    <div class="lot-num">LOT 55</div>
+    <div class="down">$875 Down</div>
+    <div class="monthly">$1,075/mo all-in</div>
+    <div class="fixup">Fix-up: ~$300 + 1 weekend</div>
+  </div>
+  <div class="lot-card">
+    <div class="lot-num">LOT 90</div>
+    <div class="down">$1,250 Down</div>
+    <div class="monthly">$1,100/mo all-in</div>
+    <div class="fixup">Fix-up: ~$500 + 1 weekend</div>
+  </div>
+  <div class="lot-card">
+    <div class="lot-num">LOT 94</div>
+    <div class="down">$1,500 Down</div>
+    <div class="monthly">$1,125/mo all-in</div>
+    <div class="fixup">Fix-up: ~$600 + 1 weekend</div>
+  </div>
+  <div class="lot-card">
+    <div class="lot-num">LOT 7</div>
+    <div class="down">$1,500 Down</div>
+    <div class="monthly">$1,150/mo all-in</div>
+    <div class="fixup">Fix-up: ~$800 + 1 weekend</div>
+  </div>
+</div>
+
+<!-- 7. PHONE NUMBER -->
+<div class="phone-block">
+  <div class="phone-cta">Call Jay. Pick Your Lot.</div>
+  <div class="phone-main">407-322-2861</div>
+</div>
+
+<!-- 8. SPANISH LINE -->
+<div class="spanish">&iquest;Habla espa&ntilde;ol? Llame a Sandra: 904-335-7767</div>
+
+<!-- 9. FOOTER -->
+<div class="footer">55+ community &bull; Weekday showings Mon&ndash;Fri &bull; Income verified via Social Security award letter &bull; 2545 Park Drive, Sanford FL 32771</div>
+
+<!-- FB_AD: These homes look like 1974. So does the price. $875 down, $1,075/mo all-in, no bank needed. You bring a weekend and a paint roller — we hand you the keys to a mobile home in a quiet 55+ park in Sanford. 4 lots open right now. They won't last. Call Jay: 407-322-2861. -->
+
+</body>
+</html>

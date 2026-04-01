@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Park Avenue MHP — Group C Billboard (Halbert V3)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 8.5in;
+      height: 11in;
+      background: #FDFAF4;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Lato', Arial, sans-serif;
+      color: #2A2A2A;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ═══════════════════════════════════════════
+       1. HERO PHOTO — full width, ~40% of page
+    ═══════════════════════════════════════════ */
+    .hero-photo {
+      width: 100%;
+      height: 4.2in;
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ═══════════════════════════════════════════
+       2. HEADLINE — massive, below the photo
+    ═══════════════════════════════════════════ */
+    .headline {
+      text-align: center;
+      padding: 14px 20px 6px;
+    }
+
+    .headline h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 48pt;
+      color: #6B1A1A;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    /* ═══════════════════════════════════════════
+       3. THREE HERO NUMBERS — side by side
+    ═══════════════════════════════════════════ */
+    .hero-numbers {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      padding: 8px 0 10px;
+    }
+
+    .hero-num {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 32pt;
+      color: #6B1A1A;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-num.gold {
+      color: #C8902A;
+    }
+
+    .hero-sep {
+      font-size: 28pt;
+      color: #C8902A;
+      font-weight: 300;
+    }
+
+    /* ═══════════════════════════════════════════
+       4. STORY PARAGRAPH — 4 sentences max
+    ═══════════════════════════════════════════ */
+    .story {
+      text-align: center;
+      padding: 0 40px 8px;
+    }
+
+    .story p {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 12.5pt;
+      color: #444;
+      line-height: 1.45;
+    }
+
+    /* ═══════════════════════════════════════════
+       5. COMPARISON STRIP
+    ═══════════════════════════════════════════ */
+    .compare-strip {
+      background: #6B1A1A;
+      color: #FDFAF4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 10px 20px;
+    }
+
+    .compare-side {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.4;
+    }
+
+    .compare-side .label {
+      font-weight: 700;
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 2px;
+    }
+
+    .compare-side.rent .label { color: #e8a0a0; }
+    .compare-side.own .label { color: #C8902A; }
+
+    .compare-vs {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 13pt;
+      color: #C8902A;
+    }
+
+    /* ═══════════════════════════════════════════
+       6. LOT CARDS — one row of 4
+    ═══════════════════════════════════════════ */
+    .lot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 6px;
+      padding: 10px 16px 6px;
+    }
+
+    .lot-card {
+      border: 2px solid #6B1A1A;
+      border-radius: 6px;
+      padding: 7px 4px 6px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .lot-card .lot-num {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 13pt;
+      color: #6B1A1A;
+      line-height: 1;
+    }
+
+    .lot-card .lot-down {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 16pt;
+      color: #C8902A;
+      line-height: 1.3;
+    }
+
+    .lot-card .lot-monthly {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: #6B1A1A;
+      line-height: 1.3;
+    }
+
+    .lot-card .lot-sweat {
+      font-family: 'Lato', sans-serif;
+      font-size: 7.5pt;
+      color: #666;
+      margin-top: 2px;
+      line-height: 1.2;
+    }
+
+    /* ═══════════════════════════════════════════
+       7. PHONE BLOCK — massive, bottom of page
+    ═══════════════════════════════════════════ */
+    .phone-block {
+      background: #6B1A1A;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0 6px;
+      min-height: 1.6in;
+    }
+
+    .phone-main {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 48pt;
+      color: #FDFAF4;
+      letter-spacing: 3px;
+      line-height: 1.1;
+    }
+
+    .phone-main a {
+      color: #FDFAF4;
+      text-decoration: none;
+    }
+
+    .phone-cta {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 14pt;
+      color: #C8902A;
+      margin-bottom: 4px;
+    }
+
+    .phone-spanish {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 14pt;
+      color: #C8902A;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .phone-spanish a {
+      color: #C8902A;
+      text-decoration: none;
+    }
+
+    .footer-micro {
+      font-family: 'Lato', sans-serif;
+      font-size: 7pt;
+      color: rgba(253,250,244,0.55);
+      margin-top: 6px;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    /* ═══════════════════════════════════════════
+       PRINT
+    ═══════════════════════════════════════════ */
+    @media print {
+      html, body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      a { color: inherit !important; text-decoration: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 1. HERO PHOTO -->
+  <div class="hero-photo">
+    <img src="photos/gC-left.jpg" alt="Massive live oak over a mobile home lot — Park Avenue MHP, Sanford FL">
+  </div>
+
+  <!-- 2. HEADLINE -->
+  <div class="headline">
+    <h1>That Mess Is Why It's $875.</h1>
+  </div>
+
+  <!-- 3. THREE HERO NUMBERS -->
+  <div class="hero-numbers">
+    <span class="hero-num gold">$875 DOWN</span>
+    <span class="hero-sep">/</span>
+    <span class="hero-num">$1,075/MO</span>
+    <span class="hero-sep">/</span>
+    <span class="hero-num gold">NO BANK</span>
+  </div>
+
+  <!-- 4. STORY PARAGRAPH -->
+  <div class="story">
+    <p>The debris on that porch is the reason the number says $875 instead of $8,750. A can of paint, a rake, and one Saturday afternoon&mdash;that&rsquo;s the gap between &ldquo;needs work&rdquo; and &ldquo;home.&rdquo; No bank. No credit check. Just your Social Security letter and a phone call.</p>
+  </div>
+
+  <!-- 5. COMPARISON STRIP -->
+  <div class="compare-strip">
+    <div class="compare-side rent">
+      <div class="label">Renting Right Now?</div>
+      $1,000/mo and you own<br>nothing at the end.
+    </div>
+    <div class="compare-vs">vs.</div>
+    <div class="compare-side own">
+      <div class="label">Park Avenue</div>
+      $1,075/mo and it&rsquo;s yours<br>in under 5 years.
+    </div>
+  </div>
+
+  <!-- 6. LOT CARDS -->
+  <div class="lot-grid">
+    <div class="lot-card">
+      <div class="lot-num">LOT 55</div>
+      <div class="lot-down">$875</div>
+      <div class="lot-monthly">$1,075/mo all-in</div>
+      <div class="lot-sweat">Fix-up: ~$300 + 1 weekend</div>
+    </div>
+    <div class="lot-card">
+      <div class="lot-num">LOT 90</div>
+      <div class="lot-down">$1,250</div>
+      <div class="lot-monthly">$1,100/mo all-in</div>
+      <div class="lot-sweat">Fix-up: ~$500 + 1 weekend</div>
+    </div>
+    <div class="lot-card">
+      <div class="lot-num">LOT 94</div>
+      <div class="lot-down">$1,500</div>
+      <div class="lot-monthly">$1,125/mo all-in</div>
+      <div class="lot-sweat">Fix-up: ~$600 + 1 weekend</div>
+    </div>
+    <div class="lot-card">
+      <div class="lot-num">LOT 7</div>
+      <div class="lot-down">$1,500</div>
+      <div class="lot-monthly">$1,150/mo all-in</div>
+      <div class="lot-sweat">Fix-up: ~$800 + 1 weekend</div>
+    </div>
+  </div>
+
+  <!-- 7. PHONE BLOCK -->
+  <div class="phone-block">
+    <div class="phone-cta">Call Jay. Weekdays only.</div>
+    <div class="phone-main"><a href="tel:4073222861">407-322-2861</a></div>
+    <div class="phone-spanish">&iquest;Habla espa&ntilde;ol? Llame a Sandra: <a href="tel:9043357767">904-335-7767</a></div>
+    <div class="footer-micro">55+ community &middot; Park Avenue Mobile Home Park &middot; 2545 Park Drive, Sanford FL 32771 &middot; Weekday showings Mon&ndash;Fri &middot; Income verification required.</div>
+  </div>
+
+</div>
+</body>
+</html>
+
+<!-- FB_AD:
+That overgrown yard and the junk on the porch — that's the reason it says $875 down instead of $8,750. Four mobile homes in a quiet 55+ park in Sanford, FL. No bank, no credit check — just your Social Security letter and one weekend with a rake and a can of paint. Donna looked at one of these lots in August, told herself she'd think about it. It was gone in 9 days. She's renting a room now. Don't be Donna. Call Jay: 407-322-2861 (en español: Sandra 904-335-7767).
+-->

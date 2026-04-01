@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Park Avenue MHP — Group B: Entry Ready (Hormozi Championship)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #0A0A0A;
+      --orange:   #FF6B00;
+      --white:    #FFFFFF;
+      --green:    #1DB954;
+      --offwhite: #F7F7F5;
+      --gray:     #CCCCCC;
+      --darkgray: #555555;
+    }
+
+    html, body {
+      width: 8.5in;
+      min-height: 11in;
+      background: var(--white);
+      font-family: 'Inter', 'Arial', Helvetica, sans-serif;
+      color: var(--black);
+      font-size: 10pt;
+      line-height: 1.35;
+    }
+
+    /* ─────────────────────────────────────────────
+       HEADER BAR
+    ───────────────────────────────────────────── */
+    .header-bar {
+      background: var(--black);
+      padding: 0.08in 0.35in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .park-name {
+      font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 14pt;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .park-address {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 8pt;
+      color: var(--orange);
+      letter-spacing: 0.5px;
+    }
+
+    /* ─────────────────────────────────────────────
+       HERO BAND
+    ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 1.0in;
+      display: flex;
+    }
+
+    .hero-panel {
+      flex: 1;
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      background-color: #2a2a2a;
+    }
+
+    .hero-panel + .hero-panel {
+      border-left: 3px solid var(--orange);
+    }
+
+    /* ── Starburst ── */
+    .starburst-wrap {
+      position: absolute;
+      top: -8px;
+      right: 0.3in;
+      z-index: 30;
+      width: 100px;
+      height: 100px;
+    }
+
+    .starburst {
+      width: 100px;
+      height: 100px;
+      background: var(--orange);
+      clip-path: polygon(
+        50% 0%,   57% 18%,  75% 4%,   68% 24%,
+        95% 20%,  79% 38%,  100% 50%, 79% 62%,
+        95% 80%,  68% 76%,  75% 96%,  57% 82%,
+        50% 100%, 43% 82%,  25% 96%,  32% 76%,
+        5%  80%,  21% 62%,  0%  50%,  21% 38%,
+        5%  20%,  32% 24%,  25% 4%,   43% 18%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .starburst-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .starburst-text {
+      color: var(--black);
+      font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 11pt;
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
+
+    .starburst-sub {
+      color: var(--black);
+      font-family: 'Oswald', Impact, sans-serif;
+      font-weight: 600;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+
+    /* ─────────────────────────────────────────────
+       HALBERT STORY HOOK — above headline
+    ───────────────────────────────────────────── */
+    .story-hook {
+      background: var(--offwhite);
+      border-left: 5px solid var(--orange);
+      padding: 0.07in 0.35in 0.07in 0.3in;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 9.5pt;
+      color: #2a2a2a;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .story-hook strong {
+      font-weight: 900;
+      font-style: normal;
+      color: var(--black);
+    }
+
+    /* ─────────────────────────────────────────────
+       HEADLINE BLOCK
+    ───────────────────────────────────────────── */
+    .headline-block {
+      background: var(--white);
+      padding: 0.08in 1.4in 0.06in 0.35in;
+      border-bottom: 3px solid var(--orange);
+    }
+
+    .headline {
+      font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 29pt;
+      line-height: 1.05;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.03in;
+    }
+
+    .headline span.orange {
+      color: var(--orange);
+    }
+
+    .subhead {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 10pt;
+      color: var(--darkgray);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    /* ─────────────────────────────────────────────
+       CONTENT WRAPPER
+    ───────────────────────────────────────────── */
+    .content {
+      padding: 0 0.35in;
+    }
+
+    /* ─────────────────────────────────────────────
+       BENCIVENGA PROOF STAT BAR
+    ───────────────────────────────────────────── */
+    .proof-stat-bar {
+      margin: 0.08in 0 0;
+      background: var(--black);
+      padding: 0.055in 0.12in;
+      display: flex;
+      align-items: center;
+      gap: 0.15in;
+      border-left: 5px solid var(--orange);
+    }
+
+    .proof-stat-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 7.5pt;
+      color: #AAAAAA;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      flex-shrink: 0;
+    }
+
+    .proof-stat-numbers {
+      display: flex;
+      gap: 0.25in;
+      flex: 1;
+    }
+
+    .proof-stat-item {
+      text-align: center;
+    }
+
+    .proof-stat-figure {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 15pt;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .proof-stat-desc {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 7pt;
+      color: #AAAAAA;
+      line-height: 1.3;
+      margin-top: 1pt;
+    }
+
+    .proof-stat-source {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 6.5pt;
+      color: #666;
+      font-style: italic;
+      margin-top: 1pt;
+    }
+
+    /* ─────────────────────────────────────────────
+       TRUE COMPARISON TABLE — HERO ELEMENT
+    ───────────────────────────────────────────── */
+    .compare-wrap {
+      margin: 0.07in 0 0.07in;
+      border: 3px solid var(--black);
+    }
+
+    .compare-header {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 12pt;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 5pt 0.15in;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare-table thead tr {
+      background: var(--black);
+    }
+
+    .compare-table thead th {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 12pt;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6pt 0.1in;
+      text-align: center;
+    }
+
+    .compare-table thead th:first-child {
+      text-align: left;
+      font-size: 9pt;
+      color: #AAAAAA;
+      width: 24%;
+    }
+
+    .compare-table thead th.col-park {
+      background: #1A7A3E;
+      color: var(--white);
+      width: 38%;
+    }
+
+    .compare-table thead th.col-rent {
+      background: #8B1A1A;
+      color: var(--white);
+      width: 38%;
+    }
+
+    .compare-table tbody tr {
+      border-bottom: 1px solid #CCCCCC;
+    }
+
+    .compare-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .compare-table tbody tr:nth-child(even) {
+      background: var(--offwhite);
+    }
+
+    .compare-table tbody td {
+      padding: 6pt 0.1in;
+      font-family: 'Inter', sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--black);
+      vertical-align: middle;
+    }
+
+    .compare-table tbody td:first-child {
+      font-size: 8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--darkgray);
+      border-right: 2px solid var(--black);
+    }
+
+    .compare-table tbody td.park-val {
+      text-align: center;
+      color: #1A7A3E;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13pt;
+      font-weight: 700;
+      border-right: 1px solid #CCCCCC;
+    }
+
+    .compare-table tbody td.rent-val {
+      text-align: center;
+      color: #C0392B;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13pt;
+      font-weight: 700;
+    }
+
+    .compare-table tbody td.park-val .sub-note {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      color: #1A7A3E;
+      line-height: 1.2;
+      margin-top: 2pt;
+    }
+
+    .compare-table tbody td.rent-val .sub-note {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      color: #C0392B;
+      line-height: 1.2;
+      margin-top: 2pt;
+    }
+
+    /* Carlton "Bank Math" enemy row */
+    .compare-table tbody tr.bank-enemy-row td {
+      background: #FFF3E0;
+      border-top: 2px solid var(--orange);
+      border-bottom: 2px solid var(--orange);
+    }
+
+    .compare-table tbody tr.bank-enemy-row td:first-child {
+      background: #FFF3E0;
+    }
+
+    .bank-enemy-label {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 7pt;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1pt;
+    }
+
+    .compare-footer {
+      background: var(--black);
+      color: var(--orange);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-align: center;
+      padding: 5pt;
+    }
+
+    /* ─────────────────────────────────────────────
+       LOT CARDS — compact
+    ───────────────────────────────────────────── */
+    .lot-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.1in;
+      margin: 0 0 0.06in;
+    }
+
+    .lot-card {
+      border: 3px solid var(--black);
+      background: var(--white);
+    }
+
+    .lot-label {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Oswald', Impact, sans-serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 3pt 0;
+      text-align: center;
+    }
+
+    .lot-card-body {
+      padding: 0.05in 0.1in;
+      text-align: center;
+    }
+
+    .card-down-amount {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 28pt;
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .card-down-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 7pt;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--darkgray);
+      margin-bottom: 0.035in;
+    }
+
+    .card-divider {
+      border: none;
+      border-top: 2px solid var(--orange);
+      margin: 0.035in 0;
+    }
+
+    .card-monthly-amount {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 34pt;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .card-monthly-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 7pt;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 0.025in;
+    }
+
+    .card-monthly-note {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--darkgray);
+      line-height: 1.3;
+    }
+
+    .card-price {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 8.5pt;
+      color: var(--black);
+      margin-top: 0.025in;
+      border-top: 1px solid var(--gray);
+      padding-top: 0.025in;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-own-line {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 7.5pt;
+      color: #1A7A3E;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3pt 0;
+      background: #EDFAF1;
+      margin: 0 -0.1in -0.05in;
+    }
+
+    /* ─────────────────────────────────────────────
+       CHECKLIST SECTION HEADER
+    ───────────────────────────────────────────── */
+    .checklist-section-header {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 11pt;
+      color: var(--white);
+      background: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 3pt 0.1in;
+      margin-bottom: 0.05in;
+    }
+
+    .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bullets li {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      line-height: 1.35;
+      margin-bottom: 0.035in;
+      padding-left: 0.25in;
+      position: relative;
+      color: var(--black);
+    }
+
+    .bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--orange);
+      font-weight: 900;
+      font-size: 11pt;
+      line-height: 1.2;
+    }
+
+    .bullets li strong {
+      color: var(--black);
+      font-weight: 900;
+    }
+
+    .bullets li .number-accent {
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    /* ─────────────────────────────────────────────
+       TWO-COLUMN LAYOUT
+    ───────────────────────────────────────────── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.1in;
+      margin: 0.05in 0 0.04in;
+    }
+
+    /* ─────────────────────────────────────────────
+       QUALIFY BOX
+    ───────────────────────────────────────────── */
+    .qualify-box {
+      border: 3px solid var(--black);
+      background: var(--offwhite);
+    }
+
+    .qualify-box-header {
+      background: var(--black);
+      color: var(--orange);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 3pt 0.1in;
+    }
+
+    .qualify-box-body {
+      padding: 0.06in 0.1in;
+    }
+
+    .qualify-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .qualify-items li {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      line-height: 1.4;
+      margin-bottom: 0.03in;
+      padding-left: 0.2in;
+      position: relative;
+      color: var(--black);
+    }
+
+    .qualify-items li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #1A7A3E;
+      font-weight: 900;
+      font-size: 10pt;
+      line-height: 1.25;
+    }
+
+    /* Welcome note */
+    .welcome-note {
+      margin-top: 0.04in;
+      background: #FFF8ED;
+      border: 2px solid var(--orange);
+      padding: 5pt 0.1in;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 8.5pt;
+      color: var(--black);
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* 55+ note */
+    .fifty-five-note {
+      margin-top: 0.04in;
+      background: #EEF4FF;
+      border: 2px solid #3A5FBF;
+      padding: 4pt 0.1in;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 8pt;
+      color: #1A2E6B;
+      line-height: 1.4;
+    }
+
+    /* ─────────────────────────────────────────────
+       URGENCY BAND
+    ───────────────────────────────────────────── */
+    .urgency-band {
+      width: 8.5in;
+      background: var(--black);
+      color: var(--white);
+      padding: 0.07in 0.35in;
+      margin-top: 0.05in;
+      display: flex;
+      align-items: center;
+      gap: 0.15in;
+      border-top: 4px solid var(--orange);
+      border-bottom: 4px solid var(--orange);
+    }
+
+    .urgency-icon {
+      font-size: 22pt;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .ub-text { flex: 1; }
+
+    .ub-line1 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 15pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--orange);
+      line-height: 1.1;
+      margin-bottom: 2pt;
+    }
+
+    .ub-line2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    /* ─────────────────────────────────────────────
+       MAKEPEACE EMOTIONAL CLOSE LINE
+    ───────────────────────────────────────────── */
+    .emotional-close {
+      background: var(--orange);
+      color: var(--black);
+      text-align: center;
+      padding: 0.05in 0.35in;
+      font-family: 'Oswald', Impact, 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      line-height: 1.25;
+    }
+
+    /* ─────────────────────────────────────────────
+       CONTACT BLOCK
+    ───────────────────────────────────────────── */
+    .contact-block {
+      background: var(--white);
+      padding: 0.07in 0.35in 0.07in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.1in;
+      align-items: center;
+    }
+
+    .contact-phones { text-align: left; }
+
+    .phone-entry { margin-bottom: 0.025in; }
+
+    .phone-who {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 8.5pt;
+      color: var(--darkgray);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-bottom: 1pt;
+    }
+
+    .phone-number {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 22pt;
+      color: var(--black);
+      line-height: 1;
+      display: block;
+    }
+
+    .contact-right { text-align: right; }
+
+    .espanol-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 12pt;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 4pt 0.12in;
+      margin-bottom: 0.04in;
+    }
+
+    .address-line {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 8.5pt;
+      color: var(--darkgray);
+      line-height: 1.5;
+    }
+
+    .hours-badge {
+      display: inline-block;
+      border: 2px solid var(--black);
+      padding: 3pt 0.1in;
+      margin-top: 0.03in;
+    }
+
+    .hours-line {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .community-line {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 7.5pt;
+      color: var(--darkgray);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 3pt;
+    }
+
+    /* ─────────────────────────────────────────────
+       AWARD BADGE — BusinessRate #1 Sanford 2026
+    ───────────────────────────────────────────── */
+    .award-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 3pt 8pt;
+      line-height: 1.4;
+      margin-top: 0.03in;
+    }
+    .award-badge-sub {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 7pt;
+      text-transform: none;
+      letter-spacing: 0;
+      margin-top: 1pt;
+      color: var(--black);
+      opacity: 0.8;
+    }
+
+    /* ─────────────────────────────────────────────
+       PRINT RULES
+    ───────────────────────────────────────────── */
+    @media print {
+      html, body { height: 11in; overflow: hidden; }
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .hero             { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .urgency-band     { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .starburst        { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .compare-wrap     { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .compare-table thead th.col-park { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .compare-table thead th.col-rent { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .header-bar       { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .lot-label        { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .checklist-section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .qualify-box-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .espanol-badge    { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .compare-header   { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .compare-footer   { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .card-own-line    { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .welcome-note     { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .fifty-five-note  { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .story-hook       { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .proof-stat-bar   { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .emotional-close  { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .compare-table tbody tr.bank-enemy-row td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER BAR
+  ═══════════════════════════════════════ -->
+  <div class="header-bar">
+    <div class="park-name">Park Avenue Mobile Home Park</div>
+    <div class="park-address">2545 Park Drive &nbsp;·&nbsp; Sanford, FL 32771 &nbsp;·&nbsp; 55-and-older community</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       GUARANTEE BLOCK — BEFORE PHOTOS (Default #1)
+  ═══════════════════════════════════════ -->
+  <div style="background:#FEF8EC; border-left:3pt solid #C8902A; padding:0.1in 0.38in; font-family:'Inter','Arial',Helvetica,sans-serif; font-size:11pt; line-height:1.45; color:#1A1A1A;">
+    <strong style="font-family:'Oswald',Impact,'Arial Narrow',sans-serif; font-size:12pt; letter-spacing:0.5px; text-transform:uppercase; color:#0A0A0A;">No sales pitch. Come see it.</strong>
+    Walk through. Ask every question. Run the numbers yourself. If it works for you, great — we can move fast. If it doesn&rsquo;t, we will tell you that. No follow-up calls. No pressure. The owner does not want the wrong buyer any more than you want the wrong home. You walk away clean. That&rsquo;s not a line — that&rsquo;s how he does business.
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO BAND + STARBURST
+  ═══════════════════════════════════════ -->
+  <div class="hero" style="position:relative;">
+    <div class="hero-panel" style="background-image:url('photos/gB-left.jpg'); background-size:cover; background-position:center 30%; flex:1;"></div>
+    <div class="hero-panel" style="background-image:url('photos/gB-right.jpg'); background-size:cover; background-position:center 30%; flex:1; border-left:2px solid rgba(255,255,255,0.35);"></div>
+    <div class="starburst-wrap">
+      <div class="starburst">
+        <div class="starburst-inner">
+          <span class="starburst-text">ONLY<br>2 HOMES</span>
+          <span class="starburst-sub">LEFT</span>
+        </div>
+      </div>
+    </div>
+    <span style="position:absolute; bottom:4pt; left:0.35in; font-family:'Inter',sans-serif; font-weight:600; font-size:7pt; color:rgba(255,255,255,0.85); letter-spacing:0.3px;">Park Avenue Mobile Home Park &mdash; 2545 Park Drive, Sanford FL 32771</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       OUTCOME STRIP — Hormozi leads with result
+  ═══════════════════════════════════════ -->
+  <div style="background:#FF6B00; color:#0A0A0A; text-align:center; padding:0.045in 0.35in; font-family:'Oswald',Impact,'Arial Narrow',sans-serif; font-weight:700; font-size:10.5pt; text-transform:uppercase; letter-spacing:1px; line-height:1.2;">
+    Month 59: Your housing payment disappears. Forever. Not reduced. Gone. &mdash; That&rsquo;s the math.
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HEADLINE
+  ═══════════════════════════════════════ -->
+  <div class="headline-block">
+    <h1 class="headline">$1,000 Down. <span class="orange">Yours in 59 Months.</span><br>No Bank. No Credit Score.</h1>
+    <p class="subhead">Rent-to-Own &nbsp;·&nbsp; Owner-Financed &nbsp;·&nbsp; From $1,000 Down &nbsp;·&nbsp; 55-and-older community &nbsp;·&nbsp; Sanford, FL</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════ -->
+  <div class="content">
+
+    <!-- ══════════════════════════════════════
+         PROOF STAT BAR
+    ═══════════════════════════════════════ -->
+    <div class="proof-stat-bar">
+      <div class="proof-stat-label">Market<br>Data</div>
+      <div class="proof-stat-numbers">
+        <div class="proof-stat-item">
+          <div class="proof-stat-figure">$1,675/mo</div>
+          <div class="proof-stat-desc">Sanford 1BR median rent</div>
+          <div class="proof-stat-source">Zillow, Q1 2026</div>
+        </div>
+        <div class="proof-stat-item" style="border-left:1px solid #444; padding-left:0.2in;">
+          <div class="proof-stat-figure">$1,100/mo</div>
+          <div class="proof-stat-desc">Park Avenue all-in (Lot 9)</div>
+          <div class="proof-stat-source">home payment + lot rent</div>
+        </div>
+        <div class="proof-stat-item" style="border-left:1px solid #444; padding-left:0.2in;">
+          <div class="proof-stat-figure">$575/mo</div>
+          <div class="proof-stat-desc">you keep vs. renting</div>
+          <div class="proof-stat-source">every single month</div>
+        </div>
+        <div class="proof-stat-item" style="border-left:1px solid #444; padding-left:0.2in;">
+          <div class="proof-stat-figure" style="color:#1DB954;">$34,500</div>
+          <div class="proof-stat-desc">savings over 5 years</div>
+          <div class="proof-stat-source">vs. Sanford median rent</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         BODY COPY — Outcome first, then rent math problem
+    ═══════════════════════════════════════ -->
+    <div style="margin: 0.06in 0 0.05in; display:grid; grid-template-columns: 1fr 1fr; gap: 0.12in;">
+      <div style="font-family:'Inter',sans-serif; font-size:9.5pt; font-weight:600; color:#1A1A1A; line-height:1.5;">
+        <strong style="font-weight:900;">59 months from now</strong>, you will either own this home free and clear — or you will have paid $100,350 in rent to someone else and own nothing. One path starts with $1,000. The other starts with $0 and ends the same way.<br><br>
+        <strong style="font-weight:900;">No bank. No credit score minimum.</strong> The owner finances it himself. You verify income — that&rsquo;s it. If you receive Social Security, your SS award letter is accepted as income proof. No W-2s required. No lender involved.
+      </div>
+      <div style="font-family:'Inter',sans-serif; font-size:9.5pt; font-weight:600; color:#1A1A1A; line-height:1.5;">
+        These two homes are dated. Parquet tile, wood paneling, gold fixtures — the wallpaper is from another decade. <strong style="font-weight:900;">The math isn&rsquo;t.</strong> That dated condition is exactly why the price is $22,000–$24,000 instead of $60,000. You are not paying for finishes. You are paying for a title, a lot, and the day 59 months from now when the payment stops. The cosmetics are a line item in your favor.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         10-YEAR COMPARISON TABLE — Hormozi signature weapon
+    ═══════════════════════════════════════ -->
+    <div class="compare-wrap">
+      <div class="compare-header">10-Year Math &mdash; Run It Yourself. Both Numbers Are Real.</div>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="col-park">&#x2713;&nbsp; PARK AVENUE — LOT 9</th>
+            <th class="col-rent">&#x2717;&nbsp; RENTING IN SANFORD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly Cost</td>
+            <td class="park-val">$1,100/mo<span class="sub-note">$350 home payment + $600 lot rent — all in</span></td>
+            <td class="rent-val">$1,650–$1,900/mo<span class="sub-note">Sanford 1BR, Zillow Q1 2026</span></td>
+          </tr>
+          <tr>
+            <td>Years 1–4<br><span style="font-size:7pt; font-weight:600; text-transform:none; letter-spacing:0;">(48 months)</span></td>
+            <td class="park-val">$52,800 paid<span class="sub-note">building toward ownership — every dollar counts</span></td>
+            <td class="rent-val">$79,200–$91,200<span class="sub-note">paid to landlord — $0 return on any of it</span></td>
+          </tr>
+          <tr>
+            <td>Month 59<br><span style="font-size:7pt; font-weight:600; text-transform:none; letter-spacing:0;">(payoff)</span></td>
+            <td class="park-val" style="color:#1A7A3E; font-size:12pt;">HOME IS YOURS<span class="sub-note">title is clean — no lien, no bank, no more payment</span></td>
+            <td class="rent-val" style="color:#C0392B; font-size:12pt;">STILL PAYING<span class="sub-note">nothing changes — rent continues forever</span></td>
+          </tr>
+          <tr>
+            <td>Total Paid<br><span style="font-size:7pt; font-weight:600; text-transform:none; letter-spacing:0;">(59 months)</span></td>
+            <td class="park-val">$21,650<span class="sub-note">$1,000 down + (59 × $350) — that&rsquo;s the whole number</span></td>
+            <td class="rent-val">$97,350–$112,100<span class="sub-note">59 months × $1,650–$1,900/mo — gone forever</span></td>
+          </tr>
+          <tr>
+            <td>Months 60–120<br><span style="font-size:7pt; font-weight:600; text-transform:none; letter-spacing:0;">(years 5–10)</span></td>
+            <td class="park-val">$600/mo<span class="sub-note">lot rent only — home payment is $0 forever</span></td>
+            <td class="rent-val">$99,000–$114,000<span class="sub-note">another 60 months of rent — nothing owned at the end</span></td>
+          </tr>
+          <tr>
+            <td>10-Year Total<br><span style="font-size:7pt; font-weight:600; text-transform:none; letter-spacing:0;">(months 1–120)</span></td>
+            <td class="park-val" style="font-size:15pt; color:#1A7A3E;">$57,650<span class="sub-note">own a home free &amp; clear — no mortgage, no bank, no debt</span></td>
+            <td class="rent-val" style="font-size:15pt; color:#C0392B;">$196,350–$226,100<span class="sub-note">paid out — zero ownership, zero asset, zero return</span></td>
+          </tr>
+          <!-- BANK ENEMY ROW -->
+          <tr class="bank-enemy-row">
+            <td><span class="bank-enemy-label">&#x26A0; The Bank Math</span>Credit Required</td>
+            <td class="park-val" style="font-size:12pt; color:#1A7A3E;">NONE<span class="sub-note">no credit score minimum — income check only</span></td>
+            <td class="rent-val" style="font-size:12pt; color:#C0392B;">680+ SCORE<span class="sub-note">bank mortgage minimum — most fixed-income buyers denied</span></td>
+          </tr>
+          <tr class="bank-enemy-row">
+            <td><span class="bank-enemy-label">&#x26A0; The Bank Math</span>Down Payment</td>
+            <td class="park-val" style="font-size:12pt; color:#1A7A3E;">$1,000<span class="sub-note">that&rsquo;s the whole number — no closing costs</span></td>
+            <td class="rent-val" style="font-size:12pt; color:#C0392B;">$44,000–$50,000<span class="sub-note">20% on a $220K–$250K home — most people don&rsquo;t have it</span></td>
+          </tr>
+          <tr>
+            <td>Lot Rent</td>
+            <td class="park-val">$600/mo<span class="sub-note">lowest in Seminole County for 55-and-older parks</span></td>
+            <td class="rent-val">N/A<span class="sub-note">included in rent — landlord keeps every dollar</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="compare-footer">10-Year Renter Total: Up to $226,100 gone &nbsp;·&nbsp; Park Avenue total cost: $57,650 — and you OWN the home &nbsp;·&nbsp; Difference: $168,450</div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         MECHANISM IN PROSE (Default #2) — one paragraph, actual math
+    ═══════════════════════════════════════ -->
+    <div style="margin: 0.06in 0 0.05in; background: var(--offwhite); border: 3px solid var(--black); border-left: 6px solid var(--orange); padding: 0.07in 0.15in 0.07in 0.18in;">
+      <div style="font-family:'Oswald',Impact,'Arial Narrow',sans-serif; font-weight:700; font-size:11pt; color:var(--black); text-transform:uppercase; letter-spacing:0.3px; margin-bottom:4pt;">How Rent-to-Own Works — The Actual Math</div>
+      <div style="font-family:'Inter',sans-serif; font-size:9.5pt; font-weight:600; color:#1A1A1A; line-height:1.55;">
+        Here is how it works. <strong>Lot 9:</strong> you pay $1,000 down. Then $350 a month. Month 59, you stop paying the home payment. Your name was on the title from day one — not month 59, from day one. The math: 59 months &times; $350 = $20,650, plus $1,000 down = $21,650 total. That is the complete cost of the home. No interest rate to decode. No bank. No permission required. <strong>Lot 14:</strong> $2,000 down, $375 a month. 59 months &times; $375 = $22,125, plus $2,000 = $24,125. Home is yours. After month 59 on either lot, your housing cost drops to $600 a month — lot rent only — forever. The owner holds the note. He does not sell it to a bank. He does not report to a credit bureau. You qualify by showing you can cover the payment. A Social Security award letter does that.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         LOT CARDS
+    ═══════════════════════════════════════ -->
+    <div class="lot-cards">
+
+      <div class="lot-card">
+        <div class="lot-label">Lot 14 &mdash; Available Now</div>
+        <div class="lot-card-body">
+          <div class="card-down-amount">$2,000</div>
+          <div class="card-down-label">Down Payment</div>
+          <hr class="card-divider">
+          <div class="card-monthly-amount">$1,125<span style="font-size:16pt;">/mo</span></div>
+          <div class="card-monthly-label">All-In Monthly Cost</div>
+          <div class="card-monthly-note">$375 home payment + $600 lot rent<br>1BR &middot; Screened porch &middot; Wood paneling<br><em style="font-size:7pt; color:#888;">Dated condition = lower price. The math works in your favor.</em></div>
+          <div class="card-price">Purchase Price: $24,000 &nbsp;·&nbsp; 59 months to own</div>
+          <div class="card-own-line">Month 59 &mdash; Home is yours. Free &amp; clear.</div>
+        </div>
+      </div>
+
+      <div class="lot-card">
+        <div class="lot-label">Lot 9 &mdash; Available Now</div>
+        <div class="lot-card-body">
+          <div class="card-down-amount">$1,000</div>
+          <div class="card-down-label">Down Payment</div>
+          <hr class="card-divider">
+          <div class="card-monthly-amount">$1,100<span style="font-size:16pt;">/mo</span></div>
+          <div class="card-monthly-label">All-In Monthly Cost</div>
+          <div class="card-monthly-note">$350 home payment + $600 lot rent<br>Parquet tile &middot; Gold fixtures &middot; Dated interior<br><em style="font-size:7pt; color:#888;">Dated condition = lower price. The math works in your favor.</em></div>
+          <div class="card-price">Purchase Price: $22,000 &nbsp;·&nbsp; 59 months to own</div>
+          <div class="card-own-line">Month 59 &mdash; Home is yours. Free &amp; clear.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════
+         CHECKLIST + QUALIFY BOX — two columns
+    ═══════════════════════════════════════ -->
+    <div class="two-col">
+
+      <!-- LEFT: what you're getting -->
+      <div>
+        <div class="checklist-section-header">What You Get</div>
+        <ul class="bullets">
+          <li><strong>No bank. No credit score minimum.</strong> Owner finances it himself. No lender. No application fee.</li>
+          <li><strong><span class="number-accent">$600/mo lot rent</span></strong> — lowest in Seminole County for 55-and-older parks. Up to <strong>$300/mo below</strong> competing parks. That&rsquo;s <strong>$3,600 a year</strong> you keep.</li>
+          <li><strong>SS award letter accepted.</strong> On Social Security? Your award letter is proof of income. No W-2. No employer call required.</li>
+          <li><strong>Trade property accepted toward down payment.</strong> A house, mobile home, or land — owner will talk creative deals. Just ask.</li>
+          <li><strong>Quiet 55-and-older community.</strong> Long-term neighbors. Well-kept park. No drama.</li>
+        </ul>
+
+        <div class="welcome-note">
+          <ul class="bullets" style="margin: 0; padding-left: 0.22in;">
+            <li>&#x2713; ITIN numbers accepted</li>
+            <li>&#x2713; No Social Security number required</li>
+            <li>&#x2713; Passport is all the ID you need</li>
+          </ul>
+          <ul class="bullets" style="margin: 0.05in 0 0 0; padding-left: 0.22in;">
+            <li>&#x2713; Se acepta n&uacute;mero ITIN</li>
+            <li>&#x2713; No se requiere n&uacute;mero de Seguro Social</li>
+            <li>&#x2713; Tu pasaporte es toda la identificaci&oacute;n que necesitas</li>
+          </ul>
+        </div>
+
+        <div class="fifty-five-note">
+          <strong>55-and-older community.</strong> Limited non-55+ units may be available — no children accepted. Ask about availability.
+        </div>
+      </div>
+
+      <!-- RIGHT: qualify box -->
+      <div>
+        <div class="qualify-box">
+          <div class="qualify-box-header">To Qualify &mdash; That&rsquo;s It</div>
+          <div class="qualify-box-body">
+            <ul class="qualify-items">
+              <li><strong>No violent felonies</strong> (ever)</li>
+              <li><strong>No evictions</strong> in the last 7 years</li>
+              <li>Income at <strong>2.5&times;</strong> the total monthly payment<br>Verified by employer call, written letter, or Social Security award notice</li>
+              <li><strong>Valid ID</strong> — any government-issued ID accepted. Passport works.</li>
+              <li><strong>Come see it first.</strong> Tour both homes. Ask everything. If the numbers don&rsquo;t work for you — no pressure, no follow-up, no obligation. Walk away clean.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top: 0.07in; border: 3px solid var(--orange); background: var(--white);">
+          <div style="background: var(--orange); color: var(--black); font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 10pt; text-transform: uppercase; letter-spacing: 2px; padding: 3pt 0.1in;">No Bank Required &mdash; How It Works</div>
+          <div style="padding: 0.06in 0.1in;">
+            <ul class="qualify-items" style="list-style:none; padding:0;">
+              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.03in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Owner holds the note</strong> — no third-party lender, ever</li>
+              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.03in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Your name on the title at signing</strong> — not month 59, day one</li>
+              <li style="padding-left: 0.22in; position:relative; margin-bottom:0.03in;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Pay off early</strong> anytime — no penalty</li>
+              <li style="padding-left: 0.22in; position:relative;"><span style="position:absolute; left:0; color:#FF6B00; font-weight:900;">&#x2192;</span> <strong>Month 59</strong> — home payment is $0. Not reduced. Gone.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- ═══════════════════════════════════════
+       URGENCY BAND
+  ═══════════════════════════════════════ -->
+  <div class="urgency-band">
+    <div class="urgency-icon">&#x26A1;</div>
+    <div class="ub-text">
+      <div class="ub-line1">Two Homes. Two Buyers. First Signed Contract Wins the Lot.</div>
+      <div class="ub-line2">Both lots are drawing calls right now. On a fixed income, the day your housing payment disappears is worth more than the home itself. The only thing worse than missing this is finding out someone else signed 48 hours after you read this flyer. Weekday showings only. Call today.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       EMOTIONAL CLOSE LINE
+  ═══════════════════════════════════════ -->
+  <div class="emotional-close">
+    The wallpaper is dated. The math isn&rsquo;t. &mdash; $1,000 down. Yours in 59 months. No bank involved.
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT BLOCK
+  ═══════════════════════════════════════ -->
+  <div class="contact-block">
+
+    <div class="contact-phones">
+      <div class="phone-entry">
+        <span class="phone-who">Jay (English)</span>
+        <span class="phone-number">904-495-1554</span>
+      </div>
+      <div class="phone-entry" style="margin-top:0.04in;">
+        <span class="phone-who">Sandra (Espa&ntilde;ol)</span>
+        <span class="phone-number">904-335-7767</span>
+      </div>
+      <div style="margin-top:0.04in;">
+        <div class="hours-badge">
+          <span class="hours-line">Weekday Showings Only &mdash; Mon&ndash;Fri</span>
+        </div>
+      </div>
+      <div style="margin-top:0.04in; font-family:'Inter',sans-serif; font-size:8pt; font-weight:600; color:var(--darkgray); line-height:1.5;">
+        <em>Know someone who&rsquo;s been turned down by a bank? Have them call Jay.</em><br>
+        <em>Helping a parent find a place that won&rsquo;t stretch a fixed income? Call for a private showing.</em>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <div class="espanol-badge">&#x2605;&nbsp; SE HABLA ESPA&Ntilde;OL &nbsp;&#x2605;</div>
+      <div style="margin-bottom:0.03in;"></div>
+      <div class="address-line">
+        Park Avenue Mobile Home Park<br>
+        2545 Park Drive, Sanford FL 32771<br>
+        Office: 407-322-2861
+      </div>
+      <div class="community-line" style="margin-top:0.04in;">55-and-older community</div>
+      <div class="award-badge">
+        &#9733; #1 Rated Mobile Home Park in Sanford &mdash; BusinessRate 2026
+        <span class="award-badge-sub">BusinessRate.com &nbsp;&middot;&nbsp; Google Reviews &nbsp;&middot;&nbsp; Best of Sanford 2026</span>
+        <span class="award-badge-sub" style="margin-top:0;">&#9733; Parque #1 en Sanford &mdash; Google Reviews 2026</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       P.S. — Referral Personas (Default #3)
+  ═══════════════════════════════════════ -->
+  <div style="background:var(--offwhite); border-top:2px solid var(--gray); padding:0.06in 0.35in; font-family:'Inter',sans-serif; font-size:8.5pt; font-weight:600; color:#1A1A1A; line-height:1.5;">
+    <strong style="font-weight:900;">P.S.</strong> &mdash; If you know someone on a fixed income who has been turned down by a bank or told they don&rsquo;t qualify, have them call Jay at 904-495-1554. The bank already said no. The owner says let&rsquo;s talk. &nbsp;&middot;&nbsp; If you are helping a parent or grandparent find a place that will not drain a Social Security check, call to schedule a private walkthrough. Weekday showings only.
+  </div>
+
+</body>
+</html>
